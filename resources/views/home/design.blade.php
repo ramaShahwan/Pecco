@@ -521,16 +521,16 @@
                 <div class="footer-icons">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                      <a href="#"><i class="fa-brands fa-pinterest"></i></a>
                     </li>
                   </ul>
                 </div>
