@@ -123,7 +123,7 @@ h4:hover{
               <div class="services-detailss">
                 <div class="single-servicess">
                   <a class="services-icons" href="{{ route('design') }}" style="    text-align: center;">
-                    <img src="imghome/cc.png" alt="" style="height: 90px;
+                    <img src="assetss/re.png" alt="" style="height: 90px;
                     width: 90px;
                         margin-left: 100px;" >
                                         <h4 class="text2">الدراسات الهندسية والإشراف  </h4>
@@ -144,7 +144,7 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="{{ route('moudel') }}"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt="" style="height: 90px;
+                    <img src="assetss/re.png" alt="" style="height: 90px;
                     width: 90px;
                        margin-left: 80px;" >                    <h4 class="text2">  النمذجة وتطوير المشاريع</h4>
 
@@ -164,7 +164,7 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="{{ route('train_index') }}"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt="" style="height: 90px;
+                    <img src="assetss/re.png" alt="" style="height: 90px;
                     width: 90px;
                         margin-left: 80px;" >
                   <h4 class="text2">   التدريب والتأهيل والتنمية</h4>
@@ -208,7 +208,7 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt="" style="height: 90px;
+                    <img src="assetss/re.png" alt="" style="height: 90px;
                     width: 90px;
                         margin-left: 80px;" >                    <h4 class="text2">  التصميم الداخلي والديكور</h4>
 
@@ -229,7 +229,7 @@ h4:hover{
               <div class="services-detailss">
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt=""  style="height: 90px;
+                    <img src="assetss/re.png" alt=""  style="height: 90px;
                     width: 90px;
                         margin-left: 70px;" >                    <h4 class="text2">   البحث والتطوير العلمي    </h4>
 
@@ -249,7 +249,7 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt=""  style="height: 90px;
+                    <img src="assetss/re.png" alt=""  style="height: 90px;
                     width: 90px;
                         margin-left: 60px;" >                    <h4 class="text2">    تصميم مواقع الويب </h4>
 
@@ -286,7 +286,7 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="imghome/cc.png" alt=""  style="height: 90px;
+                    <img src="assetss/re.png" alt=""  style="height: 90px;
                     width: 90px;
                         margin-left: 80px;" >
                     <h4 class="text2">البرمجة والتحكم الصناعي </h4>

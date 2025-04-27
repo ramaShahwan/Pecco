@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="imghome/iiii.jpg" rel="icon">
-  <link href="imghome/iiii.jpg" rel="apple-touch-icon">
+  <link href="assetss/re.png" rel="icon">
+  <link href="assetss/re.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
@@ -161,7 +161,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                   <li>
-<div style="    display: flex;"> <img src="imghome/cc.png" alt="" style="width:60px; height:50px;">
+<div style="    display: flex;"> <img src="assetss/re.png" alt="" style="width:60px; height:50px;">
 <div><h3 style="color: #fff; font-size:20px;    margin-bottom: 5px; "class="ibar">professionals</h3>
 <p style="color: #fff;margin-top: -10px;"class="ibar">for Engineering and Constructions and Training</p></div>
 
@@ -210,7 +210,7 @@
           <nav class="navbar navbar-default">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            <a href="#" class="hh"><img src="imghome/cc.png" alt="" style="width:50px; height:50px;"></a>
+            <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
             <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
