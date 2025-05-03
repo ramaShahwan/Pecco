@@ -323,7 +323,7 @@
                   <li>
 <div style="    display: flex;"> <img src="assetss/re.png" alt="" style="width:60px; height:50px;">
 <div><h3 style="color: #fff; font-size:20px;    margin-bottom: 5px; " class="ibar">Professionals</h3>
-<p style="color: #fff;margin-top: -10px;"  class="ibar">for Engineering and Constructions and Training</p></div>
+<p style="color: #fff;margin-top: -10px;"  class="ibar">for Engineering,Constructions and Training</p></div>
 
 </div>
 
