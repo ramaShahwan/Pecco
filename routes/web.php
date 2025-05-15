@@ -61,6 +61,11 @@ Route::view('/design', 'home.design')->name('design');
 Route::view('/execution', 'home.execution')->name('execution');
 Route::view('/train_index', 'pages.home')->name('train_index');
 Route::view('/moudel', 'home.moudel')->name('moudel');
+Route::view('/dms', 'dms.home')->name('dms');
+Route::view('/emp_dms', 'dms.emp')->name('emp_dms');
+Route::view('/profile_emp', 'dms.profile_emp')->name('profile_emp');
+
+
 
 
 
