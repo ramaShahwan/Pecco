@@ -529,6 +529,14 @@ Route::post('trainee/update_validate/{ques_id}', [BimarAssessmentTraineeControll
 // });
 
 
+//new section
+// Route::middleware(AdminMiddleware::class)->group(function () {
+//     Route::get('/admin/dashboard', [UserController::class, 'index'])->name('admin.dashboard');
+// });
+
+// Route::middleware(ManagerMiddleware::class)->group(function () {
+//     Route::get('/manager/dashboard', [UserController::class, 'index'])->name('manager.dashboard');
+// });
 
 
 require __DIR__.'/auth.php';

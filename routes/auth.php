@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\TraineeRegisterController;
 use App\Http\Controllers\Auth\UserRegisterController ;
+use App\Http\Controllers\Auth\ManagerRegisterController ;
+
 use App\Http\Controllers\Auth\TraineeLoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,7 +69,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// Route::get('/login/user', [UserRegisterController ::class, 'showLoginForm'])->name('user_login');
+
+//Dashboard
+ Route::post('/login', [ManagerRegisterController ::class, 'login'])->name('login');
+ Route::post('/logout', [ManagerRegisterController ::class, 'logout'])->name('logout');
+
 Route::post('/login/user', [UserRegisterController ::class, 'login'])->name('user_login_post');
 Route::view('/login_user', 'auth.emplogin')->name('login_user');
 
