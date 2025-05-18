@@ -4,16 +4,24 @@
       .bbtn{
         border: none;
     padding: 10px;
-    background-color: rgb(33 164 146);
+    background-color: #6db1bc;
     color: white;
     border-radius: 20px;
     }
     .bttn:hover{
-        background-color: rgb(33 164 146);
+        background-color: #6db1bc;
         color: white;
         font-size: 17px;
         font-weight: 600;
     }
+    .gf{
+            background: rgb(109 177 188);
+            padding: 10px 0px;
+        }
+        .h44{
+            font-weight: 600;
+            color: white;
+        }
         .popup .overlay{
             position: fixed;
             top: 0px;
@@ -61,7 +69,7 @@
 
         }
         .fables-nav .nav-link:hover {
-    color: rgb(33 164 146)!important;
+    color: #6db1bc !important;
 }
 .btco-hover-menu .active a, .btco-hover-menu .active a:focus, .btco-hover-menu .active a:hover, .btco-hover-menu li a:hover, .btco-hover-menu li a:focus, .navbar>.show>a, .navbar>.show>a:focus, .navbar>.show>a:hover {
     color:  #76c8be !important;
@@ -487,13 +495,18 @@
 </div>
 <div class="popup" id="popup-1">
             <div class="overlay"></div>
-            <div class="content yyy" style="">
+            <div class="content yyy" style="    height: 380px;
+    width: 580px;">
+                <div class="gf">
                 <div class="close-btn" onclick="togglePopuo()">&times;</div>
+                <h4 class="h44">تغيير كلمة السر</h4>
+                </div>
+
                 <!-- <div class="containerr"> -->
-                <form id="myForm" action="{{ url('trainee_profile/changePass', $userData->id) }}" method="post" enctype="multipart/form-data">
+                <form id="myForm" action="{{ url('trainee_profile/changePass', $userData->id) }}" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
     @csrf
     <div class="roww">
-        <h4>تغيير كلمة السر</h4>
+
         <h6 style="margin-top:10px;">ملاحظة: بعد عملية تعديل كلمة السر يجب إعادة تسجيل الدخول</h6>
 
         <!-- كلمة المرور الجديدة -->
@@ -528,7 +541,7 @@
     </div>
 
     <div class="roww">
-        <input type="submit" value="حفظ" class="bttn" style="border: 1px solid #23a693;">
+        <input type="submit" value="حفظ" class="bttn" style="border: 1px solid #6db1bc;">
     </div>
 </form>
 

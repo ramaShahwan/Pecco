@@ -70,7 +70,7 @@
   }
 }
         .fables-nav .nav-link:hover {
-    color: rgb(33 164 146)!important;
+    color: #6db1bc!important;
 }
 h3{
     text-align: end;

@@ -4,12 +4,12 @@
       .bbtn{
         border: none;
     padding: 10px;
-    background-color: rgb(33 164 146);
+    background-color: #6db1bc;
     color: white;
     border-radius: 20px;
     }
     .bttn:hover{
-        background-color: rgb(33 164 146);
+        background-color: #6db1bc;
         color: white;
         font-size: 17px;
         font-weight: 600;
@@ -61,7 +61,7 @@
 
         }
         .fables-nav .nav-link:hover {
-    color: rgb(33 164 146)!important;
+    color: #6db1bc!important;
 }
 h3{
     text-align: end;

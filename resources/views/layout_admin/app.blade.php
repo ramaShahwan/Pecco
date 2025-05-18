@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIMAR</title>
+    <title> محترفو التدريب و التنمية </title>
+    <link rel="icon" href="{{asset('assetss/re.png')}}" type="image/x-icon" />
+      <meta name="description" content="محترفو التدريب و التنمية ">
     <link rel="stylesheet" href="{{asset('assetsie/css/login.css')}}">
     <style>
         body

@@ -10,8 +10,8 @@
 
   <!-- Favicons -->
    <!-- Favicons -->
-   <link href="imghome/iiii.jpg" rel="icon">
-  <link href="imghome/iiii.jpg" rel="apple-touch-icon">
+   <link href="assetss/re.png" rel="icon">
+  <link href="assetss/re.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
@@ -158,9 +158,9 @@
                 <ul class="nav navbar-nav navbar-right">
 
                   <li>
-<div style="    display: flex;"> <img src="imghome/cc.png" alt="" style="width:60px; height:50px;">
+<div style="    display: flex;"> <img src="assetss/re.png" alt="" style="width:60px; height:50px;">
 <div><h3 style="color: #fff; font-size:20px;     margin-bottom: 5px;" class="ibar">professionals</h3>
-<p style="color: #fff;margin-top: -10px;" class="ibar">for Engineering and Constructions and Training</p></div>
+<p style="color: #fff;margin-top: -10px;" class="ibar">for Engineering,Constructions and Training</p></div>
 
 </div>
 
@@ -168,7 +168,7 @@
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
                   </li>
                   <li class="kk">
                     <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>
@@ -207,7 +207,7 @@
           <nav class="navbar navbar-default">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            <a href="#" class="hh"><img src="imghome/cc.png" alt="" style="width:50px; height:50px;"></a>
+            <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
             <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
@@ -419,16 +419,16 @@
                 <div class="footer-icons">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                      <a href="#"><i class="fa-brands fa-pinterest"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -439,33 +439,64 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
-                <h4>للتواصل</h4>
+                <h4 style="    visibility: hidden;">...</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
+                  <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span>فرع :</span>حلب</p>
+                  <p><span>Address:</span>سوريا _ حلب _ المحافظة _ نزلة الهندسة _  جانب كافيه مانيسا </p>
+
                   <p><span>Tel:</span>0966333221</p>
                   <p><span>Email:</span>info@proengtrain.com
                   </p>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
+                  <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span>فرع :</span>الدوحة</p>
+                  <p><span>Address:</span> قطر _ الدوحة _ مركز المنتزه التجاري_ المبنى#2 _ الطابق#1_ المكتب#2</p>
+
+                  <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
+                  <p><span>Email:</span>info@pegasuspower.qa
+                  </p>
+
                 </div>
               </div>
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12" style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4>Facebook</h4>
-                <div class="flicker-img">
+                <h4 style="    text-align: end;
+    color: white;
+    font-size: 20px;
+
+    margin-bottom: 8px;">للتواصل</h4>
+                <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>دبي</p>
+                  <p><span class="ytt">Address:</span>الامارات _ دبي _ واحة دبي للسيليكون _ برج اس اي تي _ مكتب#2403</p>
+
+                  <p><span class="ytt">Tel:</span>+971 502470240</p>
+                  <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
+                  </p>
+                  <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>السعودية</p>
+                  <p><span class="ytt">Address:</span>...</p>
+
+                  <p><span class="ytt">Tel:</span>...</p>
+                  <p><span class="ytt">Email:</span>...
+                  </p>
+
+                <!-- <div class="flicker-img">
                   <a href="#"><img src="imghome/portfolio/download (1).jpeg" alt="" style="width: 117px;height: 94px;"></a>
                   <a href="#"><img src="imghome/portfolio/download.jpeg" alt="" style="width: 117px;height: 94px;"></a>
                   <a href="#"><img src="imghome/portfolio/p6.png" alt="" style="width: 117px;height: 94px;"></a>
                   <a href="#"><img src="imghome/portfolio/photo_2024-07-28_16-39-29.jpg" alt="" style="width: 117px;height: 94px;"></a>
                   <a href="#"><img src="imghome/portfolio/photo_2024-07-28_16-43-17.jpg" alt="" style="width: 117px;height: 94px;"></a>
                   <a href="#"><img src="imghome/portfolio/Screenshot (168).png" alt="" style="width: 117px;height: 94px;"></a>
-                </div>
+                </div> -->
               </div>
+
             </div>
           </div>
         </div>
