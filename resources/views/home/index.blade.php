@@ -331,7 +331,7 @@
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
                   </li>
                   <li class="kk">
                     <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>

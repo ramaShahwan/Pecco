@@ -19,7 +19,11 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('style/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
+<style>
+    .my-5 {
+            margin-top: 7rem !important;
+    }
+</style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -31,15 +35,15 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0  my-5" style="box-shadow: inset -1px 1px 13px 0px rgb(97 184 174);">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
-                                <div class="p-5">
+                                <div class="p-5" style="border: 1px solid rgb(109 177 188);box-shadow: 1px 1px 2px 0px rgb(109 177 188);border-radius: 20px;margin: 25px;">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">تسجيل دخول</h1>
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
@@ -58,9 +62,10 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <!-- <a href="" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </a> -->
+                                        <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
                                         <!-- <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
@@ -70,12 +75,12 @@
                                         </a> -->
                                     </form>
                                     <hr>
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
