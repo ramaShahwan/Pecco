@@ -40,8 +40,8 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> الاسم   </h4>
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="الاسم   " value="عتع" name="trainee_fname_ar" id="trainee_fname_ar" class="@error('trainee_fname_ar') is-invalid @enderror"/>
-                          @error('trainee_fname_ar')
+                          <input type="text" placeholder="الاسم   " value="عتع" name="full_name" id="full_name" class="@error('full_name') is-invalid @enderror"/>
+                          @error('full_name')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
                           </span>
@@ -50,8 +50,8 @@
                          <h4 style="text-align: right;margin-bottom: 12px;"> اسم المستخدم   </h4>
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="الاسم   " value="عتع" name="trainee_fname_ar" id="trainee_fname_ar" class="@error('trainee_fname_ar') is-invalid @enderror"/>
-                          @error('trainee_fname_ar')
+                          <input type="text" placeholder="الاسم   " value="عتع" name="user_name" id="user_name" class="@error('user_name') is-invalid @enderror"/>
+                          @error('user_name')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
                           </span>
@@ -65,9 +65,9 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> رقم الموبايل   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  رقم الموبايل  " value="0241" name="trainee_mobile" id="trainee_mobile" class="@error('trainee_mobile') is-invalid @enderror"/>
+                          <input type="text" placeholder="  رقم الموبايل  " value="0241" name="phone" id="phone" class="@error('phone') is-invalid @enderror"/>
                           <div class="input-icon"><i class="fa-solid fa-phone"></i></div>
-                          @error('trainee_mobile')
+                          @error('phone')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
                           </span>
@@ -76,9 +76,9 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> البريد الالكتروني   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="  البريد الكتروني   " value="سءيشسي" name="trainee_email" id="trainee_email" class="@error('trainee_email') is-invalid @enderror"/>
+                          <input type="email" placeholder="  البريد الكتروني   " value="سءيشسي" name="email" id="email" class="@error('email') is-invalid @enderror"/>
                           <div class="input-icon">  <i class="fa-solid fa-envelope"></i></div>
-                          @error('trainee_email')
+                          @error('email')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
                           </span>
@@ -87,9 +87,9 @@
                         <h4 style="text-align: right; margin-bottom: 12px;"> العنوان   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  العنوان    " value="ءسش" name="trainee_address" id="trainee_address" class="@error('trainee_address') is-invalid @enderror"/>
+                          <input type="text" placeholder="  العنوان    " value="ءسش" name="address" id="address" class="@error('address') is-invalid @enderror"/>
                           <div class="input-icon"><i class="fa-solid fa-location-dot"></i></div>
-                          @error('trainee_address')
+                          @error('address')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
                           </span>
@@ -98,18 +98,10 @@
                         <div class="">
                         <img src="style/img/re.png" width="200px" style="margin-left: 120px;">
 
-                            <input type="file" placeholder="الصورة" style="padding-bottom: 0;" name="trainee_personal_img" id="trainee_personal_img"/>
+                            <input type="file" placeholder="الصورة" style="padding-bottom: 0;" name="image" id="image"/>
                           </div>
                       </div>
 
-                      <div class="roww">
-
-
-
-
-
-
-                            </div>
                       <div class="roww">
                        <input type="submit" value="حفظ" class="bttn">
                       </div>

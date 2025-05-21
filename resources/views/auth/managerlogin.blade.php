@@ -45,15 +45,27 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">تسجيل دخول</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="{{route('login')}}" method="post" enctype="multipart/form-data">
+                                                        @csrf
+
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user @error('user_name') is-invalid @enderror"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter  UserName...">
+                                                placeholder="Enter  UserName..." name="user_name">
+                                                 @error('user_name')
+                          <span class="invalid-feedback" role="alert">
+                              <strongn style="color:red;">{{ $message }}</strong>
+                          </span>
+                      @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"
+                                                id="exampleInputPassword" placeholder="Password" name="password">
+                                                 @error('password')
+                          <span class="invalid-feedback" role="alert">
+                              <strongn style="color:red;">{{ $message }}</strong>
+                          </span>
+                      @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

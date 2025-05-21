@@ -49,7 +49,7 @@ public function login(Request $request)
 
     session(['user_data' => $user]);
 
-    return redirect()->route('dashboard');
+    return redirect()->route('dms');
 }
 
 

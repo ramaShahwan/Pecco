@@ -153,6 +153,10 @@
     padding-right: 4.4em;
 }
  </style>
+      @if(session('user_data'))
+    @php
+        $userData = session('user_data');
+    @endphp
 
  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -182,7 +186,7 @@
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    text-align: right;
-    direction: rtl;">
+                                   direction: rtl;">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
@@ -207,7 +211,7 @@
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    text-align: right;
-    direction: rtl;">
+                                 direction: rtl;">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
@@ -326,10 +330,10 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    text-align: right;
-    direction: ltr;">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">UserName</span>
+                              direction: ltr;">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{$userData->user_name}}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="style/img/undraw_profile.svg">
+                                    src="{{URL::asset('img/user/'.$userData->image)}} ">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -350,21 +354,31 @@
                                     Activity Log
                                 </a> -->
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                 @if(Auth::guard('admin')->check() || Auth::guard('manager')->check())
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-toggle="modal" data-target="#logoutModal"href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('user_logout-form').submit();" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
+
+                                <form id="user_logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   @csrf
+                                </form>
+                                @else
+                                 <li><a href="{{ route('login') }}" class="gg" style="display:none;">تسجيل دخول</a></li>
+                                @endif
+
                             </div>
                         </li>
+                         @endif
 
                     </ul>
 
                 </nav>
 
 
-                <div class="popup" id="popupx-1">
-            <div class="overlay"></div>
-            <div class="content yyy" style="height: 380px; width: 580px;">
+            <div class="popup" id="popupx-1">
+             <div class="overlay"></div>
+             <div class="content yyy" style="height: 380px; width: 580px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuox()">&times;</div>
                 <h4 class="h44">تغيير كلمة السر</h4>
@@ -372,25 +386,25 @@
 
                 <!-- <div class="containerr"> -->
                 <form id="myForm" action="" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
-    @csrf
-    <div class="roww">
+                       @csrf
+                    <div class="roww">
 
-        <h6 style="margin-top:10px;">ملاحظة: بعد عملية تعديل كلمة السر يجب إعادة تسجيل الدخول</h6>
+                    <h6 style="margin-top:10px;">ملاحظة: بعد عملية تعديل كلمة السر يجب إعادة تسجيل الدخول</h6>
 
-        <!-- كلمة المرور الجديدة -->
-        <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
-            <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-            <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="trainee_pass" id="trainee_pass" class="@error('trainee_pass') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
-            <!-- @error('trainee_pass')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror -->
-            <div class="toggle-password" onclick="togglePassword('trainee_pass', this)">
-        <i class="fa-solid fa-eye"></i>
-    </div>
-            <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
-        </div>
+                         <!-- كلمة المرور الجديدة -->
+                    <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
+                     <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
+                    <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="trainee_pass" id="trainee_pass" class="@error('trainee_pass') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
+                        <!-- @error('trainee_pass')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                        @enderror -->
+                     <div class="toggle-password" onclick="togglePassword('trainee_pass', this)">
+                      <i class="fa-solid fa-eye"></i>
+                    </div>
+                     <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
+                    </div>
 
         <!-- تأكيد كلمة المرور -->
         <div class="input-groupp input-groupp-icon">

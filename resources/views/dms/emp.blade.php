@@ -161,8 +161,8 @@
                       <div class="roww">
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" الاسم الكامل  " name="tr_role_code" class="@error('tr_role_code') is-invalid @enderror" value="{{ old('tr_role_code') }}"/>
-                          @error('tr_role_code')
+                          <input type="text" placeholder=" الاسم الكامل  " name="full_name" class="@error('full_name') is-invalid @enderror" value="{{ old('full_name') }}"/>
+                          @error('full_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -171,8 +171,8 @@
                         </div>
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" اسم المستخدم  " name="tr_role_name_ar" class="@error('tr_role_name_ar') is-invalid @enderror"  value="{{ old('tr_role_name_ar') }}"/>
-                          @error('tr_role_name_ar')
+                          <input type="text" placeholder=" اسم المستخدم  " name="user_name" class="@error('user_name') is-invalid @enderror"  value="{{ old('user_name') }}"/>
+                          @error('user_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -180,9 +180,9 @@
                       <span class="invalid-feedback"></span>
                         </div>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="البريد الالكتروني  " name="tr_role_name_en" class="@error('tr_role_name_en') is-invalid @enderror"  value="{{ old('tr_role_name_en') }}"/>
+                          <input type="email" placeholder="البريد الالكتروني  " name="email" class="@error('email') is-invalid @enderror"  value="{{ old('email') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          @error('tr_role_name_en')
+                          @error('email')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -190,9 +190,9 @@
                       <span class="invalid-feedback"></span>
                         </div>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="رقم الهاتف   " name="tr_role_name_en" class="@error('tr_role_name_en') is-invalid @enderror"  value="{{ old('tr_role_name_en') }}"/>
+                          <input type="text" placeholder="رقم الهاتف   " name="phone" class="@error('phone') is-invalid @enderror"  value="{{ old('phone') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          @error('tr_role_name_en')
+                          @error('phone')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -245,7 +245,7 @@
 
 
                         <div class="input-groupp input-groupp-icon">
-                            <input type="file"  placeholder="الصورة  " style="padding-bottom: 0;" name="tr_program_img"/>
+                            <input type="file"  placeholder="الصورة  " style="padding-bottom: 0;" name="image"/>
                             <div class="input-icon"><i class="fa-solid fa-image"></i></div>
                           </div>
 
@@ -255,14 +255,14 @@
                       <div class="roww">
                         <h4> الدور </h4>
                         <div class="input-groupp" style="display: flex;">
-                          <input id="icard" type="radio" name="tr_role_status" value="1" {{ old('tr_role_status') == '1' ? 'checked' : '' }}/>
+                          <input id="icard" type="radio" name="role" value="admin" {{ old('role') == 'admin' ? 'checked' : '' }}/>
                           <label for="icard"><span>ادمن</span></label>
-                          <input id="ipaypal" type="radio" name="tr_role_status" value="0" {{ old('tr_role_status') == '0' ? 'checked' : '' }}/>
+                          <input id="ipaypal" type="radio" name="role" value="emp" {{ old('role') == 'emp' ? 'checked' : '' }}/>
                           <label for="ipaypal"> <span>موظف </span></label>
 
                         </div>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="العنوان" name="tr_role_desc"  value="{{ old('tr_role_desc') }}"/>
+                          <input type="text" placeholder="العنوان" name="address"  value="{{ old('address') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
                         </div>
 
@@ -277,6 +277,97 @@
 
                 </div>
             </div>
+
+
+             <div class="popup" id="popuppo-1">
+          <div class="overlay"></div>
+         <div class="content">
+         <div class="gf">
+                <div class="close-btn" onclick="togglePopuoo()"><i class="las la-times-circle"></i></div>
+                <h4 class="h44">   تعديل الدور</h4>
+
+                </div>
+
+         @if(isset($call))
+         <form id="editForm" onsubmit="updateRole(event, {{ $call->id }})" style="padding: 20px;color: black;">
+         @csrf
+         <input type="hidden" name="id" value="{{ $call->id }}">
+            <div class="roww">
+                <h4 style="text-align:right;">الاسم الكامل  </h4>
+
+                <div class="input-groupp input-groupp-icon">
+                            <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
+                          <input type="text" placeholder=" الاسم الكامل  " name="full_name" class="@error('full_name') is-invalid @enderror" value="{{ old('full_name') }}"/>
+                          @error('full_name')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                      <span class="invalid-feedback"></span>
+                        </div>
+                                        <h4 style="text-align:right;">اسم المستخدم   </h4>
+
+                        <div class="input-groupp input-groupp-icon">
+                            <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
+                          <input type="text" placeholder=" اسم المستخدم  " name="user_name" class="@error('user_name') is-invalid @enderror"  value="{{ old('user_name') }}"/>
+                          @error('user_name')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                      <span class="invalid-feedback"></span>
+                        </div>
+                                        <h4 style="text-align:right;">البريد الالكتروني   </h4>
+
+                        <div class="input-groupp input-groupp-icon">
+                          <input type="email" placeholder="البريد الالكتروني  " name="email" class="@error('email') is-invalid @enderror"  value="{{ old('email') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
+                          @error('email')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                      <span class="invalid-feedback"></span>
+                        </div>
+                                        <h4 style="text-align:right;">رقم الهاتف   </h4>
+
+                        <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="رقم الهاتف   " name="phone" class="@error('phone') is-invalid @enderror"  value="{{ old('phone') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
+                          @error('phone')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                      <span class="invalid-feedback"></span>
+                        </div>
+            </div>
+
+            <div class="roww">
+                        <h4> الدور </h4>
+                        <select name="role" id="role" class="@error('role') is-invalid @enderror" style="width: 400px;">
+                         <option value="admin">admin  </option>
+                        <option value="emp">emp</option>
+
+                        </select>
+                        <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="العنوان" name="address"  value="{{ old('address') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
+                        </div>
+
+
+
+                      </div>
+
+            <div class="roww">
+                <input type="submit" value="حفظ" class="bttn">
+            </div>
+         </form>
+         @else
+            <p>لم يتم العثور على بيانات للتعديل</p>
+         @endif
+         </div>
+        </div>
   <script>
            function togglePopuo(){
     let popup = document.getElementById("popup-1");
@@ -293,6 +384,68 @@
 }
 
      </script>
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // منع إعادة تحميل الصفحة
+
+    var formData = new FormData(this); // جمع البيانات من النموذج
+    let url = "{{ url('role/store') }}"; // URL الخاص بالـ POST
+
+    fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'Accept': 'application/json' // هذا مهم لتجنب HTML response
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // إزالة الأخطاء السابقة من الحقول
+        document.querySelectorAll('.invalid-feedback').forEach(error => {
+            error.innerHTML = ''; // تفريغ الأخطاء السابقة
+        });
+
+        if (data.errors) {
+            // عرض الأخطاء الجديدة تحت الحقول
+            Object.keys(data.errors).forEach(key => {
+                let input = document.querySelector(`[name="${key}"]`);
+                if (input) {
+                    // نبحث عن العنصر الذي يحتوي على class invalid-feedback
+                    let errorSpan = input.parentElement.querySelector('.invalid-feedback');
+                    if (errorSpan) {
+                        errorSpan.innerHTML = `<strong style="color:red;">${data.errors[key][0]}</strong>`; // عرض الخطأ
+                    }
+                }
+            });
+        } else {
+            // عرض الرسالة بنجاح داخل الـ #page-wrapper
+            let messageDiv = document.createElement('div');
+            messageDiv.classList.add('alert', 'alert-info');
+            messageDiv.setAttribute('role', 'alert');
+            messageDiv.style.textAlign = 'end';
+            messageDiv.style.fontSize = '20px';
+            messageDiv.innerHTML = data.message; // عرض رسالة النجاح
+
+            // إضافة الرسالة إلى #page-wrapper
+            let pageWrapper = document.getElementById('page-wrapper');
+            if (pageWrapper) {
+                pageWrapper.prepend(messageDiv); // إضافة الرسالة في بداية #page-wrapper
+            }
+
+            // إعادة تعيين النموذج
+            document.getElementById("myForm").reset();
+            togglePopuo();
+            // تأخير بسيط لإغلاق المودل بعد إرسال البيانات بنجاح
+            setTimeout(() => {
+    location.reload(); // تحديث الصفحة
+}, 1000); // تأخير بسيط لإغلاق المودل بعد إرسال البيانات بنجاح
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+    </script>
      <script>
 function togglePassword() {
     var passwordInput = document.getElementById("password");
