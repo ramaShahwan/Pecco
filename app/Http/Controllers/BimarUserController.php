@@ -433,13 +433,13 @@ public function emp_edit_profile($id)
             $data->update();
      }
       return back()->with(['message'=>'تم التعديل']);
-    } catch (\Exception $e) {
+     } catch (\Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
-    }
-    }else{
+     }
+     }else{
         return redirect()->route('home');
-    }
-    }
+     }
+   }
 
     public function changePass_emp(Request $request, $id)
     {
