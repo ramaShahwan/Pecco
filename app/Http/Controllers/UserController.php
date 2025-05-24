@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Helpers\PasswordGenerator;
+// use Illuminate\Support\Facades\File;
+// use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     public function edit_pass($id)
