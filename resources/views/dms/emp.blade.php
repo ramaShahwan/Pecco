@@ -289,7 +289,7 @@
                 </div>
 
          @if(isset($call))
-         <form id="editForm" onsubmit="updateRole(event, {{ $call->id }})" style="padding: 20px;color: black;">
+         <form id="editForm" onsubmit="updateRole(event)" style="padding: 20px;color: black;">
          @csrf
          <input type="hidden" name="id" value="{{ $call->id }}">
             <div class="roww">

@@ -14,7 +14,7 @@
             <div class="col-12 col-lg-4 mb-4 mb-lg-0">
                 <a href="#" class="fables-second-border-color border-bottom pb-3 d-block mb-3 mt-minus-13"><img src="{{asset('assetss/re.png')}}" alt="fables template" width="50px"></a>
                 <p class="font-15 fables-third-text-color" style="text-align: end;">
-                    أن تصبح بيمار للتطوير والتدريب الشركة الرائدة في مجال التدريب والتطوير الرقمي والهندسي على المستوى الإقليمي،وتوفير الحلول التدريبية الأكثر تطوراً لدعم الكفاءات المهنية والشركات في العالم العربي
+                    أن تصبح محترفو الهندسة, البناء و التدريب للتطوير والتدريب الشركة الرائدة في مجال التدريب والتطوير الرقمي والهندسي على المستوى الإقليمي،وتوفير الحلول التدريبية الأكثر تطوراً لدعم الكفاءات المهنية والشركات في العالم العربي
                     <br><br>
                     بناء شراكات استراتيجية مع الجامعات والمؤسسات الدولية لتعزيز جودة البرامج المقدمة وزيادة الاعتراف الأكاديمي بها
                 </p>
@@ -25,19 +25,19 @@
                 <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3">Contact us</h2>
                <div class="my-3">
                     <h4 class="font-16 semi-font"><span class="fables-iconmap-icon fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Address Information</h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">Damascous</p>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">Aleppo</p>
                 </div>
                 <div class="my-3">
                     <h4 class="font-16 semi-font"><span class="fables-iconphone fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Call Now </h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4"> (011) 611 2040</p>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4"> (+963 ) 967 333 221</p>
                 </div>
                 <div class="my-3">
                     <h4 class="font-16 semi-font"><span class="fables-iconemail fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Mail </h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4"> bimar@proengtrain.com</p>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">  info@proEngTrain.com</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
-                <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3 mb-3">EXPLORE OUR SITE</h2>
+                <!-- <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3 mb-3">EXPLORE OUR SITE</h2>
                 <ul class="nav fables-footer-links">
                     <li><a href="about1.html">BIMAR</a></li>
                     <li><a href="contactus1.html"> TRAINING</a></li>
@@ -45,7 +45,7 @@
                     <li><a href="team.html">خدمات واستشارات</a></li>
                     <li><a href="blog.html">شكاوي</a></li>
                     <li><a href="testimonials.html">التواصل معنا</a></li>
-                </ul>
+                </ul> -->
             </div>
 
         </div>
@@ -61,6 +61,6 @@
             <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
         </ul>
-        <p class="mb-0">Copyright © Fables 2018. All rights reserved.</p>
+      <a href="{{ route('home_en') }}" style="color: #697985;"> Professional For Engineering , Construction  &  Training </a>
 
 </div>

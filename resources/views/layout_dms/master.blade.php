@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>PECCO</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Custom fonts for this template-->
 
@@ -64,9 +65,22 @@
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+                    <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+
+                  @if(Auth::guard('admin')->check() || Auth::guard('manager')->check())
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-toggle="modal" data-target="#logoutModal"href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('user_logout-form').submit();" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+
+                                <form id="user_logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   @csrf
+                                </form>
+                                @else
+                                 <li><a href="{{ route('login') }}" class="gg" style="display:none;">تسجيل دخول</a></li>
+                                @endif
+ </div>
+                            </div>
             </div>
         </div>
     </div>

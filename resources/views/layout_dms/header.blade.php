@@ -1,3 +1,5 @@
+ <meta name="csrf-token" content="{{ csrf_token() }}">
+
  <style>
    .bbtn{
         border: none;
@@ -156,6 +158,8 @@
       @if(session('user_data'))
     @php
         $userData = session('user_data');
+
+
     @endphp
 
  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -338,34 +342,37 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown" style="text-align: right;">
-                                <a class="dropdown-item" href="{{route('profile_emp')}}">
+
+                                <a class="dropdown-item" href="{{url('dms_user/edit_profile',$userData->id)}}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
+
                                 <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Change Password
                                 </a> -->
+                                @if ($userData->role=="admin")
                                  <button onclick="togglePopuox()"class="fables-second-text-color border fables-second-border-color fables-btn-rounded text-center white-color p-2  font-14 fables-second-hover-background-color"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Change Password   </button>
-
+ @endif
                                 <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a> -->
                                 <div class="dropdown-divider"></div>
-                                 @if(Auth::guard('admin')->check() || Auth::guard('manager')->check())
+                                 <!-- @if(Auth::guard('admin')->check() || Auth::guard('manager')->check()) -->
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-toggle="modal" data-target="#logoutModal"href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('user_logout-form').submit();" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
 
-                                <form id="user_logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <!-- <form id="user_logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                    @csrf
                                 </form>
                                 @else
                                  <li><a href="{{ route('login') }}" class="gg" style="display:none;">تسجيل دخول</a></li>
-                                @endif
+                                @endif -->
 
                             </div>
                         </li>
@@ -385,7 +392,7 @@
                 </div>
 
                 <!-- <div class="containerr"> -->
-                <form id="myForm" action="" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
+                <form id="myForm" action="{{ url('dms_user/changePassword', $userData->id) }}" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
                        @csrf
                     <div class="roww">
 
@@ -394,13 +401,13 @@
                          <!-- كلمة المرور الجديدة -->
                     <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
                      <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-                    <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="trainee_pass" id="trainee_pass" class="@error('trainee_pass') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
-                        <!-- @error('trainee_pass')
+                    <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="password" id="password" class="@error('password') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
+                        <!-- @error('password')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
                         @enderror -->
-                     <div class="toggle-password" onclick="togglePassword('trainee_pass', this)">
+                     <div class="toggle-password" onclick="togglePassword('password', this)">
                       <i class="fa-solid fa-eye"></i>
                     </div>
                      <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
@@ -408,14 +415,14 @@
 
         <!-- تأكيد كلمة المرور -->
         <div class="input-groupp input-groupp-icon">
-        <input type="password" placeholder=" تأكيد كلمة السر " name="trainee_pass_confirmation" id="trainee_pass_confirmation" class="@error('trainee_pass_confirmation') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
+        <input type="password" placeholder=" تأكيد كلمة السر " name="password_confirmation" id="password_confirmation" class="@error('password_confirmation') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
         <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-            <!-- @error('trainee_pass_confirmation')
+            <!-- @error('password_confirmation')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror -->
-            <div class="toggle-password" onclick="togglePassword('trainee_pass_confirmation', this)">
+            <div class="toggle-password" onclick="togglePassword('password_confirmation', this)">
         <i class="fa-solid fa-eye"></i>
     </div>
             <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
@@ -496,7 +503,7 @@
             togglePopuox();
             // تأخير بسيط لإغلاق المودل بعد إرسال البيانات بنجاح
             setTimeout(() => {
-    window.location.href = "{{ route('login_trainee') }}"; // الانتقال إلى واجهة تسجيل الدخول
+    window.location.href = "{{ route('login') }}"; // الانتقال إلى واجهة تسجيل الدخول
 }, 2000); // تأخير بسيط لإغلاق المودل بعد إرسال البيانات بنجاح
         }
     })
@@ -519,3 +526,4 @@ function togglePassword(inputId, iconElement) {
     }
 }
 </script>
+

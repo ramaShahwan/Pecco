@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>محترفو الهندسة والبناء</title>
+  <title>  Professional For Engineering , Construction  &  Training</title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
@@ -65,6 +65,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
+    .ytt{
+       color: #3EC1D5;
+    font-weight: 700;
+    }
+    .content h1 {
+    /* font-size: 95px; */
+        font-size: 60px;
+    line-height: 100px;
+    width: 1000px;
+    color: #fff;
+    margin-bottom: 50px;
+}
  p {
     margin: 0;
 }
@@ -168,23 +180,24 @@
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >   Login</a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>
+                    <a class="page-scroll tt text1 nav1" href="#footer" >  Contact Us</a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#about" >  حول الشركة</a>
+                    <a class="page-scroll tt text1 nav1" href="#about" > About Us</a>
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
                     <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
-                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
- <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i>
+                     -->
+                    <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('moudel_en') }}">EN</option>
     <option value="{{ route('moudel') }}">AR</option>
@@ -240,12 +253,12 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
-            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;float: right;">
+            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;">
               <ul class="nav navbar-nav navbar-right" style="margin-right: 90px;">
 
 
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
+                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
                   </li>
 
 
@@ -277,8 +290,8 @@
             </video>
         </div>
         <div class="content">
-            <h1>محترفو الهندسة والبناء</h1>
-            <a href="#">أقسامنا</a>
+            <h1>Professional For Engineering , Construction  &  Training  </h1>
+            <a href="#">Our Departments</a>
         </div>
         <!-- إضافة زر التبديل مع أيقونة سهم -->
         <button class="toggle-button" onclick="toggleVideo()">
@@ -297,13 +310,13 @@
 
     <!-- Start Blog Area -->
   <div id="blog" class="blog-area">
-    <div class="blog-inner area-padding" >
+    <div class="blog-inner area-padding">
       <div class="blog-overly"></div>
       <div class="container " style="padding-right: 0px;">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>بعض أعمالنا</h2>
+              <h2> Some of our work</h2>
             </div>
           </div>
         </div>
@@ -326,7 +339,7 @@
               </div>
               <div class="blog-text">
                 <h4 style="text-align: center;">
-                                        <a href="#">   أعمال الهيكل لبرج سكني    </a>
+                                        <a href="#">   Structural works for a residential tower   </a>
 									</h4>
                 <!-- <p style="text-align: end; font-size: 16px;">
                   المشروع عبارة عن بناء فيلات وشقق سكانية منها 64 فيلة و93 شقة سكنية خاصة للمهندسين منها المنفصلة ومنها التوأمية
@@ -397,7 +410,7 @@
               </div>
               <div class="blog-text">
                 <h4 style="text-align: center;">
-                                        <a href="#">    أعمال الإكساء لبرج سكني</a>
+                                        <a href="#">    Cladding works for a residential tower</a>
 									</h4>
                 <!-- <p style="text-align: end; font-size: 16px;">
                   إعادة تصميم وتخطيط وإدراة المشاريع
@@ -429,13 +442,12 @@
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
 
-                <p style="font-size: 15px;text-align: end;">
-                تقدم الشركة خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
-                </p>
-                <div class="footer-icons">
+                <p style="font-size: 15px;text-align: center;">
+The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
+                <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -444,7 +456,7 @@
                       <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -455,24 +467,28 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    visibility: hidden;">...</h4>
+                <h4 style="
+    color: white;
+    font-size: 20px;
+
+    margin-bottom: 8px;">To communicate</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>حلب</p>
-                  <p><span>Address:</span>سوريا _ حلب _ المحافظة _ نزلة الهندسة _  جانب كافيه مانيسا </p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Aleppo </p>
+                  <p><span>Address:</span>Syria - Aleppo - Governorate - Engineering Street - Next to Manisa Cafe</p>
 
                   <p><span>Tel:</span>0966333221</p>
-                  <p><span>Email:</span>info@proengtrain.com
+                  <p style="border-bottom: 1px solid white;"><span>Email:</span>info@proengtrain.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>الدوحة</p>
-                  <p><span>Address:</span> قطر _ الدوحة _ مركز المنتزه التجاري_ المبنى#2 _ الطابق#1_ المكتب#2</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Doha</p>
+                  <p><span>Address:</span> Qatar - Doha - Al Muntazah Mall - Building #2 - Floor #1 - Office #2</p>
 
                   <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
-                  <p><span>Email:</span>info@pegasuspower.qa
+                  <p ><span>Email:</span>info@pegasuspower.qa
                   </p>
 
                 </div>
@@ -483,24 +499,21 @@
           <div class="col-md-4 col-sm-4 col-xs-12" style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    text-align: end;
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">للتواصل</h4>
-                <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>دبي</p>
-                  <p><span class="ytt">Address:</span>الامارات _ دبي _ واحة دبي للسيليكون _ برج اس اي تي _ مكتب#2403</p>
+              <h4 style="    visibility: hidden;">...</h4>
+                <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
-                  <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
+                  <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>السعودية</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>
+Saudi Arabia</p>
                   <p><span class="ytt">Address:</span>...</p>
 
                   <p><span class="ytt">Tel:</span>...</p>
-                  <p><span class="ytt">Email:</span>...
+                  <p ><span class="ytt">Email:</span>...
                   </p>
 
                 <!-- <div class="flicker-img">
@@ -534,7 +547,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

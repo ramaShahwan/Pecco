@@ -36,6 +36,7 @@ use App\Http\Controllers\BimarAssessmentController;
 use App\Http\Controllers\BimarAssessmentTutorController;
 use App\Http\Controllers\BimarBankAssessQuestionsUsedController;
 use App\Http\Controllers\BimarAssessmentTraineeController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -59,6 +60,11 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home.index')->name('home');
 Route::view('/design', 'home.design')->name('design');
 Route::view('/execution', 'home.execution')->name('execution');
+
+Route::view('/index_en', 'home.index_en')->name('home_en');
+Route::view('/design_en', 'home.design_en')->name('design_en');
+Route::view('/execution_en', 'home.execution_en')->name('execution_en');
+Route::view('/moudel_en', 'home.moudel_en')->name('moudel_en');
 Route::view('/train_index', 'pages.home')->name('train_index');
 Route::view('/moudel', 'home.moudel')->name('moudel');
 Route::view('/dms', 'dms.home')->name('dms');
@@ -67,6 +73,11 @@ Route::view('/profile_emp', 'dms.profile_emp')->name('profile_emp');
 Route::view('/managerlogin', 'auth.managerlogin')->name('managerlogin');
 
 
+Route::prefix('dms_user')->controller(UserController::class)->group(function(){
+    Route::post('/changePassword/{id}', 'changePassword');
+    Route::get('/edit_profile/{id}', 'edit_profile')->name('dms_profile');
+    Route::put('/update_profile/{id}', 'update_profile');
+});
 
 
 

@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>محترفو الهندسة والبناء</title>
-
+  <title>  Professional For Engineering , Construction  &  TRAINING </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-   <!-- Favicons -->
-   <link href="assetss/re.png" rel="icon">
+  <link href="assetss/re.png" rel="icon">
   <link href="assetss/re.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS File -->
   <link href="libhome/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,6 +26,8 @@
   <link href="libhome/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="libhome/animate/animate.min.css" rel="stylesheet">
   <link href="libhome/venobox/venobox.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
   <!-- Nivo Slider Theme -->
   <link href="csshome/nivo-slider-theme.css" rel="stylesheet">
@@ -39,7 +41,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa:wght@200..800&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Changa:wght@200..800&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 
   <!-- =======================================================
@@ -57,9 +66,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link href="csshome/stylee.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
 <!-- Responsive Stylesheet File -->
 <link href="csshome/responsive.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -67,15 +74,6 @@
 <style>
  p {
     margin: 0;
-}
-  .header-area {
-    position: absolute;
-    /* top: 0; */
-    left: 0;
-    width: 100%;
-    height: auto;
-    background: rgba(0, 0, 0, 0.40);
-    z-index: 9;
 }
       .section-one {
   /* background-color: blue; لون الخلفية للقسم الأول */
@@ -111,6 +109,11 @@
     display: none;
 }
 @media (max-width: 767px) {
+    .imgg{
+    max-width: 50% !important;
+    height: auto;
+    margin-left: 25%;
+}
     .ggg{
    margin-top: 10px !important;
 }
@@ -159,8 +162,8 @@
 
                   <li>
 <div style="    display: flex;"> <img src="assetss/re.png" alt="" style="width:60px; height:50px;">
-<div><h3 style="color: #fff; font-size:20px;     margin-bottom: 5px;" class="ibar">professionals</h3>
-<p style="color: #fff;margin-top: -10px;" class="ibar">for Engineering,Constructions and Training</p></div>
+<div><h3 style="color: #fff; font-size:20px;    margin-bottom: 5px; "class="ibar">professionals</h3>
+<p style="color: #fff;margin-top: -10px;"class="ibar">for Engineering,Constructions and Training</p></div>
 
 </div>
 
@@ -168,36 +171,23 @@
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    Login</a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>
+                    <a class="page-scroll tt text1 nav1" href="#footer" >     Contact Us</a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#about" >  حول الشركة</a>
+                    <a class="page-scroll tt text1 nav1" href="#about" >  About Us</a>
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
-                    <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
-                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
- <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
-    <option value="">language</option>
-    <option value="{{ route('moudel_en') }}">EN</option>
-    <option value="{{ route('moudel') }}">AR</option>
-</select>
-<script>
-    document.getElementById('languageSwitcher').addEventListener('change', function () {
-        var selectedRoute = this.value;
-        if (selectedRoute) {
-            window.location.href = selectedRoute;
-        }
-    });
-</script>
-                </div>
+                    <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
+                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i>
+                    </div>
 
                   </li>
 
@@ -240,12 +230,23 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
-            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;float: right;">
+            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;">
               <ul class="nav navbar-nav navbar-right" style="margin-right: 90px;">
 
-
+              <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#">  Interior design and decoration</a>
+                  </li>
+                  <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#">Consolidation</a>
+                  </li>
+                  <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#"> Union schemes </a>
+                  </li>
+                  <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#">  External studies</a>
+                  </li>
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
+                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
                   </li>
 
 
@@ -262,6 +263,7 @@
 </header>
 </div>
   <!-- header end -->
+  <!-- header end -->
 
   <!-- Start Slider Area -->
   <div class="containerr">
@@ -273,12 +275,12 @@
                 <source src="imghome/video1.mp4" type="video/mp4">
             </video>
             <video id="video3" autoplay loop muted plays-inline>
-                <source src="imghome/uu.mp4" type="video/mp4">
+                <source src="imghome/video2.mp4" type="video/mp4">
             </video>
         </div>
         <div class="content">
-            <h1>محترفو الهندسة والبناء</h1>
-            <a href="#">أقسامنا</a>
+            <h1>  Professional For Engineering , Construction  &  Training </h1>
+            <a href="#">Our Departments</a>
         </div>
         <!-- إضافة زر التبديل مع أيقونة سهم -->
         <button class="toggle-button" onclick="toggleVideo()">
@@ -292,29 +294,113 @@
 
 
 
+  <!-- Start Service area -->
+  <div id="services" class="services-area area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="section-headline services-head text-center" style="margin-bottom: 60px;">
+            <h2 class="text2">Our Departments</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="services-contents">
+          <!-- Start Left services -->
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="about-move rrr">
+              <div class="services-details" style="background: #e2e7e4;border-radius: 20px; border: 1px solid #c3b9b9;box-shadow: 2px 1px 1px #a69d9d;        padding: 30px 0px 30px 0px;">
+                <div class="single-services">
+                  <!-- <a class="services-icon" href="#">
+											<i class="fa fa-code"></i>
+										</a> -->
+                  <h4 class="text2">External studies </h4>
+                  <p style="font-size: 16px;"class="text11">
+We are committed to continuing our growth, development and expansion of our services by working with international engineering companies, relying on virtual work teams and modern methodologies in virtual work.                  </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="about-move rrr">
+              <div class="services-details" style="background: #e2e7e4;border-radius: 20px; border: 1px solid #c3b9b9;box-shadow: 2px 1px 1px #a69d9d;      padding: 30px 0px 30px 0px;">
+                <div class="single-services">
+                  <!-- <a class="services-icon" href="#">
+											<i class="fa fa-camera-retro"></i>
+										</a> -->
+                  <h4 class="text2">Consolidation</h4>
+                  <p style="font-size: 16px;"class="text11">
 
+We provide engineering consultations for strengthening buildings and conduct studies related to the strengthening of facilities to ensure the safety and stability of the building. We are experts in implementing quick and flexible solutions when working.                  </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <!-- end col-md-4 -->
+            <div class=" about-move rrr">
+              <div class="services-details" style="background: #e2e7e4;border-radius: 20px; border: 1px solid #c3b9b9;box-shadow: 2px 1px 1px #a69d9d;       padding: 30px 0px 30px 0px;">
+                <div class="single-services">
+                  <!-- <a class="services-icon" href="#">
+											<i class="fa fa-wordpress"></i>
+										</a> -->
+                  <h4 class="text2">union plans </h4>
+                  <p style="font-size: 16px;"class="text11">
 
+We prepare engineering plans that comply with international quality standards and have them certified by the Engineers Syndicate. These standards raise the level of services provided by the company to the highest levels.                  </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <!-- end col-md-4 -->
+            <div class=" about-move rrr">
+              <div class="services-details" style="background: #e2e7e4;border-radius: 20px; border: 1px solid #c3b9b9;box-shadow: 2px 1px 1px #a69d9d;        padding: 30px 0px 30px 0px;">
+                <div class="single-services">
+                  <!-- <a class="services-icon" href="#">
+											<i class="fa fa-camera-retro"></i>
+										</a> -->
+                  <h4 class="text2">
+Interior design and decoration</h4>
+                  <p style="font-size: 16px;" class="text11">
 
-    <!-- Start Blog Area -->
+We offer specialized solutions to create the perfect environment for your home or workspace, from concept to implementation, through a wide range of services, including interior and exterior design. </p>
+                </div>
+              </div>
+              <!-- end about-details -->
+            </div>
+          </div>
+          <!-- End Left services -->
+
+          <!-- End Left services -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Service area -->
+     <!-- Start Blog Area -->
   <div id="blog" class="blog-area">
-    <div class="blog-inner area-padding" >
+    <div class="blog-inner area-padding">
       <div class="blog-overly"></div>
-      <div class="container " style="padding-right: 0px;">
+      <div class="container ">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>بعض أعمالنا</h2>
+              <h2 class="text2">Some of our work </h2>
             </div>
           </div>
         </div>
         <div class="row">
           <!-- Start Left Blog -->
           <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img" style="width: 360px;
-    margin: auto;">
+            <div class="single-blog" style="border: 2px solid #7e7676; margin-top: 30px;border-radius: 30px;">
+              <div class="single-blog-img">
                 <a href="#">
-                                        <video src="imghome/VID-20240801-WA0015.mp4"  style="height: 224px; width: 360px;" controls ></video>
+										<img src="imghome/photo_2024-07-28_16-43-17.jpg" alt=""style="height: 224px; width: 360px;border-radius: 30px;">
 									</a>
               </div>
               <div class="blog-meta">
@@ -322,15 +408,16 @@
 										<!-- <i class="fa fa-comment-o"></i> -->
 										<!-- <a href="#">مدة التنفيذ 64 يوم</a> -->
 									</span>
-
+                <!-- <span class="date-type">
+										<i class="fa fa-calendar"></i>2023-jul-23 / 2023-sep-23
+									</span> -->
               </div>
               <div class="blog-text">
                 <h4 style="text-align: center;">
-                                        <a href="#">   أعمال الهيكل لبرج سكني    </a>
+                                        <a href="#" class="text11">  Project Nineteen   </a>
 									</h4>
-                <!-- <p style="text-align: end; font-size: 16px;">
-                  المشروع عبارة عن بناء فيلات وشقق سكانية منها 64 فيلة و93 شقة سكنية خاصة للمهندسين منها المنفصلة ومنها التوأمية
-              </p> -->
+                <p style="text-align: center; font-size: 16px;" class="text2">
+The project consists of building villas and residential apartments, including 64 villas and 93 private residential apartments for engineers, including separate and twin apartments.              </p>
               </div>
               <!-- <span>
 									<a href="blog.html" class="ready-btn">Read more</a>
@@ -341,12 +428,11 @@
           <!-- End Left Blog-->
           <!-- Start Left Blog -->
           <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img" style="width: 360px;
-    margin: auto;">
-                <a href="blog.html">
-                <video src="imghome/VID-20240801-WA0007.mp4"  style="height: 224px; width: 360px;" controls ></video>
-                </a>
+            <div class="single-blog" style="border: 2px solid #7e7676; margin-top: 30px;border-radius: 30px;">
+              <div class="single-blog-img">
+                <a href="#">
+										<img src="imghome/photo_2024-07-28_16-39-29.jpg" alt="" style="height: 224px; width: 360px;border-radius: 30px;">
+									</a>
               </div>
               <div class="blog-meta">
                 <span class="comments-type">
@@ -359,11 +445,10 @@
               </div>
               <div class="blog-text">
                 <h4 style="text-align: center;">
-                                        <a href="#">   MEP(Mechanical Electrical Plumbing)    </a>
+                                        <a href="#" class="text11">   Iraqi Women Engineers Oasis Project    </a>
 									</h4>
-                <!-- <p style="text-align: end; font-size: 16px;">
-                  مشروع نقابة المهندسين السوريين في دمشق يضم المشروع 13 برج سكني وهو نواة لتوسع عدة مشاريع عمرانية من حوله
-                </p> -->
+                <p style="text-align: center; font-size: 16px;"class="text2" >
+The Syrian Engineers Syndicate project in Damascus includes 13 residential towers and is the nucleus for the expansion of several urban projects around it.                </p>
               </div>
               <!-- <span>
 									<a href="blog.html" class="ready-btn">Read more</a>
@@ -379,29 +464,25 @@
           <!-- End Right Blog-->
            <!-- Start Right Blog-->
           <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img" style="width: 360px;
-    margin: auto;">
+            <div class="single-blog" style="border: 2px solid #7e7676; margin-top: 30px;border-radius: 30px;">
+              <div class="single-blog-img">
                 <a href="#">
-                <video src="imghome/VID-20240801-WA0006.mp4"  style="height: 224px; width: 360px;" controls ></video>
-                </a>
+										<img src="imghome/Screenshot (168).png" alt="" style="height: 224px; width: 360px;border-radius: 30px;">
+									</a>
               </div>
               <div class="blog-meta">
                 <span class="comments-type">
 										<!-- <i class="fa fa-comment-o"></i>
 										<a href="#">10 comments</a> -->
 									</span>
-                <!-- <span class="date-type">
-										<i class="fa fa-calendar"></i>2023-5-05
-									</span> -->
+
               </div>
               <div class="blog-text">
                 <h4 style="text-align: center;">
-                                        <a href="#">    أعمال الإكساء لبرج سكني</a>
+                                        <a href="#" class="text11"> Corniche Dreams Tower Project</a>
 									</h4>
-                <!-- <p style="text-align: end; font-size: 16px;">
-                  إعادة تصميم وتخطيط وإدراة المشاريع
-                </p> -->
+                <p style="text-align: center; font-size: 16px;" class="text2">
+Redesign, planning and project management. The right tower consists of 30 floors and is the tallest of the adjacent towers.                </p>
               </div>
               <!-- <span>
 									<a href="blog.html" class="ready-btn">Read more</a>
@@ -417,6 +498,8 @@
   <!-- End Blog -->
 
 
+
+
   <!-- Start Footer bottom Area -->
   <footer id="footer">
     <div class="footer-area">
@@ -429,9 +512,8 @@
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
 
-                <p style="font-size: 15px;text-align: end;">
-                تقدم الشركة خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
-                </p>
+                <p style="font-size: 15px;text-align: end;" class="text1">
+The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
                 <div class="footer-icons">
                   <ul>
                     <li>
@@ -460,16 +542,16 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>حلب</p>
-                  <p><span>Address:</span>سوريا _ حلب _ المحافظة _ نزلة الهندسة _  جانب كافيه مانيسا </p>
+              <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Aleppo </p>
+                  <p><span>Address:</span>Syria - Aleppo - Governorate - Engineering Street - Next to Manisa Cafe</p>
 
                   <p><span>Tel:</span>0966333221</p>
                   <p><span>Email:</span>info@proengtrain.com
                   </p>
                   <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>الدوحة</p>
-                  <p><span>Address:</span> قطر _ الدوحة _ مركز المنتزه التجاري_ المبنى#2 _ الطابق#1_ المكتب#2</p>
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Doha</p>
+                  <p><span>Address:</span> Qatar - Doha - Al Muntazah Mall - Building #2 - Floor #1 - Office #2</p>
 
                   <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
                   <p><span>Email:</span>info@pegasuspower.qa
@@ -487,16 +569,17 @@
     color: white;
     font-size: 20px;
 
-    margin-bottom: 8px;">للتواصل</h4>
+    margin-bottom: 8px;">To communicate</h4>
                 <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>دبي</p>
-                  <p><span class="ytt">Address:</span>الامارات _ دبي _ واحة دبي للسيليكون _ برج اس اي تي _ مكتب#2403</p>
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
                   <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>السعودية</p>
+                   <p style="    text-align: end;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>
+Saudi Arabia</p>
                   <p><span class="ytt">Address:</span>...</p>
 
                   <p><span class="ytt">Tel:</span>...</p>
@@ -534,7 +617,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+               <a href="{{ route('home_en') }}">   Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

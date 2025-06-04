@@ -6,6 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Helpers\PasswordGenerator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+
 
 class UserController extends Controller
 {
@@ -26,15 +30,16 @@ class UserController extends Controller
     }
     }
 
-    public function changePassword($id)
-   {  
+    public function changePassword($id, Request $request)
+   {
     if (Auth::guard('admin')->check() ) {
     $user = User::findOrFail($id);
 
     $user->password = Hash::make($request->Password);
     $user->save();
 
-    return redirect()->back()->with('message', "تم تعديل كلمة المرور بنجاح " );
+    // return redirect()->back()->with('message', "تم تعديل كلمة المرور بنجاح " );
+    return response()->json(['message' => 'تم تغيير كلمة المرور بنجاح.'], 200);
    }else{
     return redirect()->route('home');
   }
@@ -42,10 +47,10 @@ class UserController extends Controller
 
 
 public function edit_profile($id)
-  {     
+  {
     if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
       $data = User::findOrFail($id);
-      return view('profile_emp', compact('data'));
+      return view('dms.profile_emp', compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -53,7 +58,7 @@ public function edit_profile($id)
 
     public function update_profile(Request $request,  $id)
     {     if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
-            try {
+            // try {
                 $customNames = [
                     'full_name' => 'your full name',
                     'user_name' => 'your user name',
@@ -71,11 +76,12 @@ public function edit_profile($id)
                 ]);
 
                 $validator->setAttributeNames($customNames);
-               if ($validator->fails()) {
-                return redirect()->back()
-                    ->withErrors($validator)
-                    ->withInput();
-            }
+
+            //    if ($validator->fails()) {
+            //     return redirect()->back()
+            //         ->withErrors($validator)
+            //         ->withInput();
+            // }
 
             $data = User::findOrFail($id);
             $oldImageName = $data->image;
@@ -101,9 +107,9 @@ public function edit_profile($id)
             $data->update();
      }
       return back()->with(['message'=>'تم التعديل']);
-     } catch (\Exception $e) {
-        return response()->json(['error' => $e->getMessage()], 500);
-     }
+    //  } catch (\Exception $e) {
+    //     return response()->json(['error' => $e->getMessage()], 500);
+    //  }
      }else{
         return redirect()->route('home');
      }

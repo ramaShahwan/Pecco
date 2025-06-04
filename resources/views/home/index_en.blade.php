@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>محترفو الهندسة والبناء</title>
+  <title>Professional For Engineering , Construction  &  Training </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <!-- <link rel="icon" href="imghome/p2.jpg"  /> -->
   <meta content="" name="keywords">
@@ -16,7 +16,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
-<!-- Bootstrap CSS File -->
+
+  <!-- Bootstrap CSS File -->
   <link href="libhome/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
@@ -88,7 +89,10 @@
     z-index: 2;
 }
 .content h1 {
-    font-size: 95px;
+    /* font-size: 95px; */
+        font-size: 60px;
+    line-height: 100px;
+    width: 1000px;
     color: #fff;
     margin-bottom: 50px;
 }
@@ -330,21 +334,23 @@
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    Login  </a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>
+                    <a class="page-scroll tt text1 nav1" href="#footer" >    Contact Us </a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#about" >  حول الشركة</a>
+                    <a class="page-scroll tt text1 nav1" href="#about" >  About Us </a>
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
-                       <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+                    <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
+                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
+<select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('home_en') }}">EN</option>
     <option value="{{ route('home') }}">AR</option>
@@ -357,9 +363,7 @@
         }
     });
 </script>
-                    <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
-                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
-                    </div>
+                </div>
 
                   </li>
 
@@ -402,23 +406,17 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
-            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;float: right;">
+            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;">
               <ul class="nav navbar-nav navbar-right">
+<li class="active">
+                  <a class="page-scroll tt text1" href="{{ route('design_en') }}"> Engineering Studies and Supervision</a>
+                </li>
+ <li>
+                  <a class="page-scroll tt text1" href="{{ route('moudel_en') }}"> Modeling and Project Development</a>
+                </li>
 
-                <li>
-                  <a class="page-scroll tt text1" href="#">تصميم مواقع الانترنت</a>
-                </li>
-                <li>
-                  <a class="page-scroll tt text1" href="#">  البحث  والتطوير العلمي </a>
-                </li>
-                <li>
-                  <a class="page-scroll tt text1" href="https://proengaqar.com">تسويق العقار   </a>
-                </li>
-                <li>
-                  <a class="page-scroll tt text1" href="{{ route('execution') }}">إدارة المشاريع</a>
-                </li>
-                <li>
-                  <a class="page-scroll tt text1" href="{{ route('train_index') }}">التدريب و التأهيل و التنمية</a>
+ <li>
+                  <a class="page-scroll tt text1" href="{{ route('train_index') }}">Training, Qualification and Development</a>
                   <p class="page-scroll tt pp" style="    padding: 0px;
                      margin-top: -20px;
                     text-align: end;
@@ -428,12 +426,26 @@
                   <!-- <span style="    letter-spacing: 13px;">BIMAR    </span> <strong>بــــيــــمــــار</strong> -->
                 </p>
                 </li>
+
+ <li>
+                  <a class="page-scroll tt text1" href="{{ route('execution_en') }}">
+Project Management </a>
+                </li>
+ <li>
+                  <a class="page-scroll tt text1" href="https://proengaqar.com">Real Estate Marketing    </a>
+                </li>
+<li>
+                  <a class="page-scroll tt text1" href="#"> Scientific Research and Development</a>
+                </li>
                 <li>
-                  <a class="page-scroll tt text1" href="{{ route('moudel') }}"> النمذجة وتطوير المشاريع</a>
+                  <a class="page-scroll tt text1" href="#">  Website Design</a>
                 </li>
-                <li class="active">
-                  <a class="page-scroll tt text1" href="{{ route('design') }}"> الدراسات الهندسية والإشراف</a>
-                </li>
+
+
+
+
+
+
 
 
 
@@ -465,8 +477,8 @@
             </video>
         </div>
         <div class="content">
-            <h1>محترفو الهندسة والبناء</h1>
-            <a href="#">أقسامنا</a>
+            <h1>Professional For Engineering , Construction  &  Training </h1>
+            <a href="#">Our Departments</a>
         </div>
         <!-- إضافة زر التبديل مع أيقونة سهم -->
         <button class="toggle-button" onclick="toggleVideo()">
@@ -484,13 +496,13 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="section-headline text-center">
-            <h2 class="text2">حول الشركة </h2>
+            <h2 class="text2">About Us </h2>
           </div>
         </div>
       </div>
       <div class="row">
         <!-- single-well start-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12" style="float: right;">
           <div class="well-left">
             <div class="single-well">
               <a href="#">
@@ -500,35 +512,31 @@
           </div>
         </div>
         <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12" style="direction: rtl;padding-left: 40px;">
           <div class="well-middle">
             <div class="single-well">
               <a href="#" style="text-align: end;">
-                <h4 class="sec-head text11" style="    font-size: 14px;font-weight: 800;">معلومات عامة عن الشركة </h4>
+                <h4 class="sec-head text11" style="    font-size: 14px;font-weight: 800;">General Information About The Company </h4>
               </a>
               <p style="text-align: end;font-size: 16px;" class="text3">
-             شركتنا تقدم خدمات الدراسات الهندسية وإدارة الــمشــاريع بجودة عاليــــة مدعومــــة بالكفاءات الفنيـــــة والتكنولوجيـــــة لتلبيـــة احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
-             </p>
+
+Our company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.             </p>
               <ul>
                 <li style="text-align: end;" class="text3">
-                  مواكبة التطور في مجال العلوم الهندسية
-                  <i class="fa fa-check"></i>
+Keeping pace with developments in the field of engineering sciences                  <i class="fa fa-check"></i>
                 </li>
                 <li style="text-align: end;" class="text3">
-                  التوسع في الدراسة والتنفيذ والإشراف
-                  <i class="fa fa-check"></i>
+Expanding study, implementation and supervision                  <i class="fa fa-check"></i>
                 </li>
                 <li style="text-align: end;" class="text3">
-                   المساهمة في تأهيل الكوادر الهندسية
-                  <i class="fa fa-check"></i>
+Contributing to the qualification of engineering cadres                  <i class="fa fa-check"></i>
                 </li>
                 <li style="text-align: end;" class="text3">
-                  تقديم الاستشارات الهندسية
-                  <i class="fa fa-check"></i>
+Providing engineering consultations                  <i class="fa fa-check"></i>
                 </li>
                 <li style="text-align: end;" class="text3">
-                  دعم الخريجين الجدد وتأهيلهم
-                  <i class="fa fa-check"></i>
+
+Supporting and qualifying new graduates                  <i class="fa fa-check"></i>
                 </li>
               </ul>
             </div>
@@ -544,11 +552,11 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="section-headline services-head text-center" style="margin-bottom: 60px;">
-        <h2 class="text2">أقسامنا</h2>
+        <h2 class="text2">Our Departments</h2>
           </div>
         </div>
       </div>
-    @include('home.servies')
+    @include('home.servies_en')
 </div>
 </div>
   <!-- End Service area -->
@@ -558,7 +566,7 @@
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="section-headline text-center">
-            <h2 class="text2">أهدافنا وشركاؤنا</h2>
+            <h2 class="text2"> Our goals and partners</h2>
           </div>
         </div>
       </div>
@@ -570,16 +578,15 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-											<a data-toggle="collapse" class="active text2" data-parent="#accordion" href="#check1" style="text-align: end;">
-                                                <span class="acc-icons"></span>قيمنا
+											<a data-toggle="collapse" class="active text2" data-parent="#accordion" href="#check1">
+                                                <span class="acc-icons" style="right: -141px;"></span>Our values
 											</a>
 										</h4>
                 </div>
                 <div id="check1" class="panel-collapse collapse in">
                   <div class="panel-body">
-                    <p style="text-align: end; font-size: 16px;" class="text11">
-                      التميز والابتكار والتنوع والاحترام والتأثير
-                    </p>
+                    <p style=" font-size: 16px;" class="text11">
+Excellence, Innovation, Diversity, Respect, and Impact                    </p>
                   </div>
                 </div>
               </div>
@@ -589,16 +596,16 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-											<a data-toggle="collapse" data-parent="#accordion" href="#check2" style="text-align: end;" class="text2">
-                                                <span class="acc-icons"></span> رؤيتنا
+											<a data-toggle="collapse" data-parent="#accordion" href="#check2"  class="text2">
+                                                <span class="acc-icons" style="right: -141px;"></span> Our vision
 											</a>
 										</h4>
                 </div>
                 <div id="check2" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <p style="text-align: end;font-size: 16px;" class="text11">
-                      نتطلع للوصول إلى تطبيق معايير الهندسة والإدارة الهندسية العالمية في سوريا ، للإسهام في إعادة الإعمار بالطرق الحديثة وتطبيق المواصفات القياسية العالمية                    </p>
+                    <p style="font-size: 16px;" class="text11">
 
+We look forward to implementing international engineering and engineering management standards in Syria, to contribute to reconstruction using modern methods and applying international standard specifications.
                     </p>
                   </div>
                 </div>
@@ -608,16 +615,16 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="check-title">
-											<a data-toggle="collapse" data-parent="#accordion" href="#check3" style="text-align: end;" class="text2">
-                                                <span class="acc-icons"></span>رسالتنا
+											<a data-toggle="collapse" data-parent="#accordion" href="#check3"  class="text2">
+                                                <span class="acc-icons" style="right: -141px;"></span>
+Our message
 											</a>
 										</h4>
                 </div>
                 <div id="check3" class="panel-collapse collapse ">
                   <div class="panel-body">
-                    <p style="text-align: end;font-size: 16px;" class="text11">
-                      تلتزم شركتنا بتقديم خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
-                    </p>
+                    <p style="font-size: 16px;" class="text11">
+Our company is committed to providing high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                    </p>
                   </div>
                 </div>
               </div>
@@ -648,69 +655,63 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
               <li class="active">
-                <a href="#p-view-1" role="tab" data-toggle="tab" class="text2">بيلدينغ رانك</a>
+                <a href="#p-view-1" role="tab" data-toggle="tab" class="text2">Building Rank</a>
               </li>
               <li>
-                <a href="#p-view-2" role="tab" data-toggle="tab" class="text2">سيريا بيم تيك</a>
+                <a href="#p-view-2" role="tab" data-toggle="tab" class="text2">SYRIA BIM TEC  </a>
               </li>
               <li>
-                <a href="#p-view-3" role="tab" data-toggle="tab" class="text2">أوجيني للطاقات </a>
+                <a href="#p-view-3" role="tab" data-toggle="tab" class="text2">Ogenie For Renewable Energy  </a>
               </li>
               <li>
-                <a href="#p-view-4" role="tab" data-toggle="tab" class="text2">الشركة العامة للدراسات</a>
+                <a href="#p-view-4" role="tab" data-toggle="tab" class="text2">General Company for Engineering Studies  </a>
               </li>
             </ul>
           </div>
           <div class="tab-content">
             <div class="tab-pane active" id="p-view-1">
               <div class="tab-inner">
-                <div class="event-content head-team" style="text-align: end;">
-                  <h4 class="text2">بيلدينغ رانك</h4>
+                <div class="event-content head-team" >
+                  <h4 class="text2"> Building Rank</h4>
                   <p style="font-size: 16px;" class="text11">
-                    تقييم حالة البناء وحالة العقار وحالة المنشأة والحالة الهيكيلية ونظام الطاقة ومراقبة الجودة وضمان الجودة
-                  </p>
+Assessment of building condition, property condition, facility condition, structural condition, energy system, quality control and quality assurance                  </p>
                   <p style="font-size: 16px;" class="text11">
-                    خدمة فحص التسريبات والرطوبة والعفن وإدارة مشروع
-                  </p>
+Leak, moisture, and mold inspection and project management service                  </p>
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="p-view-2">
               <div class="tab-inner">
-                <div class="event-content head-team" style="text-align: end;">
-                  <h4 class="text2">سيريا بيم تيك</h4>
+                <div class="event-content head-team" >
+                  <h4 class="text2"> SYRIA BIM TEC  </h4>
                   <p style="font-size: 16px;" class="text11">
-                    نمذجة إنشائية ومعمارية للنادي الرياضي في الخليج العربي - الدوحة وبناء النموذج الإنشائي لبرج المكاتب التجارية في لوسيل - الدوحة
-                  </p>
+Structural and architectural modeling of the Gulf Sports Club in Doha and construction of the structural model of the commercial office tower in Lusail, Doha                  </p>
                   <p style="font-size: 16px;" class="text11">
-                    نمذجة إنشائية ومعمارية لمبنى كليات الهندسة الجديد في جامعة قطر وبناء النموذج الإنشائي ، المعماري ، الميكانيكي والمهربائي للمشفى السوري الألماني في اللاذقية
-                  </p>
+Structural and architectural modeling of the new engineering college building at Qatar University and construction of the structural, architectural, mechanical and electrical model of the Syrian-German Hospital in Lattakia                  </p>
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="p-view-3">
               <div class="tab-inner">
-                <div class="event-content head-team" style="text-align: end;">
-                  <h4 class="text2">أوجيني للطاقات </h4>
+                <div class="event-content head-team" >
+                  <h4 class="text2">Ogenie For Renewable Energy   </h4>
                   <p style="font-size: 16px;" class="text11">
-                    دراسة وتصميم منظومة توليد 1 ميغاواط والربط مع الشبكة وبيع الفائض لفندق أفاميا في اللاذقية ودراسة وتصميم منظومة توليد 10 ميغاواط والربط مع الشيكة لمجموعة أصدقاء محردة - حماة
-                  </p>
+
+Study and design of a 1 MW generation system, connection to the grid, and sale of the surplus to the Afamia Hotel in Lattakia. Study and design of a 10 MW generation system and connection to the grid for the Friends of Mahardah Group - Hama.                  </p>
                   <p style="font-size: 16px;" class="text11">
-                    دراسة وتصميم 30 كيلو واط لمدجنة و55 كيلو واط لمفقس الوسام في طرطوس وبرنامج الإدارة والمراقبة لمحطة توليد طرطوس
-                  </p>
+
+Study and design of a 30 kW poultry farm and a 55 kW Al-Wissam hatchery in Tartous, and a management and monitoring program for the Tartous power plant.                  </p>
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="p-view-4">
               <div class="tab-inner">
-                <div class="event-content head-team" style="text-align: end;">
-                  <h4 class="text2">الشركة العامة للدراسات الهندسية</h4>
+                <div class="event-content head-team" >
+                  <h4 class="text2">   General Company for Engineering Studies </h4>
                   <p style="font-size: 16px;" class="text11">
-                    الإشراف على مشروع إعادة تأهيل وترميم مبنى المكتبة الظاهرية بدمشق ومحطة لمعالجة مياه الصرف الصحي في مدينة حماة
-                  </p>
+Supervising the rehabilitation and restoration project of the Al-Zahiriya Library building in Damascus and a wastewater treatment plant in Hama.                  </p>
                   <p style="font-size: 16px;" class="text11">
-                    تخطيط وتنظيم ضواحي سكنية في مدينة اللاذقية وديكور داخلي لمكتب وزير المالية ومدير المالية بمبنى مديرية مالية مدينة دمشق
-                  </p>
+Planning and organizing residential suburbs in Latakia city and interior decoration of the office of the Minister of Finance and the Director of Finance in the Damascus City Finance Directorate building.                  </p>
                 </div>
               </div>
             </div>
@@ -723,7 +724,7 @@
   <!-- End Faq Area -->
    <!-- start pricing area -->
     <div >
-    @include('home.job')
+    @include('home.job_en')
     </div>
 
   <!-- End pricing table area -->
@@ -741,9 +742,8 @@
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
 
-                <p style="font-size: 15px;text-align: end;">
-                تقدم الشركة خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
-                </p>
+                <p style="font-size: 15px;text-align: center;">
+The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
                 <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
                     <li>
@@ -767,24 +767,28 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    visibility: hidden;">...</h4>
+                <h4 style="
+    color: white;
+    font-size: 20px;
+
+    margin-bottom: 8px;">To communicate</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>حلب</p>
-                  <p><span>Address:</span>سوريا _ حلب _ المحافظة _ نزلة الهندسة _  جانب كافيه مانيسا </p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Aleppo </p>
+                  <p><span>Address:</span>Syria - Aleppo - Governorate - Engineering Street - Next to Manisa Cafe</p>
 
                   <p><span>Tel:</span>0966333221</p>
-                  <p><span>Email:</span>info@proengtrain.com
+                  <p style="border-bottom: 1px solid white;"><span>Email:</span>info@proengtrain.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>الدوحة</p>
-                  <p><span>Address:</span> قطر _ الدوحة _ مركز المنتزه التجاري_ المبنى#2 _ الطابق#1_ المكتب#2</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Doha</p>
+                  <p><span>Address:</span> Qatar - Doha - Al Muntazah Mall - Building #2 - Floor #1 - Office #2</p>
 
                   <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
-                  <p><span>Email:</span>info@pegasuspower.qa
+                  <p ><span>Email:</span>info@pegasuspower.qa
                   </p>
 
                 </div>
@@ -795,24 +799,21 @@
           <div class="col-md-4 col-sm-4 col-xs-12" style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    text-align: end;
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">للتواصل</h4>
-                <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>دبي</p>
-                  <p><span class="ytt">Address:</span>الامارات _ دبي _ واحة دبي للسيليكون _ برج اس اي تي _ مكتب#2403</p>
+              <h4 style="    visibility: hidden;">...</h4>
+                <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
-                  <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
+                  <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>السعودية</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>
+Saudi Arabia</p>
                   <p><span class="ytt">Address:</span>...</p>
 
                   <p><span class="ytt">Tel:</span>...</p>
-                  <p><span class="ytt">Email:</span>...
+                  <p ><span class="ytt">Email:</span>...
                   </p>
 
                 <!-- <div class="flicker-img">
@@ -846,7 +847,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@
             <div class="containerr">
             <h4 class="h44 gf"> الملف الشخصي  </h4>
 
-            <form action=" " method="Post" enctype="multipart/form-data" style="padding: 20px;color: black;">
+            <form action="{{url('dms_user/update_profile',$data->id)}}" method="Post" enctype="multipart/form-data" style="padding: 20px;color: black;">
             @csrf
             @method('PUT')
 
@@ -40,7 +40,7 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> الاسم   </h4>
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="الاسم   " value="عتع" name="full_name" id="full_name" class="@error('full_name') is-invalid @enderror"/>
+                          <input type="text" placeholder="الاسم   " value="{{ $data->full_name }}" name="full_name" id="full_name" class="@error('full_name') is-invalid @enderror"/>
                           @error('full_name')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
@@ -50,7 +50,7 @@
                          <h4 style="text-align: right;margin-bottom: 12px;"> اسم المستخدم   </h4>
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="الاسم   " value="عتع" name="user_name" id="user_name" class="@error('user_name') is-invalid @enderror"/>
+                          <input type="text" placeholder="الاسم   " value="{{ $data->user_name }}" name="user_name" id="user_name" class="@error('user_name') is-invalid @enderror"/>
                           @error('user_name')
                           <span class="invalid-feedback" role="alert">
                               <strong style="color:red;">{{ $message }}</strong>
@@ -65,7 +65,7 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> رقم الموبايل   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  رقم الموبايل  " value="0241" name="phone" id="phone" class="@error('phone') is-invalid @enderror"/>
+                          <input type="text" placeholder="  رقم الموبايل  " value="{{ $data->phone }}" name="phone" id="phone" class="@error('phone') is-invalid @enderror"/>
                           <div class="input-icon"><i class="fa-solid fa-phone"></i></div>
                           @error('phone')
                           <span class="invalid-feedback" role="alert">
@@ -76,7 +76,7 @@
                         <h4 style="text-align: right;margin-bottom: 12px;"> البريد الالكتروني   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="  البريد الكتروني   " value="سءيشسي" name="email" id="email" class="@error('email') is-invalid @enderror"/>
+                          <input type="email" placeholder="  البريد الكتروني   " value="{{ $data->email }}" name="email" id="email" class="@error('email') is-invalid @enderror"/>
                           <div class="input-icon">  <i class="fa-solid fa-envelope"></i></div>
                           @error('email')
                           <span class="invalid-feedback" role="alert">
@@ -87,7 +87,7 @@
                         <h4 style="text-align: right; margin-bottom: 12px;"> العنوان   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  العنوان    " value="ءسش" name="address" id="address" class="@error('address') is-invalid @enderror"/>
+                          <input type="text" placeholder="  العنوان    " value="{{ $data->address }}" name="address" id="address" class="@error('address') is-invalid @enderror"/>
                           <div class="input-icon"><i class="fa-solid fa-location-dot"></i></div>
                           @error('address')
                           <span class="invalid-feedback" role="alert">
@@ -96,7 +96,9 @@
                       @enderror
                         </div>
                         <div class="">
-                        <img src="style/img/re.png" width="200px" style="margin-left: 120px;">
+                        <img src="{{URL::asset('img/user/'.$data->image)}}" width="200px" style="margin-left: 120px;width: 200px;
+    height: 200px;
+    margin-right: 150px;">
 
                             <input type="file" placeholder="الصورة" style="padding-bottom: 0;" name="image" id="image"/>
                           </div>

@@ -498,7 +498,7 @@ $('#validate-btnn').on('click', function () {
 
 </script> -->
     <script>
-    let answerIndex = {{ count($answers) }};
+      let answerIndex = {{ count($answers ?? []) }};
     function addAnswer() {
         const newAnswer = `
             <div class="input-group mb-2">

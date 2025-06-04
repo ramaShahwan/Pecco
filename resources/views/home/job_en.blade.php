@@ -164,7 +164,7 @@
                  <div class="text-center fables-main-background-color fables-sqr-rotation fables-second-border-color rt"
                  >
                     <div class="text-rotate">
-                         <h2 class="text-white font-25"> <br><span class="white-color font-40 bold-font mt-2 d-block">قطاعات عملنا</span></h2>
+                         <h2 class="text-white font-25"> <span class="white-color  bold-font mt-2 d-block" style="    font-size: 35px;">Our business sectors </span></h2>
                          <!-- <p class="fables-third-text-color mt-4 mb-3 mb-lg-5">
                             أنواع الأعمال التي نفوم بها
                          </p> -->
@@ -176,21 +176,21 @@
                      <div class="container z-index position-relative">
                          <div class="row">
                              <div class="col-12 col-lg-10 offset-lg-2">
-                                  <div class="owl-carousel owl-theme dots-0 carousel-items-3 circle-nav mt-lg-4 mb-lg-5 rtt" id="blog-slider" >
+                                  <div class="owl-carousel owl-theme dots-0 carousel-items-3 circle-nav mt-lg-4 mb-lg-5 rtt" id="blog-slider">
                                        <div class="card rounded-0 wow slideInDown mb-4 mb-lg-0"  data-wow-delay=".8s">
 
                                         <div class="pri_table_listt">
                                             <!-- <h3>basic <br/> <span>$80 / month</span></h3> -->
                                             <ol style="font-size: 20px;">
-                                            <li class="text11" style="text-align: end;">طرق وأنفاق وجسور وسدود وخزانات مياه  </li>
+                                            <li class="text11" >Roads, tunnels, bridges, dams and water reservoirs</li>
 
-                                              <li class="text11" style="text-align: end;">مشاريع ميكانيك وكهرباء وصحية </li>
-                                              <li class="text11" style="text-align: end;">  أبراج ومجمعات سكنية وتجارية ومصانع</li>
-                                              <li class="text11" style="text-align: end;" >ديكور وإكساء داخلي    </li>
-                                              <li class=" text11" style="text-align: end;">مشاريع مرافق بنى تحتية </li>
-                                              <!-- <li class=" text11" style="text-align: end;">مشاريع نقل وتوليد الطاقة </li>
-                                              <li class="text11" style="text-align: end;">مشاريع ميكانيك وكهرباء وصحية </li>
-                                              <li class=" text11" style="text-align: end;">خزانات مياه </li> -->
+                                              <li class="text11" >   Mechanical, electrical and plumbing projects </li>
+                                              <li class="text11" >  Towers, residential and commercial complexes, and factories</li>
+                                              <li class="text11"  >  Interior decoration and cladding    </li>
+                                              <li class=" text11" >   Infrastructure facilities projects </li>
+                                              <!-- <li class=" text11" >مشاريع نقل وتوليد الطاقة </li>
+                                              <li class="text11" >مشاريع ميكانيك وكهرباء وصحية </li>
+                                              <li class=" text11" >خزانات مياه </li> -->
                                             </ol>
                                             <!-- <button>sign up now</button> -->
                                           </div>
@@ -204,13 +204,13 @@
                                             <!-- <span class="saleon">top sale</span>
                                             <h3>standard <br/> <span>$110 / month</span></h3> -->
                                             <ol style="font-size: 20px;">
-                                                <li class="text11 " style="text-align: end;">منشآت صناعية ومباني متعددة الاستخدامات </li>
-                                            <li class="text11" style="text-align: end;" >مطارات وخطوط أنابيب النفط والغاز</li>
+                                                <li class="text11 " >    Industrial facilities and mixed-use buildings </li>
+                                            <li class="text11"  >    Airports and oil and gas pipelines</li>
 
-                                              <li class=" text11" style="text-align: end;">مشاريع نقل وتوليد الطاقة النظيفة  </li>
-                                              <li class="text11" style="text-align: end;">مستشفيات ومجمعات طبية  </li>
+                                              <li class=" text11" >    Clean energy transmission and generation projects  </li>
+                                              <li class="text11" >  Hospitals and medical complexes  </li>
 
-                                              <li class="text11" style="text-align: end;"  >شبكات مياه وصرف صحي </li>
+                                              <li class="text11"   >   Water and sewage networks </li>
                                             </ol>
                                             <!-- <button>sign up now</button> -->
                                           </div>
@@ -223,12 +223,12 @@
                                         <div class="pri_table_listt">
                                             <!-- <h3>premium <br/> <span>$150 / month</span></h3> -->
                                             <ol style="font-size: 20px;">
-                                                <li class="text11" style="text-align: end;">محطات سكك حديدية ومعالجة وإدارة النفايات</li>
-                                              <li class="text11" style="text-align: end;">مصانع معالجة المنتجات الاستهلاكية</li>
+                                                <li class="text11" >     Railway stations, waste treatment and management</li>
+                                              <li class="text11" >   Consumer product processing plants</li>
 
-                                              <li class="text11" style="text-align: end;">محطات معالجة مياه الصرف الصحي </li>
-                                              <li class="text11" style="text-align: end;">التشغيل والصيانة</li>
-                                              <li class="text11" style="text-align: end;">التدريب وتطوير المهارات</li>
+                                              <li class="text11" >    Wastewater treatment plants </li>
+                                              <li class="text11" > Operation and Maintenance</li>
+                                              <li class="text11" >  Training and skills development</li>
                                             </ol>
 
                                           </div>
@@ -241,10 +241,10 @@
                                         <div class="pri_table_list">
 
                                             <ol style="font-size: 20px;">
-                                              <li class="text11" style="text-align: end;">مصانع معالجة المنتجات الاستهلاكية</li>
-                                              <li class="text11" style="text-align: end;">محطات سكك حديدية ومعالجة وإدارة النفايات</li>
-                                              <li class=" text11" style="text-align: end;">مطارات وخطوط أنابيب النفط والغاز</li>
-                                              <li class=" text11" style="text-align: end;">طاقات نظيفة    </li>
+                                              <li class="text11" >مصانع معالجة المنتجات الاستهلاكية</li>
+                                              <li class="text11" >محطات سكك حديدية ومعالجة وإدارة النفايات</li>
+                                              <li class=" text11" >مطارات وخطوط أنابيب النفط والغاز</li>
+                                              <li class=" text11" >طاقات نظيفة    </li>
                                             </ol>
 
                                           </div>

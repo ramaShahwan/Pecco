@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>  المحترف للهندسة والبناء</title>
+  <title>  Professional Engineering and Construction</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -63,6 +63,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
+  .content h1 {
+    /* font-size: 95px; */
+        font-size: 60px;
+    line-height: 100px;
+    width: 1000px;
+    color: #fff;
+    margin-bottom: 50px;
+}
  p {
     margin: 0;
 }
@@ -242,7 +250,7 @@ Generic layout (demo looks)
 } */
 
 .articles {
-  direction: rtl;
+  /* direction: rtl; */
       margin-bottom: 30px;
   display: grid;
   max-width: 1200px;
@@ -292,7 +300,7 @@ Generic layout (demo looks)
   width: 1px;
 }
 .butn{
-  width: 100px;
+  width: 110px;
     padding: 5px;
     background: #809cb8;
     color: white;
@@ -477,23 +485,24 @@ Generic layout (demo looks)
 
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    تسجيل الدخول </a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('managerlogin') }}" >    Login</a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#footer" >    تواصل معنا</a>
+                    <a class="page-scroll tt text1 nav1" href="#footer" >     Contact Us </a>
                   </li>
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="#about" >  حول الشركة</a>
+                    <a class="page-scroll tt text1 nav1" href="#about" >   About Us </a>
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
                     <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
-                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
-  <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i>
+                    -->
+                    <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('execution_en') }}">EN</option>
     <option value="{{ route('execution') }}">AR</option>
@@ -549,27 +558,32 @@ Generic layout (demo looks)
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
-            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;float: right;">
+            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;">
               <ul class="nav navbar-nav navbar-right" style="margin-right: 90px;">
+<li class="active" style="margin-left: 40px;" >
+                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
+                  </li>
+                  <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#"> Water, Sewage and Electricity Networks</a>
+                  </li>
+                  <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#"> Solar energy</a>
+                  </li>
+ <li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#">  Reinforcement and rehabilitation  </a>
+                  </li>
+<li style="margin-left: 40px;">
+                    <a class="page-scroll tt text1" href="#">construction projects</a>
+                  </li>
 
               <li style="margin-left: 40px;" >
-                    <a class="page-scroll tt text1" href="#">  ديكور  </a>
+                    <a class="page-scroll tt text1" href="#">  decor  </a>
                   </li>
-                  <li style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="#">  مشاريع البناء </a>
-                  </li>
-                  <li style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="#">تدعيم وإعادة التأهيل  </a>
-                  </li>
-                  <li style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="#">الطاقة الشمسية</a>
-                  </li>
-                  <li style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="#"> شبكات مياه وصرف صحي وكهرباء </a>
-                  </li>
-                  <li class="active" style="margin-left: 40px;" >
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
-                  </li>
+
+
+
+
+
 
 
               </ul>
@@ -600,8 +614,8 @@ Generic layout (demo looks)
             </video>
         </div>
         <div class="content">
-            <h1>المحترف للهندسة والبناء</h1>
-            <a href="#">أقسامنا</a>
+            <h1> Professional Engineering and Construction  </h1>
+            <a href="#">Our Departments</a>
         </div>
         <!-- إضافة زر التبديل مع أيقونة سهم -->
         <button class="toggle-button" onclick="toggleVideo()">
@@ -615,12 +629,12 @@ Generic layout (demo looks)
 
 
    <!-- Start Service area -->
-  <div id="services" class="services-area area-padding">
+  <div id="services" class="services-area area-padding" style="padding: 70px 30px 80px;">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="section-headline services-head text-center" style="margin-bottom: 60px;">
-        <h2 class="text2">أقسامنا</h2>
+        <h2 class="text2">Our Departments</h2>
           </div>
         </div>
       </div>
@@ -634,10 +648,9 @@ Generic layout (demo looks)
                   <a class="services-icon" href="#">
                   <img src="imghome/ccc.png" alt="" style="height:70px; width:70px;">
 										</a>
-                  <h4 class="text2"> شبكات مياه وصرف صحي وكهرباء</h4>
+                  <h4 class="text2"> Water, sewage and electricity networks</h4>
                   <p  class="text11">
-                    تنفيذ شبكات مياه جيدة وفق القواعد الهندسية والمواصفات باستعمال مواد جيدة في سبيل المحافظة على المياه ومنع هدرها وتسربها
-
+Implementing good water networks according to engineering rules and specifications, using good materials in order to conserve water and prevent its waste and leakage.
                   </p>
                 </div>
               </div>
@@ -651,10 +664,9 @@ Generic layout (demo looks)
                   <a class="services-icon" href="#">
                   <img src="imghome/ccc.png" alt="" style="height:70px; width:70px;">
 										</a>
-                  <h4 class="text2">الطاقة الشمسية</h4>
+                  <h4 class="text2">Solar energy </h4>
                   <p  class="text11">
-                     نعمل على تنفيذ مشاريع بألواح شمسية عالية الجودة والمتوافقة مع معايير الصناعة وبالتالي تعالج مقترحات الطاقة الشمسية احتياجات العملاء و اهتماماتهم مع تسليط الضوء على الفوائد البيئية وفوائد التكلفة
-                  </p>
+We implement projects with high-quality, industry-standard solar panels. Our solar energy proposals address customer needs and concerns while highlighting environmental and cost benefits.                  </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -668,10 +680,9 @@ Generic layout (demo looks)
                   <a class="services-icon" href="#">
                   <img src="imghome/ccc.png" alt="" style="height:70px; width:70px;">
 										</a>
-                  <h4 class="text2"> تدعيم واعادة التأهيل</h4>
+                  <h4 class="text2"> Reinforcement and rehabilitation</h4>
                   <p  class="text11">
-                    إعادة تأهيل المباني المتضررة تعتمد على دراسة الوضع الحالي للمبنى  واجراء تقيمات أولية و تربط بين التصميم و المواد و أساليب البناء وتحافظ على بنية المبنى الأصلية مع مراعاة احتياجات الشاغلين
-                  </p>
+The rehabilitation of damaged buildings depends on studying the current condition of the building and conducting preliminary assessments. It links design, materials, and construction methods, and preserves the original structure of the building while taking into account the needs of the occupants.                  </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -685,10 +696,9 @@ Generic layout (demo looks)
                   <a class="services-icon" href="#">
                   <img src="imghome/ccc.png" alt="" style="height:70px; width:70px;">
 										</a>
-                  <h4 class="text2">  مشاريع البناء </h4>
+                  <h4 class="text2">  construction projects</h4>
                   <p  class="text11">
-                    تشمل تنفيذ وإنشاء هياكل منتوعة مثل المباني السكنية والتجارية والمرافق العامة ويشمل نطاق العمل تقييم الأمان والمتانة وضمان تنفيذ الأعمال وفق للمعايير الهندسية والقوانين المحلية
-                  </p>
+It includes the implementation and construction of various structures such as residential and commercial buildings and public facilities. The scope of work includes assessing safety and durability and ensuring that work is carried out in accordance with engineering standards and local laws.                  </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -704,15 +714,14 @@ Generic layout (demo looks)
     </div>
   </div>
   <!-- End Service area -->
-  <!-- Start Blog Area -->
-   <div id="blog" class="blog-area">
+    <div id="blog" class="blog-area">
     <div class="blog-inner area-padding">
       <div class="blog-overly"></div>
       <div class="container ">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2 class="text2">بعض أعمالنا</h2>
+              <h2 class="text2">Some of our work </h2>
             </div>
           </div>
         </div>
@@ -727,11 +736,10 @@ Generic layout (demo looks)
         <img src="imghome/karag.png" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تأهيل خزانات عالية (خزان القراج العالي ) </h2>
+        <h2>Rehabilitation of high tanks (high garage tank)</h2>
         <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع قشر أعمال الزريقة الداخلية و الخارجية وإعادة اعمال الزريقة مع إجراء التكتيم وأعمال العزل الإيبوكسي ومعالجة التشققات بمادة الغراوت والسيكا و ثم الرشة التيرولية وتركيب القساطل والسكورة وتجريب الخزان و بناء خزانات عالية بشكل كامل
-                 </p> -->
-       <button class="butn" onclick="togglePopuox()">التفاصيل</button>
+The project includes peeling the internal and external tiles, re-tiling the tiles, covering and epoxy insulation works, treating cracks with grout and Sika, then Tyrolean spraying, installing pipes and valves, testing the tank, and building high tanks completely.                 </p> -->
+       <button class="butn" onclick="togglePopuox()">more details</button>
       </div>
     </div>
   </article>
@@ -742,11 +750,12 @@ Generic layout (demo looks)
         <img src="imghome/khzan.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تأهيل خزانات أرضية (خزان القريعة الأرضي) </h2>
+        <h2> Rehabilitation of underground tanks (Al-Qarya ground tank) </h2>
 <!-- <p style="text-align: center; font-size: 16px;"class="text2" >
-                يتضمن المشروع قشر أعمال الزريقة الداخلية و الخارجية وإعادة اعمال الزريقة مع إجراء التكتيم وأعمال العزل الإيبوكسي ومعالجة التشققات بمادة الغراوت والسيكا و ثم الرشة التيرولية وتركيب القساطل والسكورة وتجريب الخزان و بناء خزانات أرضية بشكل كامل                </p> -->
+The project includes peeling the internal and external tiles, re-tiling the tiles, covering and epoxy insulation works, treating cracks with grout and Sika, then Tyrolean spraying, installing pipes and valves, testing the tank, and building ground tanks completely.
+     </p> -->
 
-        <button class="butn" onclick="togglePopuoxq()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxq()">more details</button>
       </div>
     </div>
   </article>
@@ -757,11 +766,11 @@ Generic layout (demo looks)
         <img src="imghome/salaman.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>ترميم وتأهيل شقق سكنية متضررة من الزلزال أو الحرب مع المرافق</h2>
+        <h2> Restoration and rehabilitation of residential apartments damaged by earthquake or war, along with facilities</h2>
            <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                 يتضمن المشروع أعمال الزريقة و  الرخام و تجهيزات المطبخ والحمام والأعمال الصحية وتركيب خزانات المياه بالإضافة الى اعمال المنجور الخشبي ومنجور الألمنيوم ومنجور الحديد وكل ما يتعلق بأعمال الإكساء الداخلي وخزانات المياه                </p> -->
+The project includes tile and marble works, kitchen and bathroom fittings, sanitary works, water tank installation, in addition to wood carpentry, aluminum carpentry, iron carpentry, and everything related to interior cladding and water tanks.    </p> -->
 
-        <button class="butn" onclick="togglePopuoxqw()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxqw()">more details</button>
       </div>
     </div>
   </article>
@@ -772,10 +781,10 @@ Generic layout (demo looks)
         <img src="imghome/masarania1.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تقديم خدمات المأوى والبنى التحتية</h2>
+        <h2>Providing shelter and infrastructure services</h2>
 <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تنفيذ مشاريع شبكات مياه وصرف صحي في محافظة حلب وفق الطلب        </p> -->
-        <button class="butn" onclick="togglePopuoxqwe()">التفاصيل</button>
+                 The project includes the implementation of water and sewage network projects in Aleppo Governorate as requested.      </p> -->
+        <button class="butn" onclick="togglePopuoxqwe()">more details</button>
       </div>
     </div>
   </article>
@@ -786,11 +795,11 @@ Generic layout (demo looks)
         <img src="imghome/masarmieh.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>توسيع شبكات مياه الشرب </h2>
+        <h2>Expansion of drinking water networks</h2>
 <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد وتوسيع شبكات مياه بقساطل من البولي إيتلين بأقطار مختلفة من (350مم) حتى (75مم) </p>   -->
+                               The project includes extending and expanding water networks with polyethylene pipes of different diameters from (350 mm) to (75 mm).</p>   -->
 
-        <button class="butn" onclick="togglePopuoxqwer()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxqwer()">more details</button>
       </div>
     </div>
   </article>
@@ -801,10 +810,10 @@ Generic layout (demo looks)
         <img src="imghome/amragim.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تأهيل شبكات مياه  الشرب المتضررة    </h2>
+        <h2>Rehabilitation of damaged drinking water networks  </h2>
   <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد خط قطر 200 مم من البولي إيتلين بطول 6.5 كم    </p> -->
-        <button class="butn" onclick="togglePopuoxqwert()">التفاصيل</button>
+          The project includes extending a 200 mm diameter polyethylene line to a length of 6.5 km.   </p> -->
+        <button class="butn" onclick="togglePopuoxqwert()">more details</button>
       </div>
     </div>
   </article>
@@ -815,11 +824,11 @@ Generic layout (demo looks)
         <img src="imghome/JK.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>إعادة تأهيل سد الرستن    </h2>
+        <h2>Rehabilitation of Rastan Dam   </h2>
 <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-               إعادة تأهيل الاعمال الهيكلية المتضررة لسد الرستن في حماة بالإضافة لاعمال الكهرباء والميكانيك وتركيب مضخات لضخ المياه   </p> -->
+          Rehabilitation of damaged structural works of the Rastan Dam in Hama, in addition to electrical and mechanical works and installation of water pumps.   </p> -->
 
-        <button class="butn" onclick="togglePopuoxqwerty()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxqwerty()">more details</button>
       </div>
     </div>
   </article>
@@ -830,10 +839,10 @@ Generic layout (demo looks)
         <img src="imghome/HGDH.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>شبكة مياه التمانعة     </h2>
+        <h2>Al-Tamanah Water Network     </h2>
 <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد خط قطر 200 مم من البولي إيتلين بطول 6.5 كم    </p> -->
-        <button class="butn" onclick="togglePopuoxqwertyu()">التفاصيل</button>
+                 The project includes extending a 200 mm diameter polyethylene line to a length of 6.5 km.   </p> -->
+        <button class="butn" onclick="togglePopuoxqwertyu()">more details</button>
       </div>
     </div>
   </article>
@@ -844,10 +853,10 @@ Generic layout (demo looks)
         <img src="imghome/talath.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تعزيل وتجريب الآبار    </h2>
+        <h2>Well cleaning and testing  </h2>
      <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع أعمال تعزيل وحفر و اكساء الآبار مع اجراء تجربة ضخ مياه لمدة 72 ساعة على الأقل    </p> -->
-        <button class="butn" onclick="togglePopuoxqwertyui()">التفاصيل</button>
+                    The project includes the works of cleaning, digging and covering the wells, with a water pumping test for at least 72 hours.  </p> -->
+        <button class="butn" onclick="togglePopuoxqwertyui()">more details</button>
       </div>
     </div>
   </article>
@@ -858,11 +867,11 @@ Generic layout (demo looks)
         <img src="imghome/qata.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>تجهيز اللوحات الكهربائية لمحطات معالجة المياه    </h2>
+        <h2> Preparing electrical panels for water treatment plants   </h2>
       <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                  استبدال لوحات كهربائية المتقطعة بقواطع متوسطة مع مضخات الفاكيوم و الكمبرسور بالإضافة لتجهيز لوحات التيار المنخفض                  </p> -->
+                         Replacing intermittent electrical panels with medium circuit breakers, vacuum pumps and compressors, in addition to equipping low-voltage panels.                </p> -->
 
-        <button class="butn" onclick="togglePopuoxqwertyuio()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxqwertyuio()">more details</button>
 
       </div>
     </div>
@@ -874,24 +883,20 @@ Generic layout (demo looks)
         <img src="imghome/mahadmus.jpg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>ترميم معهد التربية الموسيقية   </h2>
+        <h2>Restoration of the Institute of Music Education </h2>
      <!-- <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع ترميم المعهد بكل ما يتعلق من أعمال كهربائية وأعمال دهان واعمال منجور الألمنيوم وبعض أعمال الإكساء الداخلي         </p> -->
+              The project includes the restoration of the institute with all related electrical works, painting works, aluminum carpentry works, and some interior cladding works.        </p> -->
 
-        <button class="butn" onclick="togglePopuoxqwertyuiop()">التفاصيل</button>
+        <button class="butn" onclick="togglePopuoxqwertyuiop()">more details</button>
       </div>
     </div>
   </article>
 
 </section>
 
-
-
-
+  <!-- Start Blog Area -->
 
   <!-- End Blog -->
-
-<!-- End Blog -->
  <div class="popup" id="popupx-1">
              <div class="overlay"></div>
              <div class="content yyy" style=" width: 580px;    top: 1850px;">
@@ -905,10 +910,10 @@ Generic layout (demo looks)
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تأهيل خزانات عالية (خزان القراج العالي ) </h2>
+    font-weight: 600;">Rehabilitation of high tanks (high garage tank)</h2>
         <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع قشر أعمال الزريقة الداخلية و الخارجية وإعادة اعمال الزريقة مع إجراء التكتيم وأعمال العزل الإيبوكسي ومعالجة التشققات بمادة الغراوت والسيكا و ثم الرشة التيرولية وتركيب القساطل والسكورة وتجريب الخزان و بناء خزانات عالية بشكل كامل
-                 </p>
+The project includes peeling the internal and external tiles, re-tiling the tiles, covering and epoxy insulation works, treating cracks with grout and Sika, then Tyrolean spraying, installing pipes and valves, testing the tank, and building high tanks completely.                 </p>
+
       </div>
     </div>
                 <!-- <div class="containerr"> -->
@@ -929,14 +934,14 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-       <img src="imghome/khzan.jpg" alt="" />
+        <img src="imghome/khzan.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تأهيل خزانات أرضية (خزان القريعة الأرضي) </h2>
+    font-weight: 600;"> Rehabilitation of underground tanks (Al-Qarya ground tank) </h2>
 <p style="text-align: center; font-size: 16px;"class="text2" >
-                يتضمن المشروع قشر أعمال الزريقة الداخلية و الخارجية وإعادة اعمال الزريقة مع إجراء التكتيم وأعمال العزل الإيبوكسي ومعالجة التشققات بمادة الغراوت والسيكا و ثم الرشة التيرولية وتركيب القساطل والسكورة وتجريب الخزان و بناء خزانات أرضية بشكل كامل                </p>
-
+The project includes peeling the internal and external tiles, re-tiling the tiles, covering and epoxy insulation works, treating cracks with grout and Sika, then Tyrolean spraying, installing pipes and valves, testing the tank, and building ground tanks completely.
+     </p>
       </div>
     </div>
                 <!-- <div class="containerr"> -->
@@ -956,13 +961,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-          <img src="imghome/salaman.jpg" alt="" />
+         <img src="imghome/salaman.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">ترميم وتأهيل شقق سكنية متضررة من الزلزال أو الحرب مع المرافق</h2>
+    font-weight: 600;"> Restoration and rehabilitation of residential apartments damaged by earthquake or war, along with facilities</h2>
            <p style="text-align: center; font-size: 16px;" class="text2">
-                 يتضمن المشروع أعمال الزريقة و  الرخام و تجهيزات المطبخ والحمام والأعمال الصحية وتركيب خزانات المياه بالإضافة الى اعمال المنجور الخشبي ومنجور الألمنيوم ومنجور الحديد وكل ما يتعلق بأعمال الإكساء الداخلي وخزانات المياه                </p>
+The project includes tile and marble works, kitchen and bathroom fittings, sanitary works, water tank installation, in addition to wood carpentry, aluminum carpentry, iron carpentry, and everything related to interior cladding and water tanks.    </p>
 
       </div>
     </div>
@@ -983,13 +988,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-          <img src="imghome/masarania1.jpg" alt="" />
+        <img src="imghome/masarania1.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تقديم خدمات المأوى والبنى التحتية</h2>
+    font-weight: 600;">Providing shelter and infrastructure services</h2>
 <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تنفيذ مشاريع شبكات مياه وصرف صحي في محافظة حلب وفق الطلب        </p>
+                 The project includes the implementation of water and sewage network projects in Aleppo Governorate as requested.      </p>
 
       </div>
     </div>
@@ -1010,13 +1015,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-      <img src="imghome/masarmieh.jpg" alt="" />
+        <img src="imghome/masarmieh.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">توسيع شبكات مياه الشرب </h2>
+    font-weight: 600;">Expansion of drinking water networks</h2>
 <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد وتوسيع شبكات مياه بقساطل من البولي إيتلين بأقطار مختلفة من (350مم) حتى (75مم) </p>
+                               The project includes extending and expanding water networks with polyethylene pipes of different diameters from (350 mm) to (75 mm).</p>
 
       </div>
     </div>
@@ -1037,13 +1042,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-        <img src="imghome/amragim.jpg" alt="" />
+       <img src="imghome/amragim.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تأهيل شبكات مياه  الشرب المتضررة    </h2>
+    font-weight: 600;">Rehabilitation of damaged drinking water networks  </h2>
   <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد خط قطر 200 مم من البولي إيتلين بطول 6.5 كم    </p>
+          The project includes extending a 200 mm diameter polyethylene line to a length of 6.5 km.   </p>
 
       </div>
     </div>
@@ -1057,7 +1062,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
            <div class="popup" id="popupxqwerty-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style=" width: 580px;    top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwerty()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1068,9 +1073,9 @@ Generic layout (demo looks)
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">إعادة تأهيل سد الرستن    </h2>
+    font-weight: 600;">Rehabilitation of Rastan Dam   </h2>
 <p style="text-align: center; font-size: 16px;" class="text2">
-               إعادة تأهيل الاعمال الهيكلية المتضررة لسد الرستن في حماة بالإضافة لاعمال الكهرباء والميكانيك وتركيب مضخات لضخ المياه   </p>
+          Rehabilitation of damaged structural works of the Rastan Dam in Hama, in addition to electrical and mechanical works and installation of water pumps.   </p>
 
       </div>
     </div>
@@ -1084,20 +1089,20 @@ Generic layout (demo looks)
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyu-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style=" width: 580px;    top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyu()">&times;</div>
                 <h4 class="h44">  Details</h4>
                 </div>
  <div class="article-wrapper">
       <figure>
-         <img src="imghome/HGDH.jpg" alt="" />
+       <img src="imghome/HGDH.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">شبكة مياه التمانعة     </h2>
+    font-weight: 600;">Al-Tamanah Water Network     </h2>
 <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع تمديد خط قطر 200 مم من البولي إيتلين بطول 6.5 كم    </p>
+                 The project includes extending a 200 mm diameter polyethylene line to a length of 6.5 km.   </p>
 
       </div>
     </div>
@@ -1111,20 +1116,20 @@ Generic layout (demo looks)
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyui-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style=" width: 580px;    top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyui()">&times;</div>
                 <h4 class="h44">  Details</h4>
                 </div>
  <div class="article-wrapper">
       <figure>
-       <img src="imghome/talath.jpg" alt="" />
+     <img src="imghome/talath.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تعزيل وتجريب الآبار    </h2>
+    font-weight: 600;">Well cleaning and testing  </h2>
      <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع أعمال تعزيل وحفر و اكساء الآبار مع اجراء تجربة ضخ مياه لمدة 72 ساعة على الأقل    </p>
+                    The project includes the works of cleaning, digging and covering the wells, with a water pumping test for at least 72 hours.  </p>
 
       </div>
     </div>
@@ -1145,13 +1150,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-       <img src="imghome/qata.jpg" alt="" />
+     <img src="imghome/qata.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">تجهيز اللوحات الكهربائية لمحطات معالجة المياه    </h2>
+    font-weight: 600;"> Preparing electrical panels for water treatment plants   </h2>
       <p style="text-align: center; font-size: 16px;" class="text2">
-                  استبدال لوحات كهربائية المتقطعة بقواطع متوسطة مع مضخات الفاكيوم و الكمبرسور بالإضافة لتجهيز لوحات التيار المنخفض                  </p>
+                         Replacing intermittent electrical panels with medium circuit breakers, vacuum pumps and compressors, in addition to equipping low-voltage panels.                </p>
 
       </div>
     </div>
@@ -1172,13 +1177,13 @@ Generic layout (demo looks)
                 </div>
  <div class="article-wrapper">
       <figure>
-     <img src="imghome/mahadmus.jpg" alt="" />
+    <img src="imghome/mahadmus.jpg" alt="" />
       </figure>
       <div class="article-body">
         <h2 style="font-size: 21px;
-    font-weight: 600;">ترميم معهد التربية الموسيقية   </h2>
+    font-weight: 600;">Restoration of the Institute of Music Education </h2>
      <p style="text-align: center; font-size: 16px;" class="text2">
-                يتضمن المشروع ترميم المعهد بكل ما يتعلق من أعمال كهربائية وأعمال دهان واعمال منجور الألمنيوم وبعض أعمال الإكساء الداخلي         </p>
+              The project includes the restoration of the institute with all related electrical works, painting works, aluminum carpentry works, and some interior cladding works.        </p>
 
       </div>
     </div>
@@ -1232,10 +1237,8 @@ Generic layout (demo looks)
         }
 </script>
 
-
-
  <!-- Start Footer bottom Area -->
-  <footer id="footer">
+   <footer id="footer">
     <div class="footer-area">
       <div class="container">
         <div class="row">
@@ -1246,13 +1249,12 @@ Generic layout (demo looks)
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
 
-                <p class="text1" style="font-size: 15px;text-align: end;">
-                    شركتنا تقدم خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي              </p>
-                  </p>
-                <div class="footer-icons">
+                <p style="font-size: 15px;text-align: center;">
+The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
+                <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -1261,7 +1263,7 @@ Generic layout (demo looks)
                       <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -1272,24 +1274,28 @@ Generic layout (demo looks)
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    visibility: hidden;">...</h4>
+                <h4 style="
+    color: white;
+    font-size: 20px;
+
+    margin-bottom: 8px;">To communicate</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>حلب</p>
-                  <p><span>Address:</span>سوريا _ حلب _ المحافظة _ نزلة الهندسة _  جانب كافيه مانيسا </p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Aleppo </p>
+                  <p><span>Address:</span>Syria - Aleppo - Governorate - Engineering Street - Next to Manisa Cafe</p>
 
                   <p><span>Tel:</span>0966333221</p>
-                  <p><span>Email:</span>info@proengtrain.com
+                  <p style="border-bottom: 1px solid white;"><span>Email:</span>info@proengtrain.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span>فرع :</span>الدوحة</p>
-                  <p><span>Address:</span> قطر _ الدوحة _ مركز المنتزه التجاري_ المبنى#2 _ الطابق#1_ المكتب#2</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span>branch :</span>Doha</p>
+                  <p><span>Address:</span> Qatar - Doha - Al Muntazah Mall - Building #2 - Floor #1 - Office #2</p>
 
                   <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
-                  <p><span>Email:</span>info@pegasuspower.qa
+                  <p ><span>Email:</span>info@pegasuspower.qa
                   </p>
 
                 </div>
@@ -1300,24 +1306,21 @@ Generic layout (demo looks)
           <div class="col-md-4 col-sm-4 col-xs-12" style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    text-align: end;
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">للتواصل</h4>
-                <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>دبي</p>
-                  <p><span class="ytt">Address:</span>الامارات _ دبي _ واحة دبي للسيليكون _ برج اس اي تي _ مكتب#2403</p>
+              <h4 style="    visibility: hidden;">...</h4>
+                <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
-                  <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
+                  <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
                   </p>
-                  <p style="    text-align: end;
-    font-size: 20px;    margin: 15px;"><span class="ytt">فرع :</span>السعودية</p>
+                  <p style="    text-align: center;
+    font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>
+Saudi Arabia</p>
                   <p><span class="ytt">Address:</span>...</p>
 
                   <p><span class="ytt">Tel:</span>...</p>
-                  <p><span class="ytt">Email:</span>...
+                  <p ><span class="ytt">Email:</span>...
                   </p>
 
                 <!-- <div class="flicker-img">
@@ -1351,14 +1354,13 @@ Generic layout (demo looks)
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->

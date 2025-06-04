@@ -49,10 +49,10 @@
 
             </div>
             <div class="col-12 col-sm-5 col-lg-4 text-right" style="    margin-top: 10px;">
-                <p class="fables-third-text-color font-13" style="color:#DDDDDD;"><span class="fables-iconphone"></span> Phone : (011) 611 2040</p>
+                <p class="fables-third-text-color font-13" style="color:#DDDDDD;"><span class="fables-iconphone"></span> Phone : (+963 ) 967 333 221</p>
             </div>
             <div class="col-12 col-sm-5 col-lg-3 text-right" style="    margin-top: 10px;">
-                <p class="fables-third-text-color font-13"  style="color:#DDDDDD;"><span class="fables-iconemail"></span> Email: bimar@proengtrain.com</p>
+                <p class="fables-third-text-color font-13"  style="color:#DDDDDD;"><span class="fables-iconemail"></span> Email:  info@proEngTrain.com</p>
             </div>
             <!-- <div class="col-12 col-sm-5 col-lg-3 text-right" style="    margin-top: 10px;">
 

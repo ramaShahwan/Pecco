@@ -122,15 +122,15 @@ h4:hover{
             <div class=" " style="margin-top: 20px;">
               <div class="services-detailss">
                 <div class="single-servicess">
-                  <a class="services-icons" href="{{ route('design') }}" style="    text-align: center;">
+                  <a class="services-icons" href="{{ route('design_en') }}" style="    text-align: center;">
                     <img src="assetss/re.png" alt="" style="height: 100px;
     width: 140px;
                         margin: auto;" >
-                                        <h4 class="text2">الدراسات الهندسية والإشراف  </h4>
+                                        <h4 class="text2">  Engineering studies and supervision  </h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  نقدم كافة الخدمات والحلول الهندسية بكل ما يتعلق بالتصميم والاشراف على التنفيذ وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتحقيق التميز في جميع المشاريع            </p>
+               We provide all engineering services and solutions related to design, supervision of implementation, and project management with high quality, supported by technical and technological competencies to achieve excellence in all projects.    </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -143,14 +143,14 @@ h4:hover{
             <div class="" style="margin-top: 12px;">
               <div class="services-detailss" >
                 <div class="single-servicess">
-                  <a class="services-icons" href="{{ route('moudel') }}"  style="    text-align: center;">
+                  <a class="services-icons" href="{{ route('moudel_en') }}"  style="    text-align: center;">
                     <img src="assetss/re.png" alt="" style="height: 100px;
     width: 140px;
-                        margin: auto;" >                    <h4 class="text2">  النمذجة وتطوير المشاريع</h4>
+                       margin: auto;" >                    <h4 class="text2">  Modeling and Project Development</h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  لدينا فريق متخصص في النمذجة باستخدام أحدث التقنيات والمعايير العالمية ونعتمد تقنية BIM كأحدث الأساليب في مجالنا ونجمع بين الابداع والهندسة لبناء المستقبل                   </p>
+                  We have a team specialized in modeling using the latest technologies and international standards. We adopt BIM technology as the latest method in our field and combine creativity and engineering to build the future.      </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -167,11 +167,11 @@ h4:hover{
                     <img src="assetss/re.png" alt="" style="height: 100px;
     width: 140px;
                         margin: auto;" >
-                  <h4 class="text2">   التدريب والتأهيل والتنمية</h4>
+                  <h4 class="text2">   Training, qualification and development</h4>
 
 										</a>
                                         <p style="font-size: 16px;"class="text11">
-                  نقدم المعرفة المتخصصة في المجال الهندسي بجميع تخصصاته من خلال تدريب عالي الجودة بهدف تأهيل المهندسين وتطوير مهاراتهم الإدارية والهندسية وتحقيق مستويات متقدمة في  البرامج                       </p>
+            We provide specialized knowledge in all engineering disciplines through high-quality training aimed at qualifying engineers, developing their administrative and engineering skills, and achieving advanced levels in programs.             </p>
 
                 </div>
               </div>
@@ -185,16 +185,16 @@ h4:hover{
             <div class=" " style="margin-top: 20px;">
               <div class="services-detailss" >
                 <div class="single-servicess">
-                  <a class="services-icons" href="{{ route('execution') }}"  style="    text-align: center;">
+                  <a class="services-icons" href="{{ route('execution_en') }}"  style="    text-align: center;">
                     <img src="imghome/ccc.png" alt="" style="height: 100px;
     width: 140px;
-                        margin: auto;">
+                            margin: auto;" >
                         <h4 class="text2">
-                    <h4 class="text2">إدارة مشاريع </h4>
+                    <h4 class="text2"> Project Management </h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  لدينا فريق هندسي متخصص في مجال البناء والتشييد، نحن نطبق أعلى معايير الجودة في العمل مع التزامنا بالتسليم في الوقت المحدد لرضا العملاء من خلال تقديم خدمات مميزة وفقا لأعلى معايير                   </p>
+                 We have an engineering team specialized in the field of construction and building. We apply the highest quality standards in work with our commitment to timely delivery for customer satisfaction by providing distinguished services according to the highest standards.     </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -208,15 +208,13 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="assetss/re.png" alt=""style="height: 100px;
+                    <img src="assetss/re.png" alt="" style="height: 100px;
     width: 140px;
-                        margin: auto;" >                    <h4 class="text2">  التصميم الداخلي والديكور</h4>
+                        margin: auto;" >                    <h4 class="text2">  Interior design and decoration</h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  نقدم حلول متخصصة لتهيئة البيئة المثالية لمنزلك او مساحة عملك من الفكرة للتنفيذ وذلك من خلال
- مجموعة واسعة من الخدمات بما فيها التصميم الداخلي والخارجي، الديكور، تصميم الأثاث ووضعه </p>
-                </div>
+We offer specialized solutions to create the perfect environment for your home or workspace, from concept to implementation, through a wide range of services, including interior and exterior design, decoration, and furniture design and placement.                </div>
               </div>
               <!-- end about-details -->
             </div>
@@ -229,13 +227,13 @@ h4:hover{
               <div class="services-detailss">
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="assetss/re.png" alt="" style="height: 100px;
+                    <img src="assetss/re.png" alt=""  style="height: 100px;
     width: 140px;
-                        margin: auto;" >                    <h4 class="text2">   البحث والتطوير العلمي    </h4>
+                        margin: auto;" >                    <h4 class="text2">  Scientific research and development  </h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  نظرا لإيماننا بأهمية البحث العلمي في تطوير المعرفة نقدم مجموعة من الخدمات من دعم للباحثين في اختيار ابحاثهم الاكاديمية وتقديم الدعم المتكامل في جميع مراحل البحث        </p>
+               Because we believe in the importance of scientific research in developing knowledge, we offer a range of services, including support for researchers in choosing their academic research and providing comprehensive support at all stages of research.  </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -249,14 +247,13 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="#"  style="    text-align: center;">
-                    <img src="assetss/re.png" alt="" style="height: 100px;
+                    <img src="assetss/re.png" alt=""  style="height: 100px;
     width: 140px;
-                        margin: auto;" >                    <h4 class="text2">    تصميم مواقع الويب </h4>
+                       margin: auto;" >                    <h4 class="text2"> Web design</h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                  لدينا فريق متخصص في تطوير وتصميم المواقع الالكترونية المتميزة وعالية الجودة التي تقدم للعملاء الخدمة الاحترافية والتصميم الفريد بالإضافة لتقديم خدمات الدعم الفني والدعم التقني </p>
-                </div>
+We have a team specialized in developing and designing distinguished and high-quality websites that provide customers with professional service and unique design in addition to providing technical support and technical support services. </p>                </div>
               </div>
               <!-- end about-details -->
             </div>
@@ -269,13 +266,13 @@ h4:hover{
               <div class="services-detailss" >
                 <div class="single-servicess">
                   <a class="services-icons" href="https://proengaqar.com"  style="    text-align: center;">
-                    <img src="imghome/iii.png" alt="" style="height: 80px" >                    <h4 class="text2">    تطوير وتسويق العقار </h4>
+                    <img src="imghome/iii.png" alt="" style="height: 80px" >                    <h4 class="text2">    Real estate development and marketing</h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-نحن موقع متخصص في تقديم الخدمات العقارية المتكاملة كبيع وشراء ورهن العقارات وتقديم استشارات عقارية وفحصها فنياً مع شركة بلدنغ رانك وتقديم تقرير فني عن كل عقار يتم تسويقه من خلالنا                </div>
-              </div>
+We are a website specialized in providing integrated real estate services such as buying, selling, and mortgaging real estate, providing real estate consultations and technical inspection with Building Rank Company, and providing a technical report on each property marketed through us. </p>              </div>
               <!-- end about-details -->
+              </div>
             </div>
           </div>
       </div>
@@ -289,12 +286,11 @@ h4:hover{
                     <img src="assetss/re.png" alt=""  style="height: 100px;
     width: 140px;
                         margin: auto;" >
-                    <h4 class="text2">البرمجة والتحكم الصناعي </h4>
+                    <h4 class="text2">  Industrial programming and control </h4>
 
 										</a>
                   <p style="font-size: 16px;" class="text11">
-                    نقدم حلول برمجية للتحك الصناعي ونساعد في تحسين كفاءة العمليات التصنيعية وبرمجة اللوحات لأداء مهام مختلفة مثل مراقبة المدخلات و المخرجات وتشخيص الاعطال وتحليل الاخطاء
-                  </p>
+We provide industrial control software solutions and help improve the efficiency of manufacturing processes and program panels to perform various tasks such as monitoring inputs and outputs, diagnosing faults, and analyzing errors.                  </p>
                 </div>
               </div>
               <!-- end about-details -->
@@ -341,7 +337,7 @@ h4:hover{
       modifier: 1,
       slideShadows: true,
     },
-    autoplay: {
+autoplay: {
       delay: 1000, // Time between transitions (in milliseconds)
       disableOnInteraction: false, // Keep autoplay even after user interactions
     },
