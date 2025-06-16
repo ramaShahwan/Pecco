@@ -1241,12 +1241,19 @@ Generic layout (demo looks)
         <div class="row">
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
-              <div class="footer-head">
+              <div class="footer-head" style="margin-left: 30px;">
+                 <h4 style="    visibility: hidden;">...</h4>
                 <div class="footer-logo">
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
+<p style="    text-align: end;
+    font-size: 20px;    margin-bottom: 15px;"><span class="ytt">فرع :</span>دمشق</p>
+                  <p><span class="ytt">Address:</span> سوريا _ دمشق _ المزة</p>
 
-                <p class="text1" style="font-size: 15px;text-align: end;">
+                  <p><span class="ytt">Tel:</span>0966333221</p>
+                  <p><span class="ytt">Email:</span>info@proengtrain.com
+                  </p>
+                <p class="text1" style="font-size: 15px;text-align: end; margin-top: 30px;">
                     شركتنا تقدم خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي              </p>
                   </p>
                 <div class="footer-icons">
@@ -1269,7 +1276,7 @@ Generic layout (demo looks)
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12"  style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
                 <h4 style="    visibility: hidden;">...</h4>
