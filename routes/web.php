@@ -93,6 +93,8 @@ Route::view('/course_sessions_attendance', 'trainer.course_sessions_attendance')
 Route::view('/student', 'trainer.student')->name('student');
 Route::view('/coursestrainee', 'user.coursestrainee')->name('coursestrainee');
 Route::view('/sessioncourses', 'user.sessioncourses')->name('sessioncourses');
+Route::get('/show_students/{id}',[BimarCourseEnrolTrainerController::class,'show_students'])-> name('show_students');
+Route::get('/show_students_admin/{id}',[BimarCourseEnrolTrainerController::class,'show_students_admin'])-> name('show_students_admin');
 Route::view('/addquestionsbank', 'trainer.addquestionsbank')->name('addquestionsbank');
 Route::view('/link', 'user.link')->name('yylink');
 Route::view('/questionslink', 'user.questionslink')->name('yyquestionslink');

@@ -272,16 +272,16 @@ input:checked + label:active {
     border:none;
 }
 /* .table-bordered > tbody > tr:hover{
-    background: rgb(109 177 188);
+    background: #23a794;
     color: white;
 } */
 .ttr{
     border-bottom: 1px solid #bdd7d3;
 }
 .ttr:hover{
-    background: rgb(109 177 188) !important;
+    background: #23a794c2 !important;
     color: #101010;
-    box-shadow: 0px 0px 7px 0px rgb(109 177 188);
+    box-shadow: 0px 0px 7px 0px #23a794;
 }
 .table-striped > tbody > tr:nth-child(odd) > td{
     background:none;
@@ -297,8 +297,8 @@ input:checked + label:active {
 @endif
 <div class="row" style="    margin: 80px 30px; direction: rtl;">
             <div class="col-lg-12">
-                <div class="card" style="    border: 1px solid rgb(109 177 188);
-    box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                <div class="card" style="    border: 1px solid #23a794;
+    box-shadow: 1px 1px 7px 0px #23a794;">
                         <div class="card-header" style="text-align: start;font-size: 20px;display: flex;justify-content: space-between;align-items: center;background: #bdd7d3;
     color: white;">
                             <h3><i class="fa-solid fa-school"></i> الصفوف </h3>
@@ -306,7 +306,7 @@ input:checked + label:active {
                         </div>
                     <div class="card-block">
                         <table class="table table-bordered table-striped table-condensed">
-                            <thead style="text-align: center;background: rgb(109 177 188);
+                            <thead style="text-align: center;background: #23a794;
     color: white;">
                                 <tr>
                                 <th>#</th>
@@ -316,6 +316,7 @@ input:checked + label:active {
                                     <th>السعة  </th>
                                     <th> نموذج امتحاني  </th>
                                     <th> الجلسات </th>
+                                        <th> الطلاب </th>
 
                                 </tr>
                             </thead>
@@ -340,6 +341,10 @@ input:checked + label:active {
                                     </td>
 <td>
                                       <a href="{{url('session/index',$call->id)}}" target="_blank"><span class="fa-solid fa-chalkboard" style="font-size: 30px; color: #3f4046;"></span></a>
+
+                                    </td>
+                                    <td>
+                                      <a href="{{route('show_students',$call->id)}}" target="_blank"><span class="fa-solid fa-users"  style="font-size: 30px; color: #3f4046;"></span></a>
 
                                     </td>
 

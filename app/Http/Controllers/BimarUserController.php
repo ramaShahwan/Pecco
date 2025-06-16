@@ -433,13 +433,13 @@ public function emp_edit_profile($id)
             $data->update();
      }
       return back()->with(['message'=>'تم التعديل']);
-     } catch (\Exception $e) {
+    } catch (\Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
-     }
-     }else{
+    }
+    }else{
         return redirect()->route('home');
-     }
-   }
+    }
+    }
 
     public function changePass_emp(Request $request, $id)
     {
@@ -479,8 +479,10 @@ public function emp_edit_profile($id)
 
                 $old_password = $user->tr_user_pass;
 
-                if ($request->trainee_pass) {
+                if ($request->tr_user_pass) {
+
                     if ($old_password) {
+
                         $user->tr_last_pass = $old_password;
                         $user->tr_user_pass = Hash::make($request->tr_user_pass);
                         $user->tr_user_passchangedate = now();

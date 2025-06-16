@@ -31,7 +31,7 @@
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -159,7 +159,7 @@ h4{
     color: #ff0404;
 }
 .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 10px 0px;
         }
         .h44{
@@ -179,16 +179,16 @@ h4{
     border-bottom: 1px solid #bdd7d3;
 }
 .ttr:hover{
-    background: rgb(109 177 188) !important;
+    background: #23a794c2 !important;
     color: #101010;
-    box-shadow: 0px 0px 7px 0px rgb(109 177 188);
+    box-shadow: 0px 0px 7px 0px #23a794;
 }
 .table-striped > tbody > tr:nth-child(odd) > td{
     background:none;
 }
 .containerr{
 padding: 0;
-box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+box-shadow: inset 0px 1px 19px 1px #23a794;
 }
 .popup .overlay{
             position: fixed;
@@ -221,7 +221,7 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -256,8 +256,8 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
 @endif
 <div class="row" style="    margin: 80px 30px; direction: rtl;background: white; ">
             <div class="col-lg-12">
-                <div class="card" style="    border: 1px solid rgb(109 177 188);
-    box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                <div class="card" style="    border: 1px solid #23a794;
+    box-shadow: 1px 1px 7px 0px #23a794;">
                         <div class="card-header" style="text-align: start;font-size: 20px;display: flex;justify-content: space-between;align-items: center; background: #bdd7d3;
     color: white;">
                             <h3><i class="fa-solid fa-school"></i> الصفوف</h3>
@@ -265,7 +265,7 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
                         </div>
                     <div class="card-block">
                         <table class="table table-bordered table-striped table-condensed">
-                        <thead style="text-align: center;background: rgb(109 177 188);
+                        <thead style="text-align: center;background: #23a794;
     color: white;">
                                 <tr>
                                 <th style="text-align: center;">#</th>
@@ -274,6 +274,8 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
                                     <th style="text-align: center;">رمز الصف  </th>
                                     <th style="text-align: center;">سعة الصف  </th>
                                     <th style="text-align: center;">وضع الصف  </th>
+                                    <th style="text-align: center;">المتدربين المسجلين على الصف   </th>
+
                                     <th style="text-align: center;"> مدرب</th>
                                     <th style="text-align: center;"> متدربين</th>
                                     <th style="text-align: center;"> نموذج امتحاني</th>
@@ -294,7 +296,10 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
                                     <td> {{$call->tr_enrol_classes_code}}</td>
                                     <td> {{$call->tr_enrol_classes_capacity}} </td>
                                     <td> {{$call->Bimar_Class_Status->tr_class_status_name_ar}} </td>
+ <td>
+                                         <a href="{{route('show_students_admin',$call->id)}}" target="_blank"><i class="fa-solid fa-users" style="font-size: 20px; color: #3f4046;"></i></a>
 
+                                    </td>
 
                                     <td>
                                          <a href="{{url('enrol_trainer/get_trainers_for_class',$call->id)}}" target="_blank"><i class="fa-solid fa-user-plus" style="font-size: 20px; color: #3f4046;"></i></a>
