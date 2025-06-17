@@ -185,9 +185,23 @@
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
-                    <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
+                    <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
                     <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i>
-                    </div>
+                    -->
+                    <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('design_en') }}">EN</option>
+    <option value="{{ route('design') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcher').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
+                </div>
 
                   </li>
 
@@ -213,10 +227,14 @@
             <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
-            <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
-            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a>
+            <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
+            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-
+         <select id="languageSwitcher" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('design_en') }}">EN</option>
+    <option value="{{ route('design') }}">AR</option>
+</select>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
