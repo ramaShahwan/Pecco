@@ -75,7 +75,11 @@
 
 
             <div class="container-fluid">
-
+@if(session()->has('message'))
+        <div class="alert alert-info" role="alert" style="text-align:end;font-size: 20px; ">
+          {{session()->get('message')}}
+        </div>
+@endif
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">الموظفين </h1>
                     <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
@@ -128,7 +132,7 @@
                                             <td>$320,800</td>
                                             <td>2011/04/25</td>
                                             <td>
-                                        <button  style="border: none;background: none;"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
+                                        <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
                                         <button  style="border: none;background: none;"><span class="las la-trash-alt" style="font-size: 30px; color: #f10f0f;"></span></button>
 
                                             </td>
@@ -284,20 +288,19 @@
          <div class="content">
          <div class="gf">
                 <div class="close-btn" onclick="togglePopuoo()"><i class="las la-times-circle"></i></div>
-                <h4 class="h44">   تعديل الدور</h4>
+                <h4 class="h44">   تعديل بيانات الموظف</h4>
 
                 </div>
 
          @if(isset($call))
-         <form id="editForm" onsubmit="updateRole(event)" style="padding: 20px;color: black;">
+         <form id="editForm" onsubmit="updateBank(event, {{ $call->id }})" style="padding: 20px;color: black;">
          @csrf
-         <input type="hidden" name="id" value="{{ $call->id }}">
-            <div class="roww">
+   <input type="hidden" name="id" id="emp_id" value="{{ $call->id }}">            <div class="roww">
                 <h4 style="text-align:right;">الاسم الكامل  </h4>
 
                 <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" الاسم الكامل  " name="full_name" class="@error('full_name') is-invalid @enderror" value="{{ old('full_name') }}"/>
+                          <input type="text" placeholder=" الاسم الكامل  " name="full_name" id="full_name" class="@error('full_name') is-invalid @enderror" value="{{ $call->full_name }}"/>
                           @error('full_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -309,7 +312,7 @@
 
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" اسم المستخدم  " name="user_name" class="@error('user_name') is-invalid @enderror"  value="{{ old('user_name') }}"/>
+                          <input type="text" placeholder=" اسم المستخدم  " name="user_name" id="user_name" class="@error('user_name') is-invalid @enderror"  value="{{ $call->user_name }}"/>
                           @error('user_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -320,7 +323,7 @@
                                         <h4 style="text-align:right;">البريد الالكتروني   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="البريد الالكتروني  " name="email" class="@error('email') is-invalid @enderror"  value="{{ old('email') }}"/>
+                          <input type="email" placeholder="البريد الالكتروني  " name="email" id="email" class="@error('email') is-invalid @enderror"  value="{{ $call->email }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
                           @error('email')
                           <span class="invalid-feedback" role="alert">
@@ -332,7 +335,7 @@
                                         <h4 style="text-align:right;">رقم الهاتف   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="رقم الهاتف   " name="phone" class="@error('phone') is-invalid @enderror"  value="{{ old('phone') }}"/>
+                          <input type="text" placeholder="رقم الهاتف   " id="phone" name="phone" class="@error('phone') is-invalid @enderror"  value="{{ $call->phone }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
                           @error('phone')
                           <span class="invalid-feedback" role="alert">
@@ -346,12 +349,12 @@
             <div class="roww">
                         <h4> الدور </h4>
                         <select name="role" id="role" class="@error('role') is-invalid @enderror" style="width: 400px;">
-                         <option value="admin">admin  </option>
-                        <option value="emp">emp</option>
+                         <option value="admin" {{ $call->role == 'admin' ? 'selected' : '' }}>admin  </option>
+                        <option value="emp" {{ $call->role == 'emp'   ? 'selected' : '' }}>emp</option>
 
                         </select>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="العنوان" name="address"  value="{{ old('address') }}"/>
+                          <input type="text" placeholder="العنوان" name="address" id="address"  value="{{ $call->address }}"/>
                           <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
                         </div>
 
@@ -382,8 +385,22 @@
 
     popup.classList.toggle("active"); // تبديل حالة المودل (فتح/إغلاق)
 }
+ function togglePopuoo(){
+    let popuppo = document.getElementById("popuppo-1");
+
+    if (popuppo.classList.contains("active")) {
+        // إذا كان المودل مفتوحًا وأغلقناه، نقوم بمسح البيانات ورسائل الخطأ
+        document.getElementById("editForm").reset(); // إعادة تعيين النموذج
+        document.querySelectorAll('.invalid-feedback').forEach(error => {
+            error.innerHTML = ''; // إخفاء رسائل الخطأ
+        });
+    }
+
+    popuppo.classList.toggle("active"); // تبديل حالة المودل (فتح/إغلاق)
+}
 
      </script>
+
       <script>
         document.getElementById("myForm").addEventListener("submit", function (e) {
     e.preventDefault(); // منع إعادة تحميل الصفحة
@@ -478,5 +495,105 @@ function toggleConfirmPassword() {
     }
 }
 </script>
+<script>
+      function showEditPopup(id) {
+    fetch(`/bank/edit/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data received:', data);
+
+            // Assign the values to the correct fields
+            document.getElementById('emp_id').value = data.id; // ضبط معرف الكورس
+
+            document.getElementById('full_name').value = data.full_name; // Arabic name
+
+            document.getElementById('user_name').value = data.user_name; // Arabic name
+            document.getElementById('email').value = data.email; // English name
+            document.getElementById('phone').value = data.phone; // Arabic name
+            document.getElementById('address').value = data.address; // Arabic name
+ document.getElementById('role').value      = data.role;
+
+            // Update the radio button for type status
+
+            // Assign the ID in a hidden field
+            // document.querySelector('input[name="id"]').value = id;
+
+            // Show the popup
+            togglePopuoo();
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function updateBank(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    const data = {
+        full_name: document.getElementById('full_name').value,
+
+        user_name: document.getElementById('user_name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        role: document.getElementById('role').value,
+
+
+
+
+        // tr_bank_status: document.querySelector('input[name="tr_bank_status"]:checked').value,
+        id: document.querySelector('input[name="id"]').value
+    };
+    let bankIdInput = document.querySelector('input[name="id"]');
+    let bankId = bankIdInput ? bankIdInput.value : null;
+    let url = `/bank/update/${bankId}`;
+
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'X-CSRF-TOKEN': csrfToken,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.errors) {
+            Object.keys(data.errors).forEach(key => {
+                let input = document.getElementById(key);
+                if (input) {
+                    let errorSpan = input.nextElementSibling;
+                    if (!errorSpan || !errorSpan.classList.contains('invalid-feedback')) {
+                        errorSpan = document.createElement('span');
+                        errorSpan.classList.add('invalid-feedback');
+                        input.parentNode.appendChild(errorSpan);
+                    }
+                    errorSpan.innerHTML = `<strong style="color:red;">${data.errors[key][0]}</strong>`;
+                }
+            });
+        } else {
+            let messageDiv = document.createElement('div');
+            messageDiv.classList.add('alert', 'alert-info');
+            messageDiv.setAttribute('role', 'alert');
+            messageDiv.style.textAlign = 'end';
+            messageDiv.style.fontSize = '20px';
+            messageDiv.innerHTML = data.message; // عرض رسالة النجاح
+
+            // إضافة الرسالة إلى #page-wrapper
+            let pageWrapper = document.getElementById('page-wrapper');
+            if (pageWrapper) {
+                pageWrapper.prepend(messageDiv); // إضافة الرسالة في بداية #page-wrapper
+            }
+            togglePopuoo();
+            setTimeout(() => {
+    location.reload(); // تحديث الصفحة
+}, 1000);
+
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+    </script>
 
 @endsection
