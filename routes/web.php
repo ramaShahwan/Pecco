@@ -37,6 +37,7 @@ use App\Http\Controllers\BimarAssessmentTutorController;
 use App\Http\Controllers\BimarBankAssessQuestionsUsedController;
 use App\Http\Controllers\BimarAssessmentTraineeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TenderController;
 
 
 
@@ -552,5 +553,12 @@ Route::prefix('dms_user')->controller(UserController::class)->group(function(){
 
 });
 
+Route::prefix('dms_tender')->controller(TenderController::class)->group(function(){
+    Route::get('/index', 'index');
+    Route::post('/store', 'store');
+    Route::get('/edit/{id}', 'edit');
+    Route::put('/update/{id}', 'update');
+    Route::post('/destroy', 'destroy');
+});
 
 require __DIR__.'/auth.php';
