@@ -12,7 +12,7 @@ use App\Helpers\PasswordGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
-
+use Tymon\JWTAuth\Exceptions\UserNotDefinedException;
 
 class UserController extends Controller
 {
@@ -21,7 +21,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+          if (Auth::guard('admin')->check()) {
+        $data = User::all();
+        return view('admin.users',compact('data'));
+    }else{
+        return redirect()->route('home');
+    }
     }
 
     public function edit_pass($id)
@@ -41,7 +46,6 @@ class UserController extends Controller
     $user->password = Hash::make($request->Password);
     $user->save();
 
-    // return redirect()->back()->with('message', "تم تعديل كلمة المرور بنجاح " );
     return response()->json(['message' => 'تم تغيير كلمة المرور بنجاح.'], 200);
    }else{
     return redirect()->route('home');
@@ -130,8 +134,69 @@ public function edit_profile($id)
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::guard('admin')->check() ) {
+             $customNames = [
+            'full_name' => 'full name',
+            'user_name' => 'user name',
+            'role' => 'role',
+            'phone' => 'phone',
+            'address' => 'address',
+            'email' => 'email',
+            'password' => 'password',
+
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required|unique:users',
+            'user_name' => ['required', 'string','unique:users', 'max:15' ],
+            'role' => ['required', 'string','max:20'],
+            'phone' => 'required|max:13',
+            'address' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required',
+
+
+        ]);
+
+
+        $validator->setAttributeNames($customNames);
+
+        // if ($validator->fails()) {
+        //     return redirect()->back()
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+
+        $data = new User();
+        $data->full_name = $request->full_name;
+        $data->user_name = $request->user_name;
+        $data->role = $request->role;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        $data->email = $request->email;
+        $data->password =Hash::make($request->password);
+        $data->save();
+
+        // store image
+                if($request->hasFile('image')){
+                    $newImage = $request->file('image');
+                    //for change image name
+                    $newImageName = 'image_' .  $data->id . '.' . $newImage->getClientOriginalExtension();
+                    $newImage->move(public_path('img/manager/'), $newImageName);
+                    $data->image = $newImageName;
+                    $data->update();
+                }
+
+        return response()->json(['message' => 'تم الاضافة بنجاح'], 200);
+    }else{
+        return redirect()->route('home');
+     }
     }
+
 
     /**
      * Display the specified resource.
@@ -144,24 +209,92 @@ public function edit_profile($id)
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit( $id)
     {
-        //
+         if (Auth::guard('admin')->check()) {
+        $data = User::findOrFail($id);
+        return response()->json($data);
+    }else{
+        return redirect()->route('home');
+    }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request,  $id)
     {
-        //
+       if (Auth::guard('admin')->check()) {
+
+        try {
+            $customNames = [
+            'full_name' => 'full name',
+            'user_name' => 'user name',
+            'role' => 'role',
+            'phone' => 'phone',
+            'address' => 'address',
+            'email' => 'email',
+
+        ];
+
+            $validator = Validator::make($request->all(), [
+            'full_name' => 'required|unique:users',
+            'user_name' => ['required', 'string','unique:users', 'max:15' ],
+            'role' => ['required', 'string','max:20'],
+            'phone' => 'required|max:13',
+            'address' => 'required|string',
+            'email' => 'required|email',
+
+            ]);
+            $validator->setAttributeNames($customNames);
+            if ($validator->fails()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            }
+
+
+            $data = User::findOrFail($id);
+            $oldImageName = $data->image;
+
+            $data->full_name = $request->full_name;
+            $data->user_name = $request->user_name;
+            $data->email = $request->email;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->update();
+
+
+            // edit image
+            if($request->hasFile('image')){
+                if ($oldImageName) {
+                    File::delete(public_path('img/user/') . $oldImageName);
+                }
+             $newImage = $request->file('image');
+             //for change image name
+            $newImageName = 'image_' .  $data->id . '.' . $newImage->getClientOriginalExtension();
+            $newImage->move(public_path('img/user/'), $newImageName);
+            $data->image = $newImageName;
+            $data->update();
+     }
+      return back()->with(['message'=>'تم التعديل']);
+              } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }else{
+        return redirect()->route('home');
+    }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy( $id)
     {
-        //
+        $user=User::whereId($id)->first();
+        $oldImageName =$user->image;
+        if ($oldImageName) {
+            File::delete(public_path('img/manager/') . $oldImageName);
+           }
+       User::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
