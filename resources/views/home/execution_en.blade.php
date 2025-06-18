@@ -107,6 +107,37 @@
 .hh{
     display: none;
 }
+@media (max-width: 480px) {
+    .imgg{
+    max-width: 50% !important;
+    height: auto;
+    margin-left: 25%;
+}
+    .containerr{
+        height: 300px;
+    }
+    .content h1 {
+       font-size: 20px;
+        margin-bottom: 20px;
+        width: 300px;
+        line-height: 50px;
+        margin-left: -100px;
+    }
+    .content a {
+        font-size: 20px; /* تقليل حجم النص أكثر */
+        padding: 8px 16px; /* تقليل حجم الزر */
+    }
+    .toggle-button {
+        font-size: 16px; /* تقليل حجم الأيقونة أكثر */
+        padding: 6px 12px; /* تقليل حجم الزر أكثر */
+        bottom: 15px; /* تعديل موقع الزر */
+        left: 15px;
+    }
+    .background-clipp {
+
+        background-size: cover;
+    }
+}
 @media (max-width: 767px) {
     .ggg{
    margin-top: 10px !important;
@@ -122,6 +153,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -338,7 +370,8 @@ Generic layout (demo looks)
             top: 0px;
             left: 0px;
             width: 100vw;
-            height: 100vw;
+            /* height: 100vw; */
+            height: 100%;
             background: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: none;
@@ -404,10 +437,10 @@ Generic layout (demo looks)
 
 }
 .yyy{
-    width: 660px ;
+    width: 580px ;
     height: 320px;
 }
-@media screen and (max-width: 398px ){
+@media screen and (max-width: 430px ){
     /* .navbar-nav .dropdown-menu {
         float: left;
     } */
@@ -422,11 +455,11 @@ Generic layout (demo looks)
     margin-right: 30px !important;
 }
 .yyy{
-            width: 350px;
+            width: 410px;
         }
-        .popup .overlay{
+        /* .popup .overlay{
             height: 150vw;
-        }
+        } */
         .popup .content{
             width: 350px;
         }
@@ -495,7 +528,7 @@ Generic layout (demo looks)
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -541,10 +574,22 @@ Generic layout (demo looks)
             <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
-            <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
-            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a>
+            <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
+            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-
+      <select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('execution_en') }}">EN</option>
+    <option value="{{ route('execution') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
@@ -561,7 +606,7 @@ Generic layout (demo looks)
             <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1 rr" id="navbar-example" style="padding:0px;">
               <ul class="nav navbar-nav navbar-right" style="margin-right: 90px;">
 <li class="active" style="margin-left: 40px;" >
-                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
+                    <a class="page-scroll tt text1" href="{{ route('home') }}">  Home </a>
                   </li>
                   <li style="margin-left: 40px;">
                     <a class="page-scroll tt text1" href="#"> Water, Sewage and Electricity Networks</a>
@@ -899,7 +944,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
   <!-- End Blog -->
  <div class="popup" id="popupx-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="     top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuox()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -927,7 +972,7 @@ The project includes peeling the internal and external tiles, re-tiling the tile
   <!-- End Blog -->
     <div class="popup" id="popupxq-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="    top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxq()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -954,7 +999,7 @@ The project includes peeling the internal and external tiles, re-tiling the tile
      <!-- End Blog -->
       <div class="popup" id="popupxqw-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="   top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqw()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -981,7 +1026,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
           <div class="popup" id="popupxqwe-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style="  top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwe()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1008,7 +1053,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
            <div class="popup" id="popupxqwer-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style=" top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwer()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1035,7 +1080,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
           <div class="popup" id="popupxqwert-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style="  top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwert()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1062,7 +1107,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
            <div class="popup" id="popupxqwerty-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2800px;">
+             <div class="content yyy" style="  top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwerty()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1089,7 +1134,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyu-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2800px;">
+             <div class="content yyy" style="  top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyu()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1116,7 +1161,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyui-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2800px;">
+             <div class="content yyy" style="    top: 2800px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyui()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1143,7 +1188,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
           <div class="popup" id="popupxqwertyuio-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 3000px;">
+             <div class="content yyy" style="   top: 3000px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyuio()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1170,7 +1215,7 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
         <!-- End Blog -->
            <div class="popup" id="popupxqwertyuiop-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 3000px;">
+             <div class="content yyy" style="    top: 3000px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyuiop()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1238,18 +1283,30 @@ The project includes tile and marble works, kitchen and bathroom fittings, sanit
 </script>
 
  <!-- Start Footer bottom Area -->
-   <footer id="footer">
+  <footer id="footer">
     <div class="footer-area">
       <div class="container">
         <div class="row">
+            <h4 style="
+    color: white;
+   font-size: 25px;
+
+    text-align: center;">To communicate</h4>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
-              <div class="footer-head">
+              <div class="footer-head" style="margin-left: 30px;">
+                 <h4 style="    visibility: hidden;">...</h4>
                 <div class="footer-logo">
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
+<p style="    text-align: center;
+    font-size: 20px;        margin-bottom: 15px;"><span class="ytt">branch :</span>Damascus </p>
+                  <p><span class="ytt">Address:</span>  Syria _ Damascus _ Mazza</p>
 
-                <p style="font-size: 15px;text-align: center;">
+                  <p><span class="ytt">Tel:</span>0966333221</p>
+                  <p><span class="ytt">Email:</span>info@proengtrain.com
+                  </p>
+                <p style="font-size: 15px;text-align: center;margin-top: 30px;">
 The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
                 <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
@@ -1271,14 +1328,10 @@ The company provides high-quality engineering studies and project management ser
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12"  style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">To communicate</h4>
+               <h4 style="    visibility: hidden;">...</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
@@ -1309,7 +1362,9 @@ The company provides high-quality engineering studies and project management ser
               <h4 style="    visibility: hidden;">...</h4>
                 <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
-                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office </p>
+                  <p><span ></span>#2403 </p>
+
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
                   <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
@@ -1354,7 +1409,7 @@ Saudi Arabia</p>
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
+              <a href="{{ route('home') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

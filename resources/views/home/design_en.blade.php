@@ -128,6 +128,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -150,6 +151,37 @@
     font-family: "Abril Fatface", serif;
   font-weight: 400;
   font-style: normal;
+}
+@media (max-width: 480px) {
+    .imgg{
+    max-width: 50% !important;
+    height: auto;
+    margin-left: 25%;
+}
+    .containerr{
+        height: 300px;
+    }
+    .content h1 {
+       font-size: 20px;
+        margin-bottom: 20px;
+        width: 300px;
+        line-height: 50px;
+        margin-left: -100px;
+    }
+    .content a {
+        font-size: 20px; /* تقليل حجم النص أكثر */
+        padding: 8px 16px; /* تقليل حجم الزر */
+    }
+    .toggle-button {
+        font-size: 16px; /* تقليل حجم الأيقونة أكثر */
+        padding: 6px 12px; /* تقليل حجم الزر أكثر */
+        bottom: 15px; /* تعديل موقع الزر */
+        left: 15px;
+    }
+    .background-clipp {
+
+        background-size: cover;
+    }
 }
     </style>
 </head>
@@ -181,13 +213,26 @@
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
-                    <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
-                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i>
-                    </div>
+                    <!-- <input type="search" name="" id="" style="    width: 100px;    border: none;margin-top: 10px;border-radius: 20px;background: #c1c7c7;">
+                    <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
+<select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('design_en') }}">EN</option>
+    <option value="{{ route('design') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcher').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
+                </div>
 
                   </li>
 
@@ -213,10 +258,22 @@
             <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
-            <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
-            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a>
+            <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
+            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-
+<select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('design_en') }}">EN</option>
+    <option value="{{ route('design') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
@@ -246,7 +303,7 @@
                     <a class="page-scroll tt text1" href="#">  External studies</a>
                   </li>
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
+                    <a class="page-scroll tt text1" href="{{ route('home') }}">  Home </a>
                   </li>
 
 
@@ -505,19 +562,31 @@ Redesign, planning and project management. The right tower consists of 30 floors
     <div class="footer-area">
       <div class="container">
         <div class="row">
+            <h4 style="
+    color: white;
+   font-size: 25px;
+
+    text-align: center;">To communicate</h4>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
-              <div class="footer-head">
+              <div class="footer-head" style="margin-left: 30px;">
+                 <h4 style="    visibility: hidden;">...</h4>
                 <div class="footer-logo">
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
+<p style="    text-align: center;
+    font-size: 20px;        margin-bottom: 15px;"><span class="ytt">branch :</span>Damascus </p>
+                  <p><span class="ytt">Address:</span>  Syria _ Damascus _ Mazza</p>
 
-                <p style="font-size: 15px;text-align: end;" class="text1">
+                  <p><span class="ytt">Tel:</span>0966333221</p>
+                  <p><span class="ytt">Email:</span>info@proengtrain.com
+                  </p>
+                <p style="font-size: 15px;text-align: center;margin-top: 30px;">
 The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
-                <div class="footer-icons">
+                <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=61572951182014&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -526,7 +595,7 @@ The company provides high-quality engineering studies and project management ser
                       <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -534,27 +603,27 @@ The company provides high-quality engineering studies and project management ser
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12"  style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    visibility: hidden;">...</h4>
+               <h4 style="    visibility: hidden;">...</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
                 <div class="footer-contacts">
-              <p style="    text-align: end;
+                  <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span>branch :</span>Aleppo </p>
                   <p><span>Address:</span>Syria - Aleppo - Governorate - Engineering Street - Next to Manisa Cafe</p>
 
                   <p><span>Tel:</span>0966333221</p>
-                  <p><span>Email:</span>info@proengtrain.com
+                  <p style="border-bottom: 1px solid white;"><span>Email:</span>info@proengtrain.com
                   </p>
-                  <p style="    text-align: end;
+                  <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span>branch :</span>Doha</p>
                   <p><span>Address:</span> Qatar - Doha - Al Muntazah Mall - Building #2 - Floor #1 - Office #2</p>
 
                   <p><span>Tel:</span>+974 66089450 _ +974 44515550 _ +974 44515559</p>
-                  <p><span>Email:</span>info@pegasuspower.qa
+                  <p ><span>Email:</span>info@pegasuspower.qa
                   </p>
 
                 </div>
@@ -565,25 +634,23 @@ The company provides high-quality engineering studies and project management ser
           <div class="col-md-4 col-sm-4 col-xs-12" style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="    text-align: end;
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">To communicate</h4>
-                <p style="    text-align: end;
+              <h4 style="    visibility: hidden;">...</h4>
+                <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
-                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office </p>
+                  <p><span ></span>#2403 </p>
+
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
-                  <p><span class="ytt">Email:</span>info-dxb@buildingranks.com
+                  <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
                   </p>
-                   <p style="    text-align: end;
+                  <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>
 Saudi Arabia</p>
                   <p><span class="ytt">Address:</span>...</p>
 
                   <p><span class="ytt">Tel:</span>...</p>
-                  <p><span class="ytt">Email:</span>...
+                  <p ><span class="ytt">Email:</span>...
                   </p>
 
                 <!-- <div class="flicker-img">
@@ -617,7 +684,7 @@ Saudi Arabia</p>
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home_en') }}">   Professional For Engineering , Construction  &  Training </a>
+              <a href="{{ route('home') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

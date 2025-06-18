@@ -201,8 +201,11 @@
         height: 300px;
     }
     .content h1 {
-        font-size: 36px; /* تقليل حجم النص أكثر */
+       font-size: 20px;
         margin-bottom: 20px;
+        width: 300px;
+        line-height: 50px;
+        margin-left: -100px;
     }
     .content a {
         font-size: 20px; /* تقليل حجم النص أكثر */
@@ -279,6 +282,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -344,7 +348,7 @@
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -352,8 +356,8 @@
                     <i class="fa-solid fa-magnifying-glass fa-flip-horizontal" style="margin-left: -20px; color:#fff;"></i> -->
 <select id="languageSwitcher" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
-    <option value="{{ route('home_en') }}">EN</option>
-    <option value="{{ route('home') }}">AR</option>
+    <option value="{{ route('home') }}">EN</option>
+    <option value="{{ route('home_ar') }}">AR</option>
 </select>
 <script>
     document.getElementById('languageSwitcher').addEventListener('change', function () {
@@ -389,9 +393,21 @@
             <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
-            <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
-            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a>
-
+            <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
+            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
+<select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('home') }}">EN</option>
+    <option value="{{ route('home_ar') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
 
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
@@ -735,14 +751,26 @@ Planning and organizing residential suburbs in Latakia city and interior decorat
     <div class="footer-area">
       <div class="container">
         <div class="row">
+            <h4 style="
+    color: white;
+   font-size: 25px;
+
+    text-align: center;">To communicate</h4>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
-              <div class="footer-head">
+              <div class="footer-head" style="margin-left: 30px;">
+                 <h4 style="    visibility: hidden;">...</h4>
                 <div class="footer-logo">
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
+<p style="    text-align: center;
+    font-size: 20px;        margin-bottom: 15px;"><span class="ytt">branch :</span>Damascus </p>
+                  <p><span class="ytt">Address:</span>  Syria _ Damascus _ Mazza</p>
 
-                <p style="font-size: 15px;text-align: center;">
+                  <p><span class="ytt">Tel:</span>0966333221</p>
+                  <p><span class="ytt">Email:</span>info@proengtrain.com
+                  </p>
+                <p style="font-size: 15px;text-align: center;margin-top: 30px;">
 The company provides high-quality engineering studies and project management services supported by technical and technological competencies to meet the needs of our clients, achieve excellence in all projects, and develop engineering work.                </p>
                 <div class="footer-icons" style="    margin-left: 30px;">
                   <ul>
@@ -764,14 +792,10 @@ The company provides high-quality engineering studies and project management ser
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12"  style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
-                <h4 style="
-    color: white;
-    font-size: 20px;
-
-    margin-bottom: 8px;">To communicate</h4>
+               <h4 style="    visibility: hidden;">...</h4>
                 <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
@@ -802,7 +826,9 @@ The company provides high-quality engineering studies and project management ser
               <h4 style="    visibility: hidden;">...</h4>
                 <p style="    text-align: center;
     font-size: 20px;    margin: 15px;"><span class="ytt">branch :</span>Dubai</p>
-                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office #2403</p>
+                  <p><span class="ytt">Address:</span>UAE - Dubai - Dubai Silicon Oasis - SIT Tower - Office </p>
+                  <p><span ></span>#2403 </p>
+
 
                   <p><span class="ytt">Tel:</span>+971 502470240</p>
                   <p style="border-bottom: 1px solid white;"><span class="ytt">Email:</span>info-dxb@buildingranks.com
@@ -847,7 +873,7 @@ Saudi Arabia</p>
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
+              <a href="{{ route('home') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>

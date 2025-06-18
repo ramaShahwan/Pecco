@@ -57,11 +57,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Route::view('/', 'pages.home')->name('home');
-Route::view('/', 'home.index')->name('home');
+Route::view('/index_ar', 'home.index')->name('home_ar');
 Route::view('/design', 'home.design')->name('design');
 Route::view('/execution', 'home.execution')->name('execution');
 
-Route::view('/index_en', 'home.index_en')->name('home_en');
+Route::view('/', 'home.index_en')->name('home');
 Route::view('/design_en', 'home.design_en')->name('design_en');
 Route::view('/execution_en', 'home.execution_en')->name('execution_en');
 Route::view('/moudel_en', 'home.moudel_en')->name('moudel_en');

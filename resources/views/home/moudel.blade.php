@@ -125,6 +125,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -178,7 +179,7 @@
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_ar') }}" >   الرئيسية</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -223,10 +224,22 @@
             <a href="#" class="hh"><img src="assetss/re.png" alt="" style="width:50px; height:50px;"></a>
             <!-- <a href="#" class="hh"><i class="fa-solid fa-language" style="    margin-left: 15px;"></i></a> -->
             <!-- <a href="#" class="hh"><i class="fa-solid fa-right-to-bracket" style="   margin-left: 15px; margin-top: 20px;"></i></a> -->
-            <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
-            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a>
+            <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
+            <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-
+<select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+    <option value="">language</option>
+    <option value="{{ route('moudel_en') }}">EN</option>
+    <option value="{{ route('moudel') }}">AR</option>
+</select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
@@ -245,7 +258,7 @@
 
 
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
+                    <a class="page-scroll tt text1" href="{{ route('home_ar') }}">  الرئيسية </a>
                   </li>
 
 
@@ -424,12 +437,19 @@
         <div class="row">
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
-              <div class="footer-head">
+              <div class="footer-head" style="margin-left: 30px;">
+                 <h4 style="    visibility: hidden;">...</h4>
                 <div class="footer-logo">
                   <!-- <h2><span>e</span>Business</h2> -->
                 </div>
+<p style="    text-align: end;
+    font-size: 20px;    margin-bottom: 15px;"><span class="ytt">فرع :</span>دمشق</p>
+                  <p><span class="ytt">Address:</span> سوريا _ دمشق _ المزة</p>
 
-                <p style="font-size: 15px;text-align: end;">
+                  <p><span class="ytt">Tel:</span>0966333221</p>
+                  <p><span class="ytt">Email:</span>info@proengtrain.com
+                  </p>
+                <p style="font-size: 15px;text-align: end; margin-top: 30px;">
                 تقدم الشركة خدمات الدراسات الهندسية وإدارة المشاريع بجودة عالية مدعومة بالكفاءات الفنية والتكنولوجية لتلبية احتياجات عملائنا وتحقيق التميز في جميع المشاريع وتطوير العمل الهندسي
                 </p>
                 <div class="footer-icons">
@@ -452,7 +472,7 @@
             </div>
           </div>
           <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12"  style="    border-left: 1px solid beige;">
             <div class="footer-content">
               <div class="footer-head">
                 <h4 style="    visibility: hidden;">...</h4>
@@ -534,7 +554,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+               <a href="{{ route('home_ar') }}">محترفو الهندسة والبناء</a>
             </div>
           </div>
         </div>
