@@ -73,15 +73,6 @@ Route::view('/profile_emp', 'dms.profile_emp')->name('profile_emp');
 Route::view('/managerlogin', 'auth.managerlogin')->name('managerlogin');
 
 
-Route::prefix('dms_user')->controller(UserController::class)->group(function(){
-    Route::post('/changePassword/{id}', 'changePassword');
-    Route::get('/edit_profile/{id}', 'edit_profile')->name('dms_profile');
-    Route::put('/update_profile/{id}', 'update_profile');
-});
-
-
-
-
 
 Route::view('/bim', 'pages.bim')->name('bim');
 Route::view('/bill', 'admin.bill')->name('bill');
@@ -549,13 +540,17 @@ Route::post('trainee/update_validate/{ques_id}', [BimarAssessmentTraineeControll
 
 
 //new section
-// Route::middleware(AdminMiddleware::class)->group(function () {
-//     Route::get('/admin/dashboard', [UserController::class, 'index'])->name('admin.dashboard');
-// });
+Route::prefix('dms_user')->controller(UserController::class)->group(function(){
+    Route::post('/changePassword/{id}', 'changePassword');
+    Route::get('/edit_profile/{id}', 'edit_profile')->name('dms_profile');
+    Route::put('/update_profile/{id}', 'update_profile');
+    Route::get('/index', 'index');
+    Route::post('/store', 'store');
+    Route::get('/edit/{id}', 'edit');
+    Route::put('/update/{id}', 'update');
+    Route::post('/destroy', 'destroy');
 
-// Route::middleware(ManagerMiddleware::class)->group(function () {
-//     Route::get('/manager/dashboard', [UserController::class, 'index'])->name('manager.dashboard');
-// });
+});
 
 
 require __DIR__.'/auth.php';
