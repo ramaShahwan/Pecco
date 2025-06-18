@@ -128,6 +128,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -181,7 +182,7 @@
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_ar') }}" >   الرئيسية</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -230,11 +231,19 @@
             <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
             <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-         <select id="languageSwitcher" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+         <select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('design_en') }}">EN</option>
     <option value="{{ route('design') }}">AR</option>
 </select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
@@ -264,7 +273,7 @@
                     <a class="page-scroll tt text1" href="#">  الدراسات الخارجية</a>
                   </li>
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
+                    <a class="page-scroll tt text1" href="{{ route('home_ar') }}">  الرئيسية </a>
                   </li>
 
 
@@ -645,7 +654,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+               <a href="{{ route('home_ar') }}">محترفو الهندسة والبناء</a>
             </div>
           </div>
         </div>

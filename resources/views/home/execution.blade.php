@@ -114,6 +114,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -330,7 +331,8 @@ Generic layout (demo looks)
             top: 0px;
             left: 0px;
             width: 100vw;
-            height: 100vw;
+            /* height: 100vw; */
+            height: 100%;
             background: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: none;
@@ -396,10 +398,10 @@ Generic layout (demo looks)
 
 }
 .yyy{
-    width: 660px ;
+    width: 580px ;
     height: 320px;
 }
-@media screen and (max-width: 398px ){
+@media screen and (max-width: 430px ){
     /* .navbar-nav .dropdown-menu {
         float: left;
     } */
@@ -414,11 +416,11 @@ Generic layout (demo looks)
     margin-right: 30px !important;
 }
 .yyy{
-            width: 350px;
+            width: 410px;
         }
-        .popup .overlay{
+        /* .popup .overlay{
             height: 150vw;
-        }
+        } */
         .popup .content{
             width: 350px;
         }
@@ -487,7 +489,7 @@ Generic layout (demo looks)
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   الرئيسية</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home_ar') }}" >   الرئيسية</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -535,11 +537,19 @@ Generic layout (demo looks)
             <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
             <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-            <select id="languageSwitcher" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+            <select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('execution_en') }}">EN</option>
     <option value="{{ route('execution') }}">AR</option>
 </select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
 
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
@@ -573,7 +583,7 @@ Generic layout (demo looks)
                     <a class="page-scroll tt text1" href="#"> شبكات مياه وصرف صحي وكهرباء </a>
                   </li>
                   <li class="active" style="margin-left: 40px;" >
-                    <a class="page-scroll tt text1" href="{{ route('home') }}">  الرئيسية </a>
+                    <a class="page-scroll tt text1" href="{{ route('home_ar') }}">  الرئيسية </a>
                   </li>
 
 
@@ -899,7 +909,7 @@ Generic layout (demo looks)
 <!-- End Blog -->
  <div class="popup" id="popupx-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="    top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuox()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -927,7 +937,7 @@ Generic layout (demo looks)
   <!-- End Blog -->
     <div class="popup" id="popupxq-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="    top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxq()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -954,7 +964,7 @@ Generic layout (demo looks)
      <!-- End Blog -->
       <div class="popup" id="popupxqw-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 1850px;">
+             <div class="content yyy" style="    top: 1850px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqw()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -981,7 +991,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
           <div class="popup" id="popupxqwe-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style="    top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwe()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1008,7 +1018,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
            <div class="popup" id="popupxqwer-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style=" top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwer()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1035,7 +1045,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
           <div class="popup" id="popupxqwert-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2250px;">
+             <div class="content yyy" style="   top: 2250px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwert()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1062,7 +1072,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
            <div class="popup" id="popupxqwerty-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style="   top: 2600px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwerty()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1089,7 +1099,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyu-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style="    top: 2600px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyu()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1116,7 +1126,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
          <div class="popup" id="popupxqwertyui-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 2600px;">
+             <div class="content yyy" style="   top: 2600px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyui()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1143,7 +1153,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
           <div class="popup" id="popupxqwertyuio-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 3000px;">
+             <div class="content yyy" style="   top: 3000px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyuio()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1170,7 +1180,7 @@ Generic layout (demo looks)
         <!-- End Blog -->
            <div class="popup" id="popupxqwertyuiop-1">
              <div class="overlay"></div>
-             <div class="content yyy" style=" width: 580px;    top: 3000px;">
+             <div class="content yyy" style="   top: 3000px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuoxqwertyuiop()">&times;</div>
                 <h4 class="h44">  Details</h4>
@@ -1363,7 +1373,7 @@ Generic layout (demo looks)
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-               <a href="{{ route('home') }}">محترفو الهندسة والبناء</a>
+               <a href="{{ route('home_ar') }}">محترفو الهندسة والبناء</a>
             </div>
           </div>
         </div>

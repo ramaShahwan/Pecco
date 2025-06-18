@@ -128,6 +128,7 @@
     }
     .content a {
         margin-right:0px;
+                margin-left: -100px;
     }
 }
 .nav1{
@@ -150,6 +151,37 @@
     font-family: "Abril Fatface", serif;
   font-weight: 400;
   font-style: normal;
+}
+@media (max-width: 480px) {
+    .imgg{
+    max-width: 50% !important;
+    height: auto;
+    margin-left: 25%;
+}
+    .containerr{
+        height: 300px;
+    }
+    .content h1 {
+       font-size: 20px;
+        margin-bottom: 20px;
+        width: 300px;
+        line-height: 50px;
+        margin-left: -100px;
+    }
+    .content a {
+        font-size: 20px; /* تقليل حجم النص أكثر */
+        padding: 8px 16px; /* تقليل حجم الزر */
+    }
+    .toggle-button {
+        font-size: 16px; /* تقليل حجم الأيقونة أكثر */
+        padding: 6px 12px; /* تقليل حجم الزر أكثر */
+        bottom: 15px; /* تعديل موقع الزر */
+        left: 15px;
+    }
+    .background-clipp {
+
+        background-size: cover;
+    }
 }
     </style>
 </head>
@@ -181,7 +213,7 @@
                   </li>
 
                   <li class="kk">
-                    <a class="page-scroll tt text1 nav1" href="{{ route('home_en') }}" >   Home</a>
+                    <a class="page-scroll tt text1 nav1" href="{{ route('home') }}" >   Home</a>
                   </li>
                   <li class="kk" style="    margin-right: 20px;">
                     <div>
@@ -229,11 +261,19 @@
             <!-- <a href="#footer" class="hh"><i class="fa-solid fa-phone" style="    margin-left: 40px;"></i></a>
             <a href="#about" class="hh"><i class="fa-solid fa-circle-info" style="    margin-left: 40px;"></i></a> -->
 
-<select id="languageSwitcher" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
+<select id="languageSwitcherr" class="hh" style="width: 100px; height: 30px; margin-top: 10px; border-radius: 20px; color: #495664;">
     <option value="">language</option>
     <option value="{{ route('design_en') }}">EN</option>
     <option value="{{ route('design') }}">AR</option>
 </select>
+<script>
+    document.getElementById('languageSwitcherr').addEventListener('change', function () {
+        var selectedRoute = this.value;
+        if (selectedRoute) {
+            window.location.href = selectedRoute;
+        }
+    });
+</script>
             <a href="#" class="hh"><i class="fa-solid fa-house" style="    margin-left: 40px;"></i></a>
 
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
@@ -263,7 +303,7 @@
                     <a class="page-scroll tt text1" href="#">  External studies</a>
                   </li>
                   <li class="active" style="margin-left: 40px;">
-                    <a class="page-scroll tt text1" href="{{ route('home_en') }}">  Home </a>
+                    <a class="page-scroll tt text1" href="{{ route('home') }}">  Home </a>
                   </li>
 
 
@@ -644,7 +684,7 @@ Saudi Arabia</p>
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              <a href="{{ route('home_en') }}"> Professional For Engineering , Construction  &  Training </a>
+              <a href="{{ route('home') }}"> Professional For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>
