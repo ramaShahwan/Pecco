@@ -23,7 +23,7 @@ class UserController extends Controller
     {
           if (Auth::guard('admin')->check()) {
         $data = User::all();
-        return view('admin.users',compact('data'));
+        return view('dms.emp',compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -154,19 +154,15 @@ public function edit_profile($id)
             'address' => 'required|string',
             'email' => 'required|email',
             'password' => 'required',
-
+'confirm_password' => 'required|same:password',
 
         ]);
 
 
         $validator->setAttributeNames($customNames);
 
-        // if ($validator->fails()) {
-        //     return redirect()->back()
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
-        if ($validator->fails()) {
+
+       if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
 

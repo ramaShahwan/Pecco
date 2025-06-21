@@ -98,7 +98,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('emp_dms')}}" style="    text-align: right;
+                <a class="nav-link" href="{{ url('dms_user/index') }}" style="    text-align: right;
                    direction: rtl;">
                     <i class="fas fa-fw fa-users"></i>
                     <span>الموظفين</span></a>

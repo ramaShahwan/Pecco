@@ -540,16 +540,21 @@ Route::post('trainee/update_validate/{ques_id}', [BimarAssessmentTraineeControll
 
 
 //new section
-Route::prefix('dms_user')->controller(UserController::class)->group(function(){
-    Route::post('/changePassword/{id}', 'changePassword');
-    Route::get('/edit_profile/{id}', 'edit_profile')->name('dms_profile');
-    Route::put('/update_profile/{id}', 'update_profile');
-    Route::get('/index', 'index');
-    Route::post('/store', 'store');
-    Route::get('/edit/{id}', 'edit');
-    Route::put('/update/{id}', 'update');
-    Route::post('/destroy', 'destroy');
+Route::prefix('dms_user')
+      ->name('dms_user.')                   // لتسهيل الاستدعاء بالاسم
+      ->controller(UserController::class)
+      ->group(function () {
 
+    Route::get  ('/index',           'index'          )->name('index');   // عرض القائمة
+    Route::post ('/store',           'store'          )->name('store');   // إضافة مستخدم
+    Route::get  ('/edit/{id}',       'edit'           )->name('edit');
+    Route::put  ('/update/{id}',     'update'         )->name('update');
+    Route::post ('/destroy',         'destroy'        )->name('destroy');
+
+    // مسارات إضافية إن احتجت:
+    Route::post ('/changePassword/{id}', 'changePassword');
+    Route::get  ('/edit_profile/{id}',   'edit_profile')->name('profile');
+    Route::put  ('/update_profile/{id}', 'update_profile');
 });
 
 

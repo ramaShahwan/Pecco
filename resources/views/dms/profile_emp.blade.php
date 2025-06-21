@@ -96,7 +96,7 @@
                       @enderror
                         </div>
                         <div class="">
-                        <img src="{{URL::asset('img/user/'.$data->image)}}" width="200px" style="margin-left: 120px;width: 200px;
+                        <img src="{{URL::asset('img/manager/'.$data->image)}}" width="200px" style="margin-left: 120px;width: 200px;
     height: 200px;
     margin-right: 150px;">
 
