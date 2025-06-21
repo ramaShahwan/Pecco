@@ -76,8 +76,8 @@ public function edit_profile($id)
 
                 $validator = Validator::make($request->all(), [
                     'full_name' => 'required|string|max:50',
-                    'user_name' => ['required', 'string', 'max:25', 'regex:/^[a-zA-Z\s]+$/','user,' . $id],
-                    'email' => ['required', 'string','email', 'max:100', 'regex:/^[a-zA-Z\s]+$/'],
+                    'user_name' => ['required', 'string', 'max:25', 'user,' . $id],
+                    'email' => ['required', 'string','email', 'max:100'],
                     'phone' => ['required', 'string', 'max:15'],
                     'address' => ['required', 'string', 'max:200'],
                 ]);
@@ -104,12 +104,12 @@ public function edit_profile($id)
             // edit image
             if($request->hasFile('image')){
                 if ($oldImageName) {
-                    File::delete(public_path('img/user/') . $oldImageName);
+                    File::delete(public_path('img/manager/') . $oldImageName);
                 }
              $newImage = $request->file('image');
              //for change image name
             $newImageName = 'image_' .  $data->id . '.' . $newImage->getClientOriginalExtension();
-            $newImage->move(public_path('img/user/'), $newImageName);
+            $newImage->move(public_path('img/manager/'), $newImageName);
             $data->image = $newImageName;
             $data->update();
      }
