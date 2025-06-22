@@ -107,13 +107,13 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>الاسم</th>
-                                            <th>اسم المستخدم</th>
-                                            <th>البريد الالكتروني</th>
-                                            <th>الصورة</th>
-                                            <th>الدور</th>
-                                            <th>الهاتف</th>
-                                            <th>العنوان</th>
+                                            <th>الأسم</th>
+                                            <th>ملاحظات</th>
+                                            <th>تاريخ بداية المناقصة </th>
+                                            <th>تاريخ نهاية المناقصة</th>
+                                            <th>تاريخ الزيارة</th>
+                                            <th>حالة الزيارة</th>
+                                            <th>المنظمة</th>
                                             <th>الأحداث</th>
 
 
@@ -121,13 +121,13 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>الاسم</th>
-                                            <th>اسم المستخدم</th>
-                                            <th>البريد الالكتروني</th>
-                                            <th>الصورة</th>
-                                            <th>الدور</th>
-                                            <th>الهاتف</th>
-                                            <th>العنوان</th>
+                                            <th>الأسم</th>
+                                            <th>ملاحظات</th>
+                                            <th>تاريخ بداية المناقصة </th>
+                                            <th>تاريخ نهاية المناقصة</th>
+                                            <th>تاريخ الزيارة</th>
+                                            <th>حالة الزيارة</th>
+                                            <th>المنظمة</th>
                                             <th>الأحداث</th>
 
                                         </tr>
@@ -135,13 +135,13 @@
                                     <tbody>
                                          @foreach($data as $call)
                                         <tr>
-                                            <td>{{$call->full_name}}  </td>
-                                            <td>{{$call->user_name}}  </td>
-                                            <td>{{$call->email}}  </td>
-                                            <td><img src="{{URL::asset('/img/manager/'.$call->image)}}" alt="" class="bg-img" height="40px" width="40px"> </td>
-                                            <td>{{$call->role}}  </td>
-                                            <td>{{$call->phone}}  </td>
-                                            <td>{{$call->address}}  </td>
+                                            <td>{{$call->project_name}}  </td>
+                                            <td>{{$call->note}}  </td>
+                                            <td>{{$call->start_date}}  </td>
+                                            <td>{{$call->end_date}}</td>
+                                            <td>{{$call->visit_date}}  </td>
+                                            <td>{{$call->visit_status}}  </td>
+                                            <td>{{$call->organization}}  </td>
                                             <td>
                                         <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
                                         <button  style="border: none;background: none;" onclick="togglePopuoxqw({{ $call->id }})"><span class="las la-trash-alt" style="font-size: 30px; color: #f10f0f;"></span></button>

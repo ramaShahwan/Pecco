@@ -337,7 +337,7 @@
                               direction: ltr;">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{$userData->user_name}}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{URL::asset('img/user/'.$userData->image)}} ">
+                                    src="{{URL::asset('img/manager/'.$userData->image)}} ">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -392,7 +392,7 @@
                 </div>
 
                 <!-- <div class="containerr"> -->
-                <form id="myForm" action="{{ url('dms_user/changePassword', $userData->id) }}" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
+                <form id="myFormM" action="{{ url('dms_user/changePassword', $userData->id) }}" method="post" enctype="multipart/form-data" style="    padding: 20px;color: black;">
                        @csrf
                     <div class="roww">
 
@@ -451,7 +451,7 @@
         }
 </script>
 <script>
- document.getElementById("myForm").addEventListener("submit", function (e) {
+ document.getElementById("myFormM").addEventListener("submit", function (e) {
     e.preventDefault(); // منع إعادة تحميل الصفحة
 
     var formData = new FormData(this); // جمع البيانات من النموذج
@@ -499,7 +499,7 @@
             }
 
             // إعادة تعيين النموذج
-            document.getElementById("myForm").reset();
+            document.getElementById("myFormM").reset();
             togglePopuox();
             // تأخير بسيط لإغلاق المودل بعد إرسال البيانات بنجاح
             setTimeout(() => {
