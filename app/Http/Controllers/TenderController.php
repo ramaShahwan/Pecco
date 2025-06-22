@@ -191,7 +191,8 @@ class TenderController extends Controller
         $data->user_id = $user->id;
          $data->update();
 
-         return back()->with(['message'=>'تم التعديل']);
+               return response()->json(['message' => 'تم التعديل بنجاح'], 200);
+
               } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
