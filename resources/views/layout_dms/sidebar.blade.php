@@ -1,3 +1,9 @@
+@if(session('user_data'))
+    @php
+        $userData = session('user_data');
+
+
+    @endphp
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="    direction: initial;">
 
             <!-- Sidebar - Brand -->
@@ -97,16 +103,17 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
+              @if ($userData->role=="admin")
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('dms_user/index') }}" style="    text-align: right;
                    direction: rtl;">
                     <i class="fas fa-fw fa-users"></i>
                     <span>الموظفين</span></a>
             </li>
-
+ @endif
             <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="tables.html" style="    text-align: right;
+                <a class="nav-link" href="{{ url('dms_tender/index') }}" style="    text-align: right;
                    direction: rtl;">
                     <i class="fas fa-fw fa-table"></i>
                     <span>مناقصات</span></a>
@@ -152,3 +159,4 @@
             </div> -->
 
         </ul>
+         @endif

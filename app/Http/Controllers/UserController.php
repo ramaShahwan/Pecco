@@ -12,6 +12,7 @@ use App\Helpers\PasswordGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rule;
 use Tymon\JWTAuth\Exceptions\UserNotDefinedException;
 
 class UserController extends Controller
@@ -234,12 +235,21 @@ public function edit_profile($id)
         ];
 
             $validator = Validator::make($request->all(), [
-            'full_name' => 'required|unique:users',
-            'user_name' => ['required', 'string','unique:users', 'max:15' ],
+             'full_name' => [
+            'required',
+            Rule::unique('users', 'full_name')->ignore($id)
+        ],
+           'user_name' => [
+            'required', 'string', 'max:15',
+            Rule::unique('users', 'user_name')->ignore($id)
+        ],
             'role' => ['required', 'string','max:20'],
             'phone' => 'required|max:13',
             'address' => 'required|string',
-            'email' => 'required|email',
+             'email'  => [
+            'required', 'email',
+            Rule::unique('users', 'email')->ignore($id)
+        ],
 
             ]);
             $validator->setAttributeNames($customNames);
@@ -256,22 +266,24 @@ public function edit_profile($id)
             $data->email = $request->email;
             $data->phone = $request->phone;
             $data->address = $request->address;
+            $data->role = $request->role;
+
             $data->update();
 
 
             // edit image
             if($request->hasFile('image')){
                 if ($oldImageName) {
-                    File::delete(public_path('img/user/') . $oldImageName);
+                    File::delete(public_path('img/manager/') . $oldImageName);
                 }
              $newImage = $request->file('image');
              //for change image name
             $newImageName = 'image_' .  $data->id . '.' . $newImage->getClientOriginalExtension();
-            $newImage->move(public_path('img/user/'), $newImageName);
+            $newImage->move(public_path('img/manager/'), $newImageName);
             $data->image = $newImageName;
             $data->update();
      }
-      return back()->with(['message'=>'تم التعديل']);
+       return response()->json(['message' => 'تم التعديل بنجاح'], 200);
               } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -291,6 +303,6 @@ public function edit_profile($id)
             File::delete(public_path('img/manager/') . $oldImageName);
            }
        User::findOrFail($id)->delete();
-        return redirect()->back();
+       return response()->json(['message' => 'تم الحذف بنجاح'], 200);
     }
 }

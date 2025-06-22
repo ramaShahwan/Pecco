@@ -16,7 +16,7 @@ class TenderController extends Controller
     {
         if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
         $data = Tender::all();
-        return view('admin.tenders',compact('data'));
+        return view('dms.tenders',compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -130,7 +130,7 @@ class TenderController extends Controller
     public function update(Request $request,  $id)
     {
        if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
- 
+
 
         try {
              $customNames = [
