@@ -24,6 +24,7 @@ class Tender extends Model
         'check_value',
         'check_status',
         'url',
+        'tender_status',
         'address',
         'user_id',
     ];

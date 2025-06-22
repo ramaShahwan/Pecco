@@ -47,6 +47,7 @@ class TenderController extends Controller
             'reference_number' => 'reference number',
             'check_value' => 'check value',
             'check_status' => 'check status',
+            'tender_status' => 'tender status',
             'url' => 'url',
             'address' => 'address',
         ];
@@ -140,6 +141,7 @@ class TenderController extends Controller
             'end_date' => 'end date',
             'visit_date' => 'visit date',
             'visit_status' => 'visit status',
+             'tender_status' => 'tender status',
             'organization' => 'organization',
             'reference_number' => 'reference number',
             'check_value' => 'check value',
