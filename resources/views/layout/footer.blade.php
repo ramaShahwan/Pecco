@@ -61,6 +61,6 @@
             <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
         </ul>
-      <a href="{{ route('home_en') }}" style="color: #697985;"> Professional For Engineering , Construction  &  Training </a>
+      <a href="{{ route('home') }}" style="color: #697985;"> Professional For Engineering , Construction  &  Training </a>
 
 </div>

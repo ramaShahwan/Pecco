@@ -559,7 +559,7 @@ Route::prefix('dms_user')
     Route::put  ('/update_profile/{id}', 'update_profile');
 });
 
-Route::prefix('dms_tender')->name('dms_user.') ->controller(TenderController::class)->group(function(){
+Route::prefix('dms_tender')->name('dms_tender.') ->controller(TenderController::class)->group(function(){
     Route::get('/index', 'index')->name('index');
     Route::post('/store', 'store')->name('store');
     Route::get('/edit/{id}', 'edit')->name('edit');

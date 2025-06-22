@@ -99,7 +99,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <button onclick="togglePopuo()" type="button" class="m-0 font-weight-bold " style="background: #2e8f9f;
-                              padding: 10px;color: white;border-radius: 20px;cursor: pointer;">اضافة موظف جديد</button>
+                              padding: 10px;color: white;border-radius: 20px;cursor: pointer;">اضافة مناقصة جديدة</button>
 
                         </div>
                         <div class="card-body">
@@ -114,6 +114,8 @@
                                             <th>تاريخ الزيارة</th>
                                             <th>حالة الزيارة</th>
                                             <th>المنظمة</th>
+                                            <th>حالة المناقصة</th>
+
                                             <th>الأحداث</th>
 
 
@@ -128,6 +130,8 @@
                                             <th>تاريخ الزيارة</th>
                                             <th>حالة الزيارة</th>
                                             <th>المنظمة</th>
+                                            <th>حالة المناقصة</th>
+
                                             <th>الأحداث</th>
 
                                         </tr>
@@ -142,6 +146,8 @@
                                             <td>{{$call->visit_date}}  </td>
                                             <td>{{$call->visit_status}}  </td>
                                             <td>{{$call->organization}}  </td>
+                                            <td>{{$call->tender_status}}  </td>
+
                                             <td>
                                         <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
                                         <button  style="border: none;background: none;" onclick="togglePopuoxqw({{ $call->id }})"><span class="las la-trash-alt" style="font-size: 30px; color: #f10f0f;"></span></button>
@@ -167,7 +173,7 @@
             <div class="content">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuo()"><i class="las la-times-circle"></i></div>
-                                <h4 class="h44">اضافة   موظف جديد</h4>
+                                <h4 class="h44">اضافة   مناقصة جديدة</h4>
 
                 </div>
 
@@ -178,8 +184,8 @@
 
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="الاسم الكامل " name="full_name" value="{{ old('full_name') }}" class="@error('full_name') is-invalid @enderror"/>
-                          <!-- @error('full_name')
+                          <input type="text" placeholder="الاسم المناقصة " name="project_name" value="{{ old('project_name') }}" class="@error('project_name') is-invalid @enderror"/>
+                          <!-- @error('project_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -187,9 +193,9 @@
                       <span class="invalid-feedback"></span>
                         </div>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  اسم المستخدم" name="user_name" value="{{ old('user_name') }}" class="@error('user_name') is-invalid @enderror"/>
+                          <input type="text" placeholder="  ملاحظات المناقصة " name="note" value="{{ old('note') }}" class="@error('note') is-invalid @enderror"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('user_name')
+                          <!-- @error('note')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -197,63 +203,100 @@
                       <span class="invalid-feedback"></span>
                         </div>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="البريد الالكتروني  " name="email" class="@error('email') is-invalid @enderror"  value="{{ old('email') }}"/>
+                          <input type="text" placeholder="تاريخ بداية المناقصة   " name="start_date" class="@error('start_date') is-invalid @enderror"  value="{{ old('start_date') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
 
                       <span class="invalid-feedback"></span>
                         </div>
                        <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="رقم الهاتف   " name="phone" class="@error('phone') is-invalid @enderror"  value="{{ old('phone') }}"/>
+                          <input type="text" placeholder="تاريخ نهاية المناقصة    " name="end_date" class="@error('end_date') is-invalid @enderror"  value="{{ old('end_date') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
 
                       <span class="invalid-feedback"></span>
                         </div>
-                         <div class="input-groupp input-groupp-icon" style="position: relative;">
-  <input type="password" placeholder="كلمة السر" id="password" name="password"
-         class="@error('password') is-invalid @enderror" value="{{ old('password') }}"/>
-  <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-
-  <!-- أيقونة العين -->
-  <span class="toggle-password" onclick="togglePassword()" style="position: absolute; top: 50%;  transform: translateY(-50%); cursor: pointer;">
-    <i id="eyeIcon" class="fa-solid fa-eye"></i>
-  </span>
-
-                       <span class="invalid-feedback"></span>
-
-</div>
-<div class="input-groupp input-groupp-icon" style="position: relative;">
-  <input type="password" placeholder="تأكيد كلمة السر" id="confirm_password" name="confirm_password"
-         class="@error('confirm_password') is-invalid @enderror" value="{{ old('confirm_password') }}"/>
-  <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-
-  <span class="toggle-password" onclick="toggleConfirmPassword()" style="position: absolute; top: 50%;  transform: translateY(-50%); cursor: pointer;">
-    <i id="eyeIconConfirm" class="fa-solid fa-eye"></i>
-  </span>
-</div>
                         <div class="input-groupp input-groupp-icon">
-                            <input type="file"  placeholder="الصورة  " style="padding-bottom: 0;" name="image"/>
-                            <div class="input-icon"><i class="fa-solid fa-image"></i></div>
-                          </div>
+                          <input type="text" placeholder="تاريخ  الزيارة    " name="visit_date" class="@error('visit_date') is-invalid @enderror"  value="{{ old('visit_date') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
+
+                      <span class="invalid-feedback"></span>
+                        </div>
+
+
+
                       </div>
 
                       <div class="roww">
-                        <h4> الدور </h4>
+                        <!-- <h4> حالة الزيارة </h4> -->
                         <div class="input-groupp" style="display: flex;">
-                          <input id="icard" type="radio" name="role" value="admin" {{ old('role') == 'admin' ? 'checked' : '' }}/>
-                          <label for="icard"><span>ادمن</span></label>
-                          <input id="ipaypal" type="radio" name="role" value="manager" {{ old('role') == 'manager' ? 'checked' : '' }}/>
-                          <label for="ipaypal"> <span>موظف </span></label>
+                           <select name="visit_status" id="visit_status" class="@error('visit_status') is-invalid @enderror" style="width: 400px;">
+                         <option value=" ">اختر حالة الزيارة   </option>
+
+                           <option value="تمت الزيارة">تمت الزيارة  </option>
+                        <option value="لم تتم الزيارة">لم تتم الزيارة</option>
+                        <option value="لا يوجد زيارة لها">لا يوجد زيارة لها  </option>
+
+
+                        </select>
+
+
+                        </div>
+                          <div class="input-groupp" style="display: flex;">
+                           <select name="tender_status" id="tender_status" class="@error('tender_status') is-invalid @enderror" style="width: 400px;">
+                         <option value=" ">اختر حالة المناقصة   </option>
+
+                           <option value=" مقبولة">مقبولة   </option>
+                        <option value="  مرفوضة">مرفوضة  </option>
+                        <option value="   لم تقدم">لم تقدم     </option>
+
+
+                        </select>
 
 
                         </div>
                          <span class="invalid-feedback"></span>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="العنوان" name="address"  value="{{ old('address') }}"/>
+                          <input type="text" placeholder="اسم المنظمة" name="organization"  value="{{ old('organization') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
                                              <span class="invalid-feedback"></span>
 
                         </div>
+  <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="الرقم المرجعي للمناقصة " name="reference_number"  value="{{ old('reference_number') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
+                                             <span class="invalid-feedback"></span>
 
+                        </div>
+                         <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="  قيمة الشيك " name="check_value"  value="{{ old('check_value') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
+                                             <span class="invalid-feedback"></span>
+
+                        </div>
+                             <div class="input-groupp" style="display: flex;">
+                           <select name="check_status" id="check_status" class="@error('check_status') is-invalid @enderror" style="width: 400px;">
+                         <option value=" ">اختر حالة الشيك   </option>
+
+                           <option value=" مقبولة">مقبولة   </option>
+                        <option value="  مرفوضة">مرفوضة  </option>
+                        <option value="   لم تقدم">لم تقدم     </option>
+
+
+                        </select>
+
+
+                        </div>
+                              <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="  مسار الملف  " name="url"  value="{{ old('url') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
+                                             <span class="invalid-feedback"></span>
+
+                        </div>
+                         <div class="input-groupp input-groupp-icon">
+                          <input type="text" placeholder="  عنوان المناقصة   " name="address"  value="{{ old('address') }}"/>
+                          <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
+                                             <span class="invalid-feedback"></span>
+
+                        </div>
 
                       </div>
                       <div class="roww">
@@ -284,7 +327,7 @@ document.addEventListener('submit', function (e) {
         console.log('✅ myForm submit captured');        // DEBUG واضح
 
         const form  = e.target;
-        const url   = "{{ route('dms_user.store') }}";
+        const url   = "{{ route('dms_tender.store') }}";
         const token = document.querySelector('meta[name="csrf-token"]').content;
 
         fetch(url, {
@@ -346,8 +389,8 @@ document.addEventListener('submit', function (e) {
 
                 <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" الاسم الكامل  " name="full_name" id="full_name" class="@error('full_name') is-invalid @enderror" value="{{ $call->full_name }}"/>
-                          <!-- @error('full_name')
+                          <input type="text" placeholder=" الاسم الكامل  " name="project_name" id="project_name" class="@error('project_name') is-invalid @enderror" value="{{ $call->project_name }}"/>
+                          <!-- @error('project_name')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -358,8 +401,8 @@ document.addEventListener('submit', function (e) {
 
                         <div class="input-groupp input-groupp-icon">
                             <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder=" اسم المستخدم  " name="user_name" id="user_name" class="@error('user_name') is-invalid @enderror"  value="{{ $call->user_name }}"/>
-                          <!-- @error('user_name')
+                          <input type="text" placeholder=" اسم المستخدم  " name="note" id="note" class="@error('note') is-invalid @enderror"  value="{{ $call->note }}"/>
+                          <!-- @error('note')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -369,9 +412,9 @@ document.addEventListener('submit', function (e) {
                                         <h4 style="text-align:right;">البريد الالكتروني   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="email" placeholder="البريد الالكتروني  " name="email" id="email" class="@error('email') is-invalid @enderror"  value="{{ $call->email }}"/>
+                          <input type="start_date" placeholder="البريد الالكتروني  " name="start_date" id="start_date" class="@error('start_date') is-invalid @enderror"  value="{{ $call->start_date }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('email')
+                          <!-- @error('start_date')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -381,9 +424,9 @@ document.addEventListener('submit', function (e) {
                                         <h4 style="text-align:right;">رقم الهاتف   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="رقم الهاتف   " id="phone" name="phone" class="@error('phone') is-invalid @enderror"  value="{{ $call->phone }}"/>
+                          <input type="text" placeholder="رقم الهاتف   " id="end_date" name="end_date" class="@error('end_date') is-invalid @enderror"  value="{{ $call->end_date }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('phone')
+                          <!-- @error('end_date')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
@@ -405,7 +448,7 @@ document.addEventListener('submit', function (e) {
 
                         </select>
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="العنوان" name="address" id="address"  value="{{ $call->address }}"/>
+                          <input type="text" placeholder="العنوان" name="organization" id="organization"  value="{{ $call->organization }}"/>
                           <div class="input-icon"><i class="fa-solid fa-audio-description"></i></div>
                         </div>
 
@@ -445,11 +488,11 @@ function showEditPopup(id){
       log('✅ data fetched')
       const f=document.getElementById('editForm');
       f.manager_id.value      = d.id
-      f.full_name.value   = d.full_name
-      f.user_name.value   = d.user_name
-      f.email.value       = d.email
-      f.phone.value       = d.phone
-      f.address.value     = d.address
+      f.project_name.value   = d.project_name
+      f.note.value   = d.note
+      f.start_date.value       = d.start_date
+      f.end_date.value       = d.end_date
+      f.organization.value     = d.organization
       f.role.value        = d.role
       const img=document.getElementById('current_program_img')
       img.src = d.image?`/img/manager/${d.image}`:''
@@ -855,12 +898,12 @@ function toggleConfirmPassword() {
 //             // Assign the values to the correct fields
 //             document.getElementById('manager_id').value = data.id; // ضبط معرف الكورس
 
-//             document.getElementById('full_name').value = data.full_name; // Arabic name
+//             document.getElementById('project_name').value = data.project_name; // Arabic name
 
-//             document.getElementById('user_name').value = data.user_name; // Arabic name
-//             document.getElementById('email').value = data.email; // English name
-//             document.getElementById('phone').value = data.phone; // Arabic name
-//             document.getElementById('address').value = data.address; // Arabic name
+//             document.getElementById('note').value = data.note; // Arabic name
+//             document.getElementById('start_date').value = data.start_date; // English name
+//             document.getElementById('end_date').value = data.end_date; // Arabic name
+//             document.getElementById('organization').value = data.organization; // Arabic name
 //  document.getElementById('role').value      = data.role;
 //  if (data.image) {
 //                 document.getElementById('current_program_img').src = `/img/manager/${data.image}`;
@@ -885,12 +928,12 @@ function toggleConfirmPassword() {
 //     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 //    const formData = new FormData();
-//     formData.append('full_name', document.getElementById('full_name').value);
-//     formData.append('user_name', document.getElementById('user_name').value);
-//     formData.append('email', document.getElementById('email').value);
-//     formData.append('phone', document.getElementById('phone').value);
+//     formData.append('project_name', document.getElementById('project_name').value);
+//     formData.append('note', document.getElementById('note').value);
+//     formData.append('start_date', document.getElementById('start_date').value);
+//     formData.append('end_date', document.getElementById('end_date').value);
 //     formData.append('role', document.getElementById('role').value);
-//     formData.append('address', document.getElementById('address').value);
+//     formData.append('organization', document.getElementById('organization').value);
 
 
 //     let managerid = document.querySelector('input[name="id"]');
