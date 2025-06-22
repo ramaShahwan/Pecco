@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('url')->nullable();
             $table->string('address')->nullable();
 
-           $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
 
 
              if (Schema::hasTable('users')) {

@@ -563,6 +563,7 @@ Route::prefix('dms_tender')->name('dms_tender.') ->controller(TenderController::
     Route::get('/index', 'index')->name('index');
     Route::post('/store', 'store')->name('store');
     Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/show/{id}', 'show')->name('show');
     Route::put('/update/{id}', 'update')->name('update');
     Route::post('/destroy/{id}', 'destroy')->name('destroy');
 });
