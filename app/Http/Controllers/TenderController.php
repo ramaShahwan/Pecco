@@ -107,9 +107,15 @@ class TenderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tender $tender)
+    public function show( $id)
     {
-        //
+       if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
+            $data = Tender::where('id',$id)
+            ->first();
+             return view('tender.showtender',compact('data'));
+            }else{
+                return redirect()->route('home');
+            }
     }
 
     /**
