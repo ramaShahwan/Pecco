@@ -39,6 +39,8 @@ use App\Http\Controllers\BimarAssessmentTraineeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TenderController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\CVController;
+use App\Http\Controllers\MaterialController;
 
 
 
@@ -543,17 +545,16 @@ Route::post('trainee/update_validate/{ques_id}', [BimarAssessmentTraineeControll
 
 //new section
 Route::prefix('dms_user')
-      ->name('dms_user.')                   // لتسهيل الاستدعاء بالاسم
+      ->name('dms_user.')                
       ->controller(UserController::class)
       ->group(function () {
 
-    Route::get  ('/index',           'index'          )->name('index');   // عرض القائمة
-    Route::post ('/store',           'store'          )->name('store');   // إضافة مستخدم
+    Route::get  ('/index',           'index'          )->name('index');   
+    Route::post ('/store',           'store'          )->name('store');  
     Route::get  ('/edit/{id}',       'edit'           )->name('edit');
     Route::put  ('/update/{id}',     'update'         )->name('update');
     Route::post ('/destroy/{id}',         'destroy'        )->name('destroy');
 
-    // مسارات إضافية إن احتجت:
     Route::post ('/changePassword/{id}', 'changePassword');
     Route::get  ('/edit_profile/{id}',   'edit_profile')->name('profile');
     Route::put  ('/update_profile/{id}', 'update_profile');
@@ -578,4 +579,20 @@ Route::prefix('dms_document')->name('dms_document.')->controller(DocumentControl
 
 });
 
+Route::prefix('dms_cv')->controller(CVController::class)->group(function(){
+    Route::get('/index', 'index');
+    Route::post('/store', 'store');
+    Route::get('/edit/{id}', 'edit');
+    Route::put('/update/{id}', 'update');
+    Route::post('/destroy', 'destroy');
+});
+
+Route::prefix('dms_material')->controller(MaterialController::class)->group(function(){
+    Route::get('/index', 'index');
+    Route::post('/store', 'store');
+    Route::get('/edit/{id}', 'edit');
+    Route::put('/update/{id}', 'update');
+    Route::post('/destroy', 'destroy');
+
+});
 require __DIR__.'/auth.php';

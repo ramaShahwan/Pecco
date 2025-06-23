@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     use HasFactory;
+    
+     protected $table = 'materials';
+
+        protected $fillable = [
+        'name',
+        'url',
+        'user_id',
+    ];
+
+          public function User()
+      {
+          return $this->belongsTo(User::class, 'user_id');
+      }
 }
