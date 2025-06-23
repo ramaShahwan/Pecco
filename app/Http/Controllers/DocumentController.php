@@ -15,7 +15,7 @@ class DocumentController extends Controller
     {
       if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
         $data = Document::all();
-        return view('admin.documents',compact('data'));
+        return view('dms.documents',compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -47,7 +47,7 @@ class DocumentController extends Controller
             'filename' =>  'string',
             'filepath' => 'required|string',
             'document_date' => 'required|date',
-        
+
         ]);
 
         $validator->setAttributeNames($customNames);
@@ -100,7 +100,7 @@ class DocumentController extends Controller
     public function update(Request $request,  $id)
     {
         if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
- 
+
 
         try {
                        $customNames = [
@@ -115,7 +115,7 @@ class DocumentController extends Controller
             'filename' =>  'string',
             'filepath' => 'required|string',
             'document_date' => 'required|date',
-        
+
         ]);
 
             $validator->setAttributeNames($customNames);
@@ -134,7 +134,9 @@ class DocumentController extends Controller
         $data->user_id = $user->id;
          $data->update();
 
-         return back()->with(['message'=>'تم التعديل']);
+        //  return back()->with(['message'=>'تم التعديل']);
+        return response()->json(['message' => 'تم التعديل بنجاح'], 200);
+
               } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -149,7 +151,9 @@ class DocumentController extends Controller
     public function destroy( $id)
     {
        Document::findOrFail($id)->delete();
-       return redirect()->back();
+    //    return redirect()->back();
+        return response()->json(['message' => 'تم الحذف بنجاح'], 200);
+
     }
 
 

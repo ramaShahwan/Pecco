@@ -568,12 +568,12 @@ Route::prefix('dms_tender')->name('dms_tender.') ->controller(TenderController::
     Route::post('/destroy/{id}', 'destroy')->name('destroy');
 });
 
-Route::prefix('dms_document')->controller(DocumentController::class)->group(function(){
-    Route::get('/index', 'index');
-    Route::post('/store', 'store');
-    Route::get('/edit/{id}', 'edit');
-    Route::put('/update/{id}', 'update');
-    Route::post('/destroy', 'destroy');
+Route::prefix('dms_document')->name('dms_document.')->controller(DocumentController::class)->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::post('/destroy/{id}', 'destroy')->name('destroy');
     Route::get('/search', 'search');
 
 });

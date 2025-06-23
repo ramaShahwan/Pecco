@@ -1,5 +1,11 @@
 @extends('layout_dms.master')
 @section('content')
+@if(session('user_data'))
+    @php
+        $userData = session('user_data');
+
+
+    @endphp
 <style>
 
 
@@ -79,6 +85,19 @@
             font-weight: 600;
             color: white;
         }
+        .bb{
+            width: 100%;
+    padding: 1em;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+        }
 </style>
 
 
@@ -90,7 +109,7 @@
         </div>
 @endif
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">الموظفين </h1>
+                    <h1 class="h3 mb-2 text-gray-800">المناقصات </h1>
                     <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p> -->
@@ -150,10 +169,10 @@
 
                                             <td>
                                         <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
-                                        <button  style="border: none;background: none;" onclick="showEditPopupe({{ $call->id }})"><span class="las la-eye" style="font-size: 30px; color: #3f4046;"></span></button>
-
+                                        <button  style="border: none;background: none;" onclick="showEditPopupe({{ $call->id }})"><span class="las la-eye" style="font-size: 30px; color:rgb(12, 222, 156);"></span></button>
+   @if ($userData->role=="admin")
                                         <button  style="border: none;background: none;" onclick="togglePopuoxqw({{ $call->id }})"><span class="las la-trash-alt" style="font-size: 30px; color: #f10f0f;"></span></button>
-
+ @endif
                                             </td>
                                         </tr>
                                          @endforeach
@@ -676,7 +695,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 200 OK => نجاح */
         const msg = document.createElement('div');
         msg.className = 'alert alert-info';
-        msg.style.textAlign = 'end';
+        msg.style.textAlign = 'start';
         msg.style.fontSize  = '20px';
         msg.textContent = res.message || 'تم التعديل بنجاح';
         document.getElementById('page-wrapper').prepend(msg);
@@ -767,7 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="roww">
                                          <h4 style="font-size: 20px;">حالة الزيارة  </h4>
 
-                        <div class="input-groupp" >
+                        <div class="input-groupp input-groupp-icon" >
                            <!-- <select name="visit_status" id="visit_status" class="@error('visit_status') is-invalid @enderror" style="width: 400px;">
 
 
@@ -784,7 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                          <h4 style="font-size: 20px;">حالة المناقصة </h4>
 
-                          <div class="input-groupp" >
+                          <div class="input-groupp input-groupp-icon" >
                            <!-- <select name="tender_status" id="tender_status" class="@error('tender_status') is-invalid @enderror" style="width: 400px;">
 
                            <option value="جاري التقديم" {{ $call->tender_status == 'جاري التقديم' ? 'selected' : '' }}>جاري التقديم   </option>
@@ -826,7 +845,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                                                  <h4 style="font-size: 20px;"> حالة الشيك </h4>
 
-                             <div class="input-groupp" style="display: flex;">
+                             <div class="input-groupp input-groupp-icon" >
                            <!-- <select name="check_status" id="check_status" class="@error('check_status') is-invalid @enderror" style="width: 400px;">
 
 
@@ -861,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="roww">
                 <!-- <input type="submit"  onclick="togglePopuooe()" value="حفظ" class="bttn"> -->
-                <button onclick="togglePopuooe()" class="bttn">اغلاق</button>
+                <button onclick="togglePopuooe()" class="bttn bb">اغلاق</button>
             </div>
          </form>
          @else
@@ -976,7 +995,7 @@ document.getElementById("myFormMqw").addEventListener("submit", function (e) {
             const msg = document.createElement('div');
             msg.classList.add('alert', 'alert-info');
             msg.setAttribute('role', 'alert');
-            msg.style.textAlign = 'end';
+            msg.style.textAlign = 'start';
             msg.style.fontSize = '20px';
             msg.innerHTML = data.message;
             document.getElementById('page-wrapper')?.prepend(msg);
@@ -1189,5 +1208,5 @@ function toggleConfirmPassword() {
 // }
 
     </script>
-
+      @endif
 @endsection
