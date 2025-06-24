@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>  Professional For Engineering , Construction  &  TRAINING </title>
+  <title>  Professionals For Engineering , Construction  &  TRAINING </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -336,7 +336,7 @@
             </video>
         </div>
         <div class="content">
-            <h1>  Professional For Engineering , Construction  &  Training </h1>
+            <h1>  Professionals For Engineering , Construction  &  Training </h1>
             <a href="#">Our Departments</a>
         </div>
         <!-- إضافة زر التبديل مع أيقونة سهم -->
@@ -684,7 +684,7 @@ Saudi Arabia</p>
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              <a href="{{ route('home') }}"> Professional For Engineering , Construction  &  Training </a>
+              <a href="{{ route('home') }}"> Professionals For Engineering , Construction  &  Training </a>
             </div>
           </div>
         </div>
