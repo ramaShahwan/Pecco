@@ -109,7 +109,7 @@
         </div>
 @endif
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">CV </h1>
+                    <h1 class="h3 mb-2 text-gray-800">datasheet materials </h1>
                     <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p> -->
@@ -118,7 +118,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <button onclick="togglePopuo()" type="button" class="m-0 font-weight-bold " style="background: #2e8f9f;
-                              padding: 10px;color: white;border-radius: 20px;cursor: pointer;">اضافة سيفي جديد</button>
+                              padding: 10px;color: white;border-radius: 20px;cursor: pointer;">اضافة كتالوك جديد</button>
 
                         </div>
                         <div class="card-body">
@@ -127,10 +127,10 @@
                                     <thead>
                                         <tr>
                                             <th>الأسم</th>
-                                            <th>نوع المستند</th>
-                                            <th>مسار المستند  </th>
-                                            <th>الاختصاص   </th>
+
+                                            <th>مسار الملف  </th>
                                             <th>المستخدم الذي قام بانشاء الملف    </th>
+
 
 
 
@@ -142,10 +142,10 @@
                                     <tfoot>
                                         <tr>
                                            <th>الأسم</th>
-                                            <th>نوع المستند</th>
-                                            <th>مسار المستند  </th>
-                                            <th>الاختصاص   </th>
+
+                                            <th>مسار الملف  </th>
                                             <th>المستخدم الذي قام بانشاء الملف    </th>
+
 
 
                                             <th>الأحداث</th>
@@ -156,10 +156,10 @@
                                          @foreach($data as $call)
                                         <tr>
                                             <td>{{$call->name}}  </td>
-                                            <td>{{$call->filename}}  </td>
-                                            <td>{{$call->filepath}}  </td>
-                                            <td>{{$call->specialization}}</td>
+
+                                            <td>{{$call->url}}</td>
                                             <td>{{$call->User->full_name}}</td>
+
 
 
                                             <td>
@@ -182,10 +182,10 @@
             </div>
   <div class="popup" id="popup-1">
             <div class="overlay"></div>
-            <div class="content" style="height: 530px;">
+            <div class="content" style="height: 350px;">
                 <div class="gf">
                 <div class="close-btn" onclick="togglePopuo()"><i class="las la-times-circle"></i></div>
-                                <h4 class="h44">اضافة   سيفي جديد</h4>
+                                <h4 class="h44">اضافة   كتالوك جديد</h4>
 
                 </div>
 
@@ -204,29 +204,11 @@
                       @enderror -->
                       <span class="invalid-feedback"></span>
                         </div>
-                        <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  نوع المستند  " name="filename" value="{{ old('filename') }}" class="@error('filename') is-invalid @enderror"/>
-                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('filename')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror -->
 
-                        </div>
-                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  مسار المستند  " name="filepath" value="{{ old('filepath') }}" class="@error('filepath') is-invalid @enderror"/>
-                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('filepath')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror -->
- <span class="invalid-feedback"></span>
-                        </div>
+
                         <!-- <h4 style="font-size: 20px;">تاريخ  المستند </h4> -->
                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="الاختصاص      " name="specialization" class="@error('specialization') is-invalid @enderror"  value="{{ old('specialization') }}"/>
+                          <input type="text" placeholder="مسار الملف      " name="url" class="@error('url') is-invalid @enderror"  value="{{ old('url') }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
 
                       <span class="invalid-feedback"></span>
@@ -268,7 +250,7 @@ document.addEventListener('submit', function (e) {
         console.log('✅ myForm submit captured');        // DEBUG واضح
 
         const form  = e.target;
-        const url   = "{{ route('dms_cv.store') }}";
+        const url   = "{{ route('dms_material.store') }}";
         const token = document.querySelector('meta[name="csrf-token"]').content;
 
         fetch(url, {
@@ -315,17 +297,17 @@ document.addEventListener('submit', function (e) {
 
              <div class="popup" id="popuppo-1">
           <div class="overlay"></div>
-         <div class="content" style="height: 570px;">
+         <div class="content" style="    height: 400px;">
          <div class="gf">
                 <div class="close-btn" onclick="togglePopuoo()"><i class="las la-times-circle"></i></div>
-                <h4 class="h44">   تعديل بيانات سيفي</h4>
+                <h4 class="h44">   تعديل بيانات كتالوك</h4>
 
                 </div>
 
          @if(isset($call))
          <form id="editForm" enctype="multipart/form-data" style="padding: 20px;color: black;">
          @csrf
-   <input type="hidden" name="id" id="document_id" value="{{ $call->id }}">            <div class="roww">
+   <input type="hidden" name="id" id="material_id" value="{{ $call->id }}">            <div class="roww">
                 <h4 style="text-align:right;">الاسم   </h4>
 
                 <div class="input-groupp input-groupp-icon">
@@ -338,33 +320,11 @@ document.addEventListener('submit', function (e) {
                       @enderror -->
                       <span class="invalid-feedback"></span>
                         </div>
-                                        <h4 style="text-align:right;"> نوع الملف   </h4>
+
+                <h4 style="text-align:right;">مسار الملف   </h4>
 
                         <div class="input-groupp input-groupp-icon">
-                            <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <input type="text" placeholder="  نوع الملف  " name="filename" id="filename" class="@error('filename') is-invalid @enderror"  value="{{ $call->filename }}"/>
-                          <!-- @error('filename')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror -->
-                      <span class="invalid-feedback"></span>
-                        </div>
-                                        <h4 style="text-align:right;"> مسار الملف   </h4>
-
-                         <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="  مسار الملف  " name="filepath" value="{{ $call->filepath }}" class="@error('filepath') is-invalid @enderror"/>
-                          <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
-                          <!-- @error('filepath')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror -->
- <span class="invalid-feedback"></span>
-                        </div>
-
-                        <div class="input-groupp input-groupp-icon">
-                          <input type="text" placeholder="الاختصاص      " name="specialization" class="@error('specialization') is-invalid @enderror"  value="{{ $call->specialization }}"/>
+                          <input type="text" placeholder="مسار الملف      " name="url" class="@error('url') is-invalid @enderror"  value="{{ $call->url }}"/>
                           <div class="input-icon"><i class="fa-solid fa-signature"></i></div>
 
                       <span class="invalid-feedback"></span>
@@ -405,18 +365,17 @@ function togglePopuoo(){
 /* ========== تعبئة النموذج ========== */
 function showEditPopup(id){
   log('🔍 fetch record #'+id)
-  fetch(`/dms_cv/edit/${id}`)
+  fetch(`/dms_material/edit/${id}`)
     .then(r=>r.json())
     .then(d=>{
       log('✅ data fetched')
       const f=document.getElementById('editForm');
 
-      f.document_id.value      = d.id
+      f.material_id.value      = d.id
       f.name.value   = d.name
-      f.filename.value   = d.filename
-      f.filepath.value   = d.filepath
 
-      f.specialization.value       = d.specialization;
+
+      f.url.value       = d.url;
 
       togglePopuoo()
     })
@@ -430,7 +389,7 @@ function showEditPopup(id){
 //   form.addEventListener('submit',e=>{
 //      e.preventDefault()
 //      log('📤 submit captured')
-//      const id   =form.document_id.value
+//      const id   =form.material_id.value
 //      const fd   =new FormData(form)
 //      fd.append('_method','PUT')
 //      fetch(`/dms_user/update/${id}`,{
@@ -475,11 +434,11 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     log('📤 submit captured');
 
-    const id = form.document_id.value;
+    const id = form.material_id.value;
     const fd = new FormData(form);
     fd.append('_method', 'PUT');
 
-    fetch(`/dms_cv/update/${id}`, {
+    fetch(`/dms_material/update/${id}`, {
       method: 'POST',
       headers: {
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
@@ -534,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <form id="myFormMqw" method="POST" style="padding: 20px; color: black;">
             @csrf
-            <input type="hidden" id="documents_id" name="documents_id">
+            <input type="hidden" id="materials_id" name="materials_id">
 
             <div class="roww">
                 <input type="submit" value="حذف" class="bttnn" style="border: 1px solidrgb(225, 18, 18);">
@@ -546,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function togglePopuoxqw(id = null) {
     const popup = document.getElementById("popupxqw-1");
     if (id !== null) {
-        document.getElementById("documents_id").value = id;
+        document.getElementById("materials_id").value = id;
     }
     popup.classList.toggle("active");
 }
@@ -555,9 +514,9 @@ function togglePopuoxqw(id = null) {
 // إرسال النموذج Ajax
 document.getElementById("myFormMqw").addEventListener("submit", function (e) {
     e.preventDefault();
-    const userId = document.getElementById("documents_id").value;
+    const userId = document.getElementById("materials_id").value;
     const formData = new FormData(this);
-    const url = `/dms_cv/destroy/${userId}`;
+    const url = `/dms_material/destroy/${userId}`;
 
     fetch(url, {
         method: 'POST',

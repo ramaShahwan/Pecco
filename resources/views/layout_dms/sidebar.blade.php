@@ -125,13 +125,13 @@
                     <span>الأوراق الثبوتية</span></a>
             </li>
              <li class="nav-item">
-                <a class="nav-link" href="tables.html" style="    text-align: right;
+                <a class="nav-link" href="{{ url('dms_cv/index') }}" style="    text-align: right;
                   direction: rtl;">
                     <i class="fas fa-fw fa-table"></i>
                     <span>CVs</span></a>
             </li>
              <li class="nav-item">
-                <a class="nav-link" href="tables.html" style="    text-align: right;
+                <a class="nav-link" href="{{ url('dms_material/index') }}" style="    text-align: right;
                      direction: rtl;">
                     <i class="fas fa-fw fa-table"></i>
                     <span>datasheet material</span></a>

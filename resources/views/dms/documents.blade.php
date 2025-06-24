@@ -130,6 +130,8 @@
                                             <th>نوع المستند</th>
                                             <th>مسار المستند  </th>
                                             <th>تاريخ  المستند </th>
+                                            <th>المستخدم الذي قام بانشاء الملف    </th>
+
 
 
                                             <th>الأحداث</th>
@@ -143,6 +145,7 @@
                                             <th>نوع المستند</th>
                                             <th>مسار المستند  </th>
                                             <th>تاريخ  المستند </th>
+                                            <th>المستخدم الذي قام بانشاء الملف    </th>
 
                                             <th>الأحداث</th>
 
@@ -155,7 +158,7 @@
                                             <td>{{$call->filename}}  </td>
                                             <td>{{$call->filepath}}  </td>
                                             <td>{{$call->document_date}}</td>
-
+                                            <td>{{$call->User->full_name}}</td>
 
                                             <td>
                                         <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>

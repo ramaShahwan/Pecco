@@ -15,7 +15,7 @@ class MaterialController extends Controller
     {
           if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
         $data = Material::all();
-        return view('admin.material',compact('data'));
+        return view('dms.material',compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -40,11 +40,11 @@ class MaterialController extends Controller
             'url' => 'url ',
 
         ];
- 
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'url' =>  'string',
-        
+
         ]);
 
         $validator->setAttributeNames($customNames);
@@ -95,7 +95,7 @@ class MaterialController extends Controller
     public function update(Request $request, $id)
     {
         if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
- 
+
 
         try {
             $customNames = [
@@ -123,7 +123,9 @@ class MaterialController extends Controller
         $data->user_id = $user->id;
          $data->update();
 
-         return back()->with(['message'=>'تم التعديل']);
+        //  return back()->with(['message'=>'تم التعديل']);
+        return response()->json(['message' => 'تم التعديل بنجاح'], 200);
+
               } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -138,6 +140,8 @@ class MaterialController extends Controller
     public function destroy( $id)
     {
        Material::findOrFail($id)->delete();
-        return redirect()->back();
+        // return redirect()->back();
+        return response()->json(['message' => 'تم الحذف بنجاح'], 200);
+
     }
 }

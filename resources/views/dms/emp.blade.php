@@ -79,6 +79,39 @@
             font-weight: 600;
             color: white;
         }
+        .toggle-password {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    cursor: pointer;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+    .input-groupp {
+    position: relative;
+    /* display: flex; */
+    align-items: center;
+}
+/* .input-groupp input {
+    padding-right: 40px;
+} */
+.toggle-password {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    cursor: pointer;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+.input-groupp-icon .input-icon:before{
+    display: none;
+}
 </style>
 
 
@@ -209,13 +242,13 @@
                       <span class="invalid-feedback"></span>
                         </div>
                          <div class="input-groupp input-groupp-icon" style="position: relative;">
-  <input type="password" placeholder="كلمة السر" id="password" name="password"
+  <input type="password" placeholder="كلمة السر" id="s_password" name="password"
          class="@error('password') is-invalid @enderror" value="{{ old('password') }}"/>
   <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
 
   <!-- أيقونة العين -->
-  <span class="toggle-password" onclick="togglePassword()" style="position: absolute; top: 50%;  transform: translateY(-50%); cursor: pointer;">
-    <i id="eyeIcon" class="fa-solid fa-eye"></i>
+  <span class="toggle-password" onclick="toggleConfirmPasswordd()" style="position: absolute; top: 50%;  transform: translateY(-50%); cursor: pointer;">
+    <i id="eyeIconpass" class="fa-solid fa-eye"></i>
   </span>
 
                        <span class="invalid-feedback"></span>
@@ -459,49 +492,7 @@ function showEditPopup(id){
     .catch(err=>console.error(err))
 }
 
-/* ========== إرسال التعديل ========== */
-// document.addEventListener('DOMContentLoaded',()=>{
-//   log('🟢 DOM ready, attaching listener')
-//   const form=document.getElementById('editForm')
-//   form.addEventListener('submit',e=>{
-//      e.preventDefault()
-//      log('📤 submit captured')
-//      const id   =form.manager_id.value
-//      const fd   =new FormData(form)
-//      fd.append('_method','PUT')
-//      fetch(`/dms_user/update/${id}`,{
-//         method:'POST',
-//         headers:{
-//           'X-CSRF-TOKEN':document.querySelector('meta[name="csrf-token"]').content,
-//           'Accept':'application/json'
-//         },
-//         body:fd
-//      })
-//      .then(async resp=>{
-//         const data=await resp.json()
-//         log('↩️ response '+resp.status)
-//         /* مسح أخطاء قديمة */
-//         form.querySelectorAll('.invalid-feedback').forEach(s=>s.textContent='')
-//         form.querySelectorAll('.is-invalid').forEach(i=>i.classList.remove('is-invalid'))
 
-//         if(!resp.ok){             // 422
-//            Object.entries(data.errors).forEach(([k,v])=>{
-//              const inp=form.querySelector(`[name="${k}"]`)
-//              const span=inp?.parentElement.querySelector('.invalid-feedback')
-//              if(span){span.textContent=v[0];inp.classList.add('is-invalid')}
-//            })
-//            return
-//         }
-
-//         // 200 OK
-//         alert(data.message)       // أبسط إشعار
-//         togglePopuoo()
-//         location.reload()
-//      })
-//      .catch(err=>console.error(err))
-
-//   })
-// })
 document.addEventListener('DOMContentLoaded', () => {
   log('🟢 DOM ready, attaching listener');
 
@@ -570,25 +561,25 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="hidden" id="user_id" name="user_id">
 
 
-            <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
-                <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-                <input type="password" placeholder="كلمة السر" name="password" id="password"
-                    class="form-control" />
-                <div class="toggle-password" onclick="togglePassword('password', this)">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <span class="invalid-feedback" style="display: block;"></span>
-            </div>
+          <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
+    <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
+    <input type="password" placeholder="كلمة السر" name="password" id="user_password"
+        class="form-control" />
+    <div class="toggle-password" onclick="togglePasswordd('user_password', this)">
+        <i class="fa-solid fa-eye"></i>
+    </div>
+    <span class="invalid-feedback" style="display: block;"></span>
+</div>
 
-            <div class="input-groupp input-groupp-icon">
-                <input type="password" placeholder="تأكيد كلمة السر" name="password_confirmation"
-                    id="password_confirmation" class="form-control" />
-                <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-                <div class="toggle-password" onclick="togglePassword('password_confirmation', this)">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <span class="invalid-feedback" style="display: block;"></span>
-            </div>
+<div class="input-groupp input-groupp-icon">
+    <input type="password" placeholder="تأكيد كلمة السر" name="password_confirmation"
+        id="user_password_confirmation" class="form-control" />
+    <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
+    <div class="toggle-password" onclick="togglePasswordd('user_password_confirmation', this)">
+        <i class="fa-solid fa-eye"></i>
+    </div>
+    <span class="invalid-feedback" style="display: block;"></span>
+</div>
 
             <div class="roww">
                 <input type="submit" value="حفظ" class="bttn" style="border: 1px solid #6db1bc;">
@@ -596,7 +587,22 @@ document.addEventListener('DOMContentLoaded', () => {
         </form>
     </div>
 </div>
+<script>
+function togglePasswordd(inputId, iconElement) {
+    var inputField = document.getElementById(inputId);
+    var icon = iconElement.querySelector("i");
 
+    if (inputField.type === "password") {
+        inputField.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        inputField.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+</script>
 
   <script>
 function togglePopuoxq(id = null) {
@@ -761,58 +767,7 @@ setTimeout(() => {
     .catch(err => console.error(err));
 });
 </script>
-      <!-- <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const form  = document.getElementById('myForm');
-    const url   = "{{ route('dms_user.store') }}";
-    const token = document.querySelector('meta[name="csrf-token"]').content;
-console.log(data);
-    form.addEventListener('submit', e => {
-        e.preventDefault();   // إيقاف الإرسال الطبيعى
-              // (تأمين زائد) يمنع أى Bubbling يُعيد الإرسال
 
-        /* الكود لن يصل هنا إذا كسرنا شيئاً فوق … */
-        const data = new FormData(form);
-
-        fetch(url, {
-            method : 'POST',
-            headers: {
-                'X-CSRF-TOKEN': token,
-                'Accept'      : 'application/json'
-            },
-            body   : data
-        })
-        .then(async resp => {
-            const res = await resp.json();
-
-            // نظف الأخطاء القديمة
-            document.querySelectorAll('.invalid-feedback').forEach(s => {
-                s.innerHTML = '';
-                s.closest('.input-groupp')?.querySelector('input')?.classList.remove('is-invalid');
-            });
-
-            if (!resp.ok) {           // أخطاء فاليديشن
-                Object.entries(res.errors).forEach(([k,v]) => {
-                    const input = document.querySelector(`[name="${k}"]`);
-                    const span  = input?.parentElement.querySelector('.invalid-feedback');
-                    input.classList.add('is-invalid');
-                    if (span) span.innerHTML = `<strong style="color:red;">${v[0]}</strong>`;
-                });
-            } else {                  // نجاح
-                const msg = document.createElement('div');
-                msg.className = 'alert alert-info';
-                msg.textContent = res.message;
-                document.getElementById('page-wrapper').prepend(msg);
-
-                form.reset();
-                togglePopuo();
-                setTimeout(()=>location.reload(), 700);
-            }
-        })
-        .catch(err => console.error(err));
-    });
-});
-    </script> -->
      <script>
 function togglePassword() {
     var passwordInput = document.getElementById("password");
@@ -844,115 +799,21 @@ function toggleConfirmPassword() {
         eyeIcon.classList.add("fa-eye");
     }
 }
+function toggleConfirmPasswordd() {
+    var passwordInput = document.getElementById("s_password");
+    var eyeIcon = document.getElementById("eyeIconpass");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    }
+}
 </script>
-<script>
-//       function showEditPopup(id) {
-//     fetch(`/dms_user/edit/${id}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Data received:', data);
 
-//             // Assign the values to the correct fields
-//             document.getElementById('manager_id').value = data.id; // ضبط معرف الكورس
-
-//             document.getElementById('full_name').value = data.full_name; // Arabic name
-
-//             document.getElementById('user_name').value = data.user_name; // Arabic name
-//             document.getElementById('email').value = data.email; // English name
-//             document.getElementById('phone').value = data.phone; // Arabic name
-//             document.getElementById('address').value = data.address; // Arabic name
-//  document.getElementById('role').value      = data.role;
-//  if (data.image) {
-//                 document.getElementById('current_program_img').src = `/img/manager/${data.image}`;
-//                 document.getElementById('current_program_img').style.display = 'block';
-//             } else {
-//                 document.getElementById('current_program_img').style.display = 'none';
-//             }
-//             // Update the radio button for type status
-
-//             // Assign the ID in a hidden field
-//             // document.querySelector('input[name="id"]').value = id;
-
-//             // Show the popup
-//             togglePopuoo();
-//         })
-//         .catch(error => console.error('Error:', error));
-// }
-
-// function updateBank(event) {
-//     event.preventDefault(); // منع إعادة تحميل الصفحة
-
-//     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-//    const formData = new FormData();
-//     formData.append('full_name', document.getElementById('full_name').value);
-//     formData.append('user_name', document.getElementById('user_name').value);
-//     formData.append('email', document.getElementById('email').value);
-//     formData.append('phone', document.getElementById('phone').value);
-//     formData.append('role', document.getElementById('role').value);
-//     formData.append('address', document.getElementById('address').value);
-
-
-//     let managerid = document.querySelector('input[name="id"]');
-// let manager_id = managerid ? managerid.value : null;
-// console.log("Program ID:", manager_id);
-
-//     console.log("Program ID:", manager_id);
-
-//     const newImage = document.getElementById('image').files[0];
-//     if (newImage) {
-//         formData.append('image', newImage);
-//     }
-
-//     let url = `/dms_user/update/${manager_id}`;
-//     console.log("URL:", url);
-//     fetch(url, {
-//         method: 'PUT',
-//         headers: {
-//             'X-CSRF-TOKEN': csrfToken,
-//             'Accept': 'application/json' // هذا مهم لتجنب HTML response
-
-//         },
-//         body: formData
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         if (data.errors) {
-//             Object.keys(data.errors).forEach(key => {
-//                 let input = document.getElementById(key);
-//                 if (input) {
-//                     let errorSpan = input.nextElementSibling;
-//                     if (!errorSpan || !errorSpan.classList.contains('invalid-feedback')) {
-//                         errorSpan = document.createElement('span');
-//                         errorSpan.classList.add('invalid-feedback');
-//                         input.parentNode.appendChild(errorSpan);
-//                     }
-//                     errorSpan.innerHTML = `<strong style="color:red;">${data.errors[key][0]}</strong>`;
-//                 }
-//             });
-//         } else {
-//             let messageDiv = document.createElement('div');
-//             messageDiv.classList.add('alert', 'alert-info');
-//             messageDiv.setAttribute('role', 'alert');
-//             messageDiv.style.textAlign = 'end';
-//             messageDiv.style.fontSize = '20px';
-//             messageDiv.innerHTML = data.message; // عرض رسالة النجاح
-
-//             // إضافة الرسالة إلى #page-wrapper
-//             let pageWrapper = document.getElementById('page-wrapper');
-//             if (pageWrapper) {
-//                 pageWrapper.prepend(messageDiv); // إضافة الرسالة في بداية #page-wrapper
-//             }
-//             togglePopuoo();
-//             setTimeout(() => {
-//     location.reload(); // تحديث الصفحة
-// }, 1000);
-
-//         }
-//     })
-//     .catch(error => console.error('Error:', error));
-// }
-
-    </script>
 
 @endsection

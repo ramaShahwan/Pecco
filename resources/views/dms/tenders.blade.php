@@ -134,6 +134,7 @@
                                             <th>حالة الزيارة</th>
                                             <th>المنظمة</th>
                                             <th>حالة المناقصة</th>
+                                            <th>المستخدم الذي قام بانشاء الملف    </th>
 
                                             <th>الأحداث</th>
 
@@ -150,6 +151,8 @@
                                             <th>حالة الزيارة</th>
                                             <th>المنظمة</th>
                                             <th>حالة المناقصة</th>
+                                            <th>المستخدم الذي قام بانشاء الملف    </th>
+
 
                                             <th>الأحداث</th>
 
@@ -166,7 +169,7 @@
                                             <td>{{$call->visit_status}}  </td>
                                             <td>{{$call->organization}}  </td>
                                             <td>{{$call->tender_status}}  </td>
-
+                                            <td>{{$call->User->full_name}}</td>
                                             <td>
                                         <button  style="border: none;background: none;" onclick="showEditPopup({{ $call->id }})"><span class="las la-edit" style="font-size: 30px; color: #3f4046;"></span></button>
                                         <button  style="border: none;background: none;" onclick="showEditPopupe({{ $call->id }})"><span class="las la-eye" style="font-size: 30px; color:rgb(12, 222, 156);"></span></button>

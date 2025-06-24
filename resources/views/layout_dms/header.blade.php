@@ -362,7 +362,7 @@
                                 </a> -->
                                 <div class="dropdown-divider"></div>
                                  <!-- @if(Auth::guard('admin')->check() || Auth::guard('manager')->check()) -->
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-toggle="modal" data-target="#logoutModal"href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('user_logout-form').submit();" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-toggle="modal" data-target="#logoutModal"href=""  document.getElementById('user_logout-form').submit();" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -401,13 +401,13 @@
                          <!-- كلمة المرور الجديدة -->
                     <div class="input-groupp input-groupp-icon" style="margin-top: 10px;">
                      <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
-                    <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="password" id="password" class="@error('password') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
+                    <input type="password" placeholder=" كلمة السر و يجب ان تحتوي على احرف كبيرة وصغيرة وارقام و محارف " name="password" id="passwordd" class="@error('password') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
                         <!-- @error('password')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                           </span>
                         @enderror -->
-                     <div class="toggle-password" onclick="togglePassword('password', this)">
+                     <div class="toggle-password" onclick="togglePassworde('passwordd', this)">
                       <i class="fa-solid fa-eye"></i>
                     </div>
                      <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
@@ -415,14 +415,14 @@
 
         <!-- تأكيد كلمة المرور -->
         <div class="input-groupp input-groupp-icon">
-        <input type="password" placeholder=" تأكيد كلمة السر " name="password_confirmation" id="password_confirmation" class="@error('password_confirmation') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
+        <input type="password" placeholder=" تأكيد كلمة السر " name="password_confirmation" id="password_confirmationd" class="@error('password_confirmation') is-invalid @enderror" style="    font-family: sans-serif !important;"/>
         <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
             <!-- @error('password_confirmation')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror -->
-            <div class="toggle-password" onclick="togglePassword('password_confirmation', this)">
+            <div class="toggle-password" onclick="togglePassworde('password_confirmationd', this)">
         <i class="fa-solid fa-eye"></i>
     </div>
             <span class="invalid-feedback" style="display: block;font-family: sans-serif;"></span>
@@ -511,7 +511,7 @@
 });
 </script>
 <script>
-function togglePassword(inputId, iconElement) {
+function togglePassworde(inputId, iconElement) {
     var inputField = document.getElementById(inputId);
     var icon = iconElement.querySelector("i");
 
