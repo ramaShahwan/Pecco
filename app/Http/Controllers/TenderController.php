@@ -112,7 +112,9 @@ class TenderController extends Controller
        if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
             $data = Tender::where('id',$id)
             ->first();
-             return view('tender.showtender',compact('data'));
+            //  return view('tender.showtender',compact('data'));
+        return response()->json($data);
+
             }else{
                 return redirect()->route('home');
             }
@@ -213,6 +215,8 @@ class TenderController extends Controller
     public function destroy( $id)
     {
         Tender::findOrFail($id)->delete();
-        return redirect()->back();
+        // return redirect()->back();
+               return response()->json(['message' => 'تم الحذف بنجاح'], 200);
+
     }
 }

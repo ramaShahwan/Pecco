@@ -545,12 +545,12 @@ Route::post('trainee/update_validate/{ques_id}', [BimarAssessmentTraineeControll
 
 //new section
 Route::prefix('dms_user')
-      ->name('dms_user.')                
+      ->name('dms_user.')
       ->controller(UserController::class)
       ->group(function () {
 
-    Route::get  ('/index',           'index'          )->name('index');   
-    Route::post ('/store',           'store'          )->name('store');  
+    Route::get  ('/index',           'index'          )->name('index');
+    Route::post ('/store',           'store'          )->name('store');
     Route::get  ('/edit/{id}',       'edit'           )->name('edit');
     Route::put  ('/update/{id}',     'update'         )->name('update');
     Route::post ('/destroy/{id}',         'destroy'        )->name('destroy');
@@ -569,30 +569,30 @@ Route::prefix('dms_tender')->name('dms_tender.') ->controller(TenderController::
     Route::post('/destroy/{id}', 'destroy')->name('destroy');
 });
 
-Route::prefix('dms_document')->controller(DocumentController::class)->group(function(){
-    Route::get('/index', 'index');
-    Route::post('/store', 'store');
-    Route::get('/edit/{id}', 'edit');
-    Route::put('/update/{id}', 'update');
-    Route::post('/destroy', 'destroy');
+Route::prefix('dms_document')->name('dms_document.')->controller(DocumentController::class)->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::post('/destroy/{id}', 'destroy')->name('destroy');
     Route::get('/search', 'search');
 
 });
 
-Route::prefix('dms_cv')->controller(CVController::class)->group(function(){
-    Route::get('/index', 'index');
-    Route::post('/store', 'store');
-    Route::get('/edit/{id}', 'edit');
-    Route::put('/update/{id}', 'update');
-    Route::post('/destroy', 'destroy');
+Route::prefix('dms_cv')->name('dms_cv.')->controller(CVController::class)->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::post('/destroy/{id}', 'destroy')->name('destroy');
 });
 
-Route::prefix('dms_material')->controller(MaterialController::class)->group(function(){
-    Route::get('/index', 'index');
-    Route::post('/store', 'store');
-    Route::get('/edit/{id}', 'edit');
-    Route::put('/update/{id}', 'update');
-    Route::post('/destroy', 'destroy');
+Route::prefix('dms_material')->name('dms_material.')->controller(MaterialController::class)->group(function(){
+    Route::get('/index', 'index')->name('index');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::post('/destroy/{id}', 'destroy')->name('destroy');
 
 });
 require __DIR__.'/auth.php';

@@ -16,7 +16,7 @@ class CvController extends Controller
     {
         if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {
         $data = Cv::all();
-        return view('admin.cv',compact('data'));
+        return view('dms.cvs',compact('data'));
     }else{
         return redirect()->route('home');
     }
@@ -42,13 +42,13 @@ class CvController extends Controller
             'filepath' => 'file path',
             'specialization' => 'specialization',
         ];
- 
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'filename' =>  'string',
             'filepath' => 'required|string',
             'specialization' => 'required|string',
-        
+
         ]);
 
         $validator->setAttributeNames($customNames);
@@ -101,7 +101,7 @@ class CvController extends Controller
     public function update(Request $request, $id)
     {
         if (Auth::guard('admin')->check()  || Auth::guard('manager')->check()) {
- 
+
 
         try {
             $customNames = [
@@ -116,7 +116,7 @@ class CvController extends Controller
             'filename' =>  'string',
             'filepath' => 'required|string',
             'specialization' => 'required|string',
-        
+
         ]);
 
             $validator->setAttributeNames($customNames);
@@ -135,7 +135,9 @@ class CvController extends Controller
         $data->user_id = $user->id;
          $data->update();
 
-         return back()->with(['message'=>'تم التعديل']);
+        //  return back()->with(['message'=>'تم التعديل']);
+        return response()->json(['message' => 'تم التعديل بنجاح'], 200);
+
               } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -150,7 +152,9 @@ class CvController extends Controller
     public function destroy( $id)
     {
            Cv::findOrFail($id)->delete();
-       return redirect()->back();
+    //    return redirect()->back();
+        return response()->json(['message' => 'تم الحذف بنجاح'], 200);
+
     }
 
 
