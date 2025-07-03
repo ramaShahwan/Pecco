@@ -154,6 +154,21 @@
     text-align: right;
     padding-right: 4.4em;
 }
+.badge {
+    background: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+.dropdown-content {
+    background: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 999;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+}
  </style>
       @if(session('user_data'))
     @php
@@ -213,14 +228,12 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                            <!-- <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    text-align: right;
                                  direction: rtl;">
                                 <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
-                            <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
@@ -260,7 +273,15 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
+                            </div> -->
+                            <div class="notification-dropdown">
+    <button onclick="toggleNotifications()">
+        🔔 <span id="unread-count" class="badge">0</span>
+    </button>
+    <div id="notifications-list" class="dropdown-content" style="display: none;">
+        <ul id="notifications"></ul>
+    </div>
+</div>
                         </li>
 
                         <!-- Nav Item - Messages -->
@@ -438,6 +459,40 @@
 
             </div>
         </div>
+        <script>
+function toggleNotifications() {
+    const list = document.getElementById('notifications-list');
+    list.style.display = list.style.display === 'none' ? 'block' : 'none';
+
+    fetch('/notifications')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('unread-count').innerText = data.unread_count;
+
+            const listEl = document.getElementById('notifications');
+            listEl.innerHTML = '';
+            data.notifications.forEach(notif => {
+                const li = document.createElement('li');
+                li.innerText = notif.title + ' - ' + notif.body;
+                listEl.appendChild(li);
+            });
+        });
+
+    fetch('/notifications/mark-as-read', {method: 'POST', headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'}})
+        .then(() => {
+            document.getElementById('unread-count').innerText = '0';
+        });
+}
+
+// تشغيل عند تحميل الصفحة:
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('/notifications')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('unread-count').innerText = data.unread_count;
+        });
+});
+</script>
 
                    <script>
     // document.addEventListener('DOMContentLoaded', function() {
