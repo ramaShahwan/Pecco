@@ -30,10 +30,10 @@ h4{
     }
     .containerr{
         padding: 0;
-        box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        box-shadow: inset 0px 1px 19px 1px #23a794;
     }
     .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 20px 0px;
         }
         .h44{
@@ -234,7 +234,7 @@ h4{
                           </div>
                         <div class="input-groupp input-groupp-icon">
                         <select name="bimar_training_type_id" id="bimar_training_type_id"  class="@error('bimar_training_type_id') is-invalid @enderror">
-                         <option>اختر  نوع التدريب</option>
+                         <option value="" disabled selected>اختر  نوع التدريب</option>
                              @foreach ($types as $type)
                                <option value="{{ $type->id }}">{{ $type->tr_type_name_ar }}</option>
                              @endforeach
@@ -258,7 +258,7 @@ h4{
                         </div>
                       </div>
                       <div class="roww">
-                       <input type="submit" value="حفظ" class="bttn" style="border: 2px solid rgb(109 177 188);">
+                       <input type="submit" value="حفظ" class="bttn" style="border: 2px solid #23a794;">
                       </div>
                     </form>
               </div>

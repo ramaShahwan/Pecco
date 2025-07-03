@@ -31,10 +31,10 @@ h4{
     .containerr{
         max-width: 100%;
         padding: 0;
-        box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        box-shadow: inset 0px 1px 19px 1px #23a794;
     }
     .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 20px 0px;
         }
         .h44{
@@ -139,7 +139,7 @@ legend {
     display: inline-block;">
        <h4> الجنس    </h4>
                         <select name="bimar_users_gender_id" class="@error('bimar_users_gender_id') is-invalid @enderror">
-                         <option>اختر الجنس  </option>
+
                          @foreach ($genders as $gender)
 
 
@@ -340,7 +340,7 @@ legend {
     display: inline-block;"><h4>الدرجة العلمية    </h4>
 
                         <select name="bimar_users_academic_degree_id" class="@error('bimar_users_academic_degree_id') is-invalid @enderror">
-                         <option>اختر الدرجة العلمية   </option>
+                       
                          @foreach ($degrees as $degree)
                          <option value="{{ $degree->id}}" {{ $degree->id == $data->bimar_users_academic_degree_id ? 'selected' : '' }}>
                             {{ $degree->tr_users_degree_name_ar }}

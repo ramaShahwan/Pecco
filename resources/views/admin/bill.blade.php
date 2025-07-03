@@ -47,10 +47,10 @@
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-        /* border-right: 3px solid rgb(109 177 188); */
-    /* border-left: 2px solid rgb(109 177 188); */
-    /* border-bottom: 1px solid rgb(109 177 188); */
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        /* border-right: 3px solid #23a794; */
+    /* border-left: 2px solid #23a794; */
+    /* border-bottom: 1px solid #23a794; */
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -141,10 +141,10 @@
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-        /* border-right: 3px solid rgb(109 177 188); */
-    /* border-left: 2px solid rgb(109 177 188); */
-    /* border-bottom: 1px solid rgb(109 177 188); */
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        /* border-right: 3px solid #23a794; */
+    /* border-left: 2px solid #23a794; */
+    /* border-bottom: 1px solid #23a794; */
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -453,10 +453,10 @@ body{
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-        /* border-right: 3px solid rgb(109 177 188); */
-    /* border-left: 2px solid rgb(109 177 188); */
-    /* border-bottom: 1px solid rgb(109 177 188); */
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        /* border-right: 3px solid #23a794; */
+    /* border-left: 2px solid #23a794; */
+    /* border-bottom: 1px solid #23a794; */
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -498,22 +498,22 @@ body{
     border:none;
 }
 /* .table-bordered > tbody > tr:hover{
-    background: rgb(109 177 188);
+    background: #23a794;
     color: white;
 } */
 .ttr{
     border-bottom: 1px solid #bdd7d3;
 }
 .ttr:hover{
-    background: rgb(109 177 188) !important;
+    background: #23a794c2 !important;
     color: #101010;
-    box-shadow: 0px 0px 7px 0px rgb(109 177 188);
+    box-shadow: 0px 0px 7px 0px #23a794;
 }
 .table-striped > tbody > tr:nth-child(odd) > td{
     background:none;
 }
 .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 10px 0px;
         }
         .h44{
@@ -521,12 +521,12 @@ body{
             color: white;
         }
         .yuu{
-            border: 1px solid rgb(109 177 188);
+            border: 1px solid #23a794;
     padding: 3px;
     border-radius: 50px;
     color: white;
     font-weight: 700;
-    background: rgb(109 177 188);
+    background: #23a794;
     width: 83px;
     margin: 2px
         }
@@ -541,8 +541,8 @@ body{
 
         <div class="row" style="    margin: 80px 30px; direction: rtl;">
             <div class="col-lg-12">
-                <div class="card" style="    border: 1px solid rgb(109 177 188);
-    box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                <div class="card" style="    border: 1px solid #23a794;
+    box-shadow: 1px 1px 7px 0px #23a794;">
                         <div class="card-header" style="text-align: start;font-size: 20px;display: flex;justify-content: space-between;align-items: center;background: #bdd7d3;
     color: white;">
                             <h3><i class="fa-solid fa-file-invoice"></i> جميع الايصالات</h3>
@@ -550,7 +550,7 @@ body{
                         </div>
                     <div class="card-block">
                         <table class="table table-bordered table-striped table-condensed">
-                            <thead style="text-align: center;background: rgb(109 177 188);
+                            <thead style="text-align: center;background: #23a794;
     color: white;">
                                 <tr>
                                 <th>#</th>
@@ -774,7 +774,7 @@ body{
                       <div class="roww">
                         <div class="input-groupp">
                             <select name="bimar_payment_status_id" id="bimar_payment_status_id" class="@error('bimar_payment_status_id') is-invalid @enderror">
-                         <option>اختر حالة الوصل</option>
+                         <option value="" disabled selected>اختر حالة الوصل</option>
 
                          @foreach ($statuses as $statuse)
                                <option value="{{ $statuse->id }}">{{ $statuse->tr_pay_status_name_ar }}</option>
@@ -801,7 +801,7 @@ body{
                         </div>
                         <div class="input-groupp">
                             <select name="bimar_bank_id" id="bimar_bank_id" class="@error('bimar_bank_id') is-invalid @enderror">
-                         <option>اختر البنك </option>
+                         <option value="" disabled selected>اختر البنك </option>
 
                          @foreach ($banks as $bank)
                                <option value="{{ $bank->id }}">{{ $bank->tr_bank_name_ar }}</option>

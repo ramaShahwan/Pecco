@@ -31,10 +31,10 @@ h4{
     .containerr{
         max-width: 100%;
         padding: 0;
-        box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        box-shadow: inset 0px 1px 19px 1px #23a794;
     }
     .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 20px 0px;
         }
         .h44{
@@ -126,7 +126,7 @@ legend {
                         <div class="input-groupp" style="width: 140px;
     display: inline-block;    margin-right: 74px;">
                         <select name="bimar_users_gender_id" class="@error('bimar_users_gender_id') is-invalid @enderror">
-                         <option>اختر الجنس  </option>
+                         <option value="" disabled selected>اختر الجنس  </option>
                          @foreach ($genders as $gender)
 
 
@@ -143,7 +143,7 @@ legend {
                             <div class="input-groupp" style="width: 140px;
     display: inline-block;">
                         <select name="bimar_role_id" class="@error('bimar_role_id') is-invalid @enderror">
-                         <option>اختر الدور   </option>
+                         <option value="" disabled selected>اختر الدور   </option>
                          @foreach ($roles as $role)
 
 
@@ -161,7 +161,7 @@ legend {
                             <div class="input-groupp" style="width: 150px;
     display: inline-block;">
                         <select name="bimar_users_status_id" class="@error('bimar_users_status_id') is-invalid @enderror">
-                         <option>اختر حالة المستخدم  </option>
+                         <option value="" disabled selected>اختر حالة المستخدم  </option>
                          @foreach ($statuses as $status)
 
 
@@ -365,7 +365,7 @@ legend {
                         <div class="input-groupp" style="width: 221px;
     display: inline-block;">
                         <select name="bimar_users_academic_degree_id" class="@error('bimar_users_academic_degree_id') is-invalid @enderror">
-                         <option>اختر الدرجة العلمية   </option>
+                         <option value="" disabled selected>اختر الدرجة العلمية   </option>
                          @foreach ($degrees as $degree)
 
 

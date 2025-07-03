@@ -277,15 +277,15 @@ body{
     border-bottom: 1px solid #bdd7d3;
 }
 .ttr:hover{
-    background: rgb(109 177 188) !important;
+    background: #23a794c2 !important;
     color: #101010;
-    box-shadow: 0px 0px 7px 0px rgb(109 177 188);
+    box-shadow: 0px 0px 7px 0px #23a794;
 }
 .table-striped > tbody > tr:nth-child(odd) > td{
     background:none;
 }
 .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 10px 0px;
         }
         .h44{
@@ -324,9 +324,9 @@ body{
                         padding: 10px;
                         display: flex;background: #bdd7d3;
                         border-radius: 10px;
-                        margin-bottom: 20px;box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                        margin-bottom: 20px;box-shadow: 1px 1px 7px 0px #23a794;">
                         <select name="bimar_training_year_id" style="    margin-left: 10px;    width: 200px;">
-                                <option value="">اختر السنة</option>
+                                <option value="" disabled selected>اختر السنة</option>
                                 @foreach($years as $year)
                                     <option value="{{ $year->id }}">{{ $year->tr_year }}</option>
                                 @endforeach
@@ -351,8 +351,8 @@ body{
                             <button type="submit" class="btn btn-outline-success bbt">فلترة</button>
                         </form>
             <div class="col-lg-12">
-                <div class="card" style="border: 1px solid rgb(109 177 188);
-    box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                <div class="card" style="border: 1px solid #23a794;
+    box-shadow: 1px 1px 7px 0px #23a794;">
                         <div class="card-header" style="text-align: start;font-size: 20px;display: flex;justify-content: space-between;align-items: center; background: #bdd7d3;
     color: white;">
                             <h3> تسجيل على دورة جديدة</h3>
@@ -368,7 +368,7 @@ body{
 
 
                         <table class="table table-bordered table-striped table-condensed">
-                            <thead style="text-align: center; background: rgb(109 177 188);
+                            <thead style="text-align: center; background: #23a794;
     color: white;">
                                 <tr>
                                 <th>#</th>

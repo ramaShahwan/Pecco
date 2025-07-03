@@ -15,7 +15,6 @@ class Bimar_Assessment extends Model
 
     protected $table = 'bimar_assessments';
 
-
     public function Bimar_Enrol_Class()
     {
         return $this->belongsTo(Bimar_Enrol_Class::class, 'bimar_enrol_class_id');

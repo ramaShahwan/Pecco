@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tender;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -12,6 +13,27 @@ class TenderController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+public function getNotifications()
+{
+        $user=Auth::guard('admin')->user()
+        ?? Auth::guard('manager')->user();
+
+
+    $notifications = Notification::where('user_id',$user->id)
+        ->latest()
+        ->take(10)
+        ->get();
+
+    $unreadCount = Notification::where('user_id', $user->id)
+        ->where('is_read', false)
+        ->count();
+        return response()->json([
+        'notifications' => $notifications,
+        'unread_count' => $unreadCount
+    ]);
+}
+
     public function index()
     {
         if (Auth::guard('admin')->check() || Auth::guard('manager')->check()) {

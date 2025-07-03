@@ -47,7 +47,7 @@ h4{
     color: #ff0404;
 }
 .gf{
-            background: rgb(109 177 188);
+            background: #23a794;
             padding: 10px 0px;
         }
         .h44{
@@ -67,16 +67,16 @@ h4{
     border-bottom: 1px solid #bdd7d3;
 }
 .ttr:hover{
-    background: rgb(109 177 188) !important;
+    background: #23a794c2 !important;
     color: #101010;
-    box-shadow: 0px 0px 7px 0px rgb(109 177 188);
+    box-shadow: 0px 0px 7px 0px #23a794;
 }
 .table-striped > tbody > tr:nth-child(odd) > td{
     background:none;
 }
 .containerr{
 padding: 0;
-box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+box-shadow: inset 0px 1px 19px 1px #23a794;
 }
 .popup .overlay{
             position: fixed;
@@ -107,10 +107,10 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
     text-align: center;
     /* padding: 20px; */
     box-sizing: border-box;
-        /* border-right: 3px solid rgb(109 177 188); */
-    /* border-left: 2px solid rgb(109 177 188); */
-    /* border-bottom: 1px solid rgb(109 177 188); */
-    box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
+        /* border-right: 3px solid #23a794; */
+    /* border-left: 2px solid #23a794; */
+    /* border-bottom: 1px solid #23a794; */
+    box-shadow: inset 0px 1px 19px 1px #23a794;
 
         }
         .popup .close-btn{
@@ -145,8 +145,8 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
 @endif
 <div class="row" style="    margin: 80px 30px; direction: rtl;background: white; ">
             <div class="col-lg-12">
-                <div class="card" style="    border: 1px solid rgb(109 177 188);
-    box-shadow: 1px 1px 7px 0px rgb(109 177 188);">
+                <div class="card" style="    border: 1px solid #23a794;
+    box-shadow: 1px 1px 7px 0px #23a794;">
                         <div class="card-header" style="text-align: start;font-size: 20px;display: flex;justify-content: space-between;align-items: center;background: #bdd7d3;
     color: white;">
                             <h3><i class="fa-solid fa-users"></i> مدربين</h3>
@@ -154,7 +154,7 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
                         </div>
                     <div class="card-block">
                         <table class="table table-bordered table-striped table-condensed">
-                        <thead style="text-align: center;background: rgb(109 177 188);
+                        <thead style="text-align: center;background: #23a794;
     color: white;">
                                 <tr>
                                 <th style="text-align: center;">#</th>
@@ -272,7 +272,7 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
 
 </div>
                       <div class="roww">
-                       <input type="submit" value="حفظ" class="bttn" style="border:1px solid rgb(109 177 188);">
+                       <input type="submit" value="حفظ" class="bttn" style="border:1px solid #23a794;">
                       </div>
                     </form>
               </div> -->
@@ -304,7 +304,7 @@ box-shadow: inset 0px 1px 19px 1px rgb(109 177 188);
                         </div>
                         <div class="input-groupp" >
                          <select name="bimar_user_id" id="bimar_user_id" class="@error('bimar_user_id') is-invalid @enderror">
-                         <option>  اختر المدرب  </option>
+                         <option value="" disabled selected>  اختر المدرب  </option>
                          @foreach ($users as $user)
                                <option value="{{ $user->id }}">{{ $user->tr_user_fname_ar }}</option>
                              @endforeach
