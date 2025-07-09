@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('materials', function (Blueprint $table) {
-           $table->id();
+       Schema::create('documents', function (Blueprint $table) {
+            $table->id();
              $table->string('name');
-             $table->string('url');
+             $table->string('filename');
+             $table->longText('filepath');
+            $table->timestamp('document_date')->nullable();
             $table->timestamps();
 
-            $table->unsignedBigInteger('user_id');
+             $table->unsignedBigInteger('user_id');
+
 
              if (Schema::hasTable('users')) {
                 $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
@@ -25,12 +28,11 @@ return new class extends Migration
         });
     }
 
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('documents');
     }
 };

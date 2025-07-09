@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-       public function up(): void
+    public function up(): void
     {
         Schema::create('tenders', function (Blueprint $table) {
 
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('reference_number')->nullable();
             $table->string('check_value')->nullable();
             $table->string('check_status')->nullable();
-            $table->string('url')->nullable();
+            $table->longText('url')->nullable();
             $table->string('address')->nullable();
 
             $table->unsignedBigInteger('user_id');
@@ -38,6 +38,7 @@ return new class extends Migration
              $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */

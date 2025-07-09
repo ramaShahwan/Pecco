@@ -9,29 +9,30 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-public function up(): void
+    public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
-            $table->id();
+     Schema::create('cvs', function (Blueprint $table) {
+             $table->id();
              $table->string('name');
+             $table->string('specialization');
+
              $table->string('filename');
-             $table->string('filepath');
-            $table->timestamp('document_date')->nullable();
+             $table->longText('filepath');
             $table->timestamps();
 
-             $table->unsignedBigInteger('user_id');
-
+            $table->unsignedBigInteger('user_id');
 
              if (Schema::hasTable('users')) {
                 $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             }
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('cvs');
     }
 };
