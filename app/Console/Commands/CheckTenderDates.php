@@ -93,7 +93,7 @@ public function handle()
         }
 
         if ($tender->visit_date && $tender->visit_date >= $today && $tender->visit_date <= $targetDate) {
-            $type = 'موعد الزيارة';
+            $type = ' الزيارة';
             $time = $tender->visit_date->format('Y-m-d H:i');
         }
 
