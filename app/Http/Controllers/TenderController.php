@@ -16,23 +16,28 @@ class TenderController extends Controller
 
 public function getNotifications()
 {
-        $user=Auth::guard('admin')->user()
+    $user = Auth::guard('admin')->user()
         ?? Auth::guard('manager')->user();
 
+    if (!$user) {
+        return response()->json(['notifications' => [], 'unread_count' => 0]);
+    }
 
-    $notifications = Notification::where('user_id',$user->id)
+    $notifications = \App\Models\Notification::where('user_id', $user->id)
         ->latest()
         ->take(10)
         ->get();
 
-    $unreadCount = Notification::where('user_id', $user->id)
+    $unreadCount = \App\Models\Notification::where('user_id', $user->id)
         ->where('is_read', false)
         ->count();
-        return response()->json([
+
+    return response()->json([
         'notifications' => $notifications,
         'unread_count' => $unreadCount
     ]);
 }
+
 
     public function index()
     {

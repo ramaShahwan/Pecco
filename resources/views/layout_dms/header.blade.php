@@ -274,7 +274,15 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div> -->
-                            <div class="notification-dropdown">
+                            <!-- <div class="notification-dropdown">
+    <button onclick="toggleNotifications()">
+        🔔 <span id="unread-count" class="badge">0</span>
+    </button>
+    <div id="notifications-list" class="dropdown-content" style="display: none;">
+        <ul id="notifications"></ul>
+    </div>
+</div> -->
+<div class="notification-dropdown">
     <button onclick="toggleNotifications()">
         🔔 <span id="unread-count" class="badge">0</span>
     </button>
@@ -459,7 +467,7 @@
 
             </div>
         </div>
-        <script>
+        <!-- <script>
 function toggleNotifications() {
     const list = document.getElementById('notifications-list');
     list.style.display = list.style.display === 'none' ? 'block' : 'none';
@@ -488,6 +496,55 @@ function toggleNotifications() {
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/notifications')
         .then(response => response.json())
+        .then(data => {
+            document.getElementById('unread-count').innerText = data.unread_count;
+        });
+});
+</script> -->
+<script>
+function toggleNotifications() {
+    const list = document.getElementById('notifications-list');
+    list.style.display = list.style.display === 'none' ? 'block' : 'none';
+
+    fetch('/notifications')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch notifications');
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('unread-count').innerText = data.unread_count;
+
+            const listEl = document.getElementById('notifications');
+            listEl.innerHTML = '';
+            data.notifications.forEach(notif => {
+                const li = document.createElement('li');
+                li.innerText = notif.title + ' - ' + notif.body;
+                listEl.appendChild(li);
+            });
+
+            // Mark as read
+            return fetch('/notifications/mark-as-read', {
+                method: 'POST',
+                headers: {
+                    // 'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Content-Type': 'application/json',
+                }
+            });
+        })
+        .then(() => {
+            document.getElementById('unread-count').innerText = '0';
+        })
+        .catch(error => console.error('Notification Error:', error));
+}
+
+// جلب عدد الإشعارات عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('/notifications')
+        .then(response => {
+            if (!response.ok) throw new Error('Fetch error');
+            return response.json();
+        })
         .then(data => {
             document.getElementById('unread-count').innerText = data.unread_count;
         });

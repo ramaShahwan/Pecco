@@ -598,10 +598,21 @@ Route::prefix('dms_material')->name('dms_material.')->controller(MaterialControl
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/notifications', [TenderController::class, 'getNotifications'])->middleware('auth');
-Route::post('/notifications/mark-as-read', function () {
-    \App\Models\Notification::where('user_id', Auth::id())->where('is_read', false)->update(['is_read' => true]);
-    return response()->json(['success' => true]);
+// Route::get('/notifications', [TenderController::class, 'getNotifications'])->middleware('auth');
+// Route::post('/notifications/mark-as-read', function () {
+//     \App\Models\Notification::where('user_id', Auth::id())->where('is_read', false)->update(['is_read' => true]);
+//     return response()->json(['success' => true]);
+// });
+Route::middleware(['auth:admin,manager'])->group(function () {
+    Route::get('/notifications', [TenderController::class, 'getNotifications']);
+
+    Route::post('/notifications/mark-as-read', function () {
+        \App\Models\Notification::where('user_id', Auth::id())
+            ->where('is_read', false)
+            ->update(['is_read' => true]);
+
+        return response()->json(['success' => true]);
+    });
 });
 
 require __DIR__.'/auth.php';
