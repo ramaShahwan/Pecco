@@ -156,7 +156,7 @@
                                         <tr>
                                             <td>{{$call->name}}  </td>
                                             <td>{{$call->filename}}  </td>
-                                            <td>{{$call->filepath}}  </td>
+                                            <td><a href="{{$call->filepath}} " target="_blank"> مسار الملف</a> </td>
                                             <td>{{$call->document_date}}</td>
                                             <td>{{$call->User->full_name}}</td>
 

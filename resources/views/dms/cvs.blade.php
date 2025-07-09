@@ -157,7 +157,7 @@
                                         <tr>
                                             <td>{{$call->name}}  </td>
                                             <td>{{$call->filename}}  </td>
-                                            <td>{{$call->filepath}}  </td>
+                                            <td><a href="{{$call->filepath}}" target="_blank"> مسار المستند</a>  </td>
                                             <td>{{$call->specialization}}</td>
                                             <td>{{$call->User->full_name}}</td>
 

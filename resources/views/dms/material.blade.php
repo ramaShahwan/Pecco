@@ -157,7 +157,7 @@
                                         <tr>
                                             <td>{{$call->name}}  </td>
 
-                                            <td>{{$call->url}}</td>
+                                            <td><a href="{{$call->url}}" target="_blank">مسار الملف</a></td>
                                             <td>{{$call->User->full_name}}</td>
 
 

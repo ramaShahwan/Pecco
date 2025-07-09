@@ -128,6 +128,7 @@
                                         <tr>
                                             <th>الأسم</th>
                                             <th>ملاحظات</th>
+                                            <th>مسار الملف</th>
                                             <th>تاريخ بداية المناقصة </th>
                                             <th>تاريخ نهاية المناقصة</th>
                                             <th>تاريخ الزيارة</th>
@@ -145,6 +146,7 @@
                                         <tr>
                                             <th>الأسم</th>
                                             <th>ملاحظات</th>
+                                            <th>مسار الملف</th>
                                             <th>تاريخ بداية المناقصة </th>
                                             <th>تاريخ نهاية المناقصة</th>
                                             <th>تاريخ الزيارة</th>
@@ -163,6 +165,7 @@
                                         <tr>
                                             <td>{{$call->project_name}}  </td>
                                             <td>{{$call->note}}  </td>
+                                            <td><a href="{{$call->url}}" target="_blank">مسار الملف</a></td>
                                             <td>{{$call->start_date}}  </td>
                                             <td>{{$call->end_date}}</td>
                                             <td>{{$call->visit_date}}  </td>
