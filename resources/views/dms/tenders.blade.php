@@ -166,9 +166,9 @@
                                             <td>{{$call->project_name}}  </td>
                                             <td>{{$call->note}}  </td>
                                             <td><a href="{{$call->url}}" target="_blank">مسار الملف</a></td>
-                                            <td>{{$call->start_date}}  </td>
-                                            <td>{{$call->end_date}}</td>
-                                            <td>{{$call->visit_date}}  </td>
+                                          <td>{{ \Carbon\Carbon::parse($call->start_date)->format('Y-m-d') }}</td>
+<td>{{ \Carbon\Carbon::parse($call->end_date)->format('Y-m-d') }}</td>
+<td>{{ \Carbon\Carbon::parse($call->visit_date)->format('Y-m-d') }}</td>
                                             <td>{{$call->visit_status}}  </td>
                                             <td>{{$call->organization}}  </td>
                                             <td>{{$call->tender_status}}  </td>
@@ -256,11 +256,12 @@
                         <!-- <h4> حالة الزيارة </h4> -->
                         <div class="input-groupp" style="display: flex;">
                            <select name="visit_status" id="visit_status" class="@error('visit_status') is-invalid @enderror" style="width: 400px;">
-                         <option value=" ">اختر حالة الزيارة   </option>
+                         <option value="" disabled selected>اختر حالة الزيارة   </option>
 
                            <option value="تمت الزيارة">تمت الزيارة  </option>
                         <option value="لم تتم الزيارة">لم تتم الزيارة</option>
                         <option value="لا يوجد زيارة لها">لا يوجد زيارة لها  </option>
+                         <option value="جاري التقديم">جاري التقديم   </option>
 
 
                         </select>
@@ -270,7 +271,7 @@
 
                           <div class="input-groupp" style="display: flex;">
                            <select name="tender_status" id="tender_status" class="@error('tender_status') is-invalid @enderror" style="width: 400px;">
-                         <option value=" ">اختر حالة المناقصة   </option>
+                         <option value="" disabled selected>اختر حالة المناقصة   </option>
                            <option value=" جاري التقديم">جاري التقديم   </option>
 
                            <option value=" مقبولة">مقبولة   </option>
@@ -303,7 +304,7 @@
                         </div>
                              <div class="input-groupp" style="display: flex;">
                            <select name="check_status" id="check_status" class="@error('check_status') is-invalid @enderror" style="width: 400px;">
-                         <option value=" ">اختر حالة الشيك   </option>
+                         <option value="" disabled selected>اختر حالة الشيك   </option>
 
                            <option value=" مقبول">مقبول   </option>
                         <option value="  مرفوض">مرفوض  </option>
