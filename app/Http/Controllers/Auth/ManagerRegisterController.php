@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 use App\Models\User;
 class ManagerRegisterController  extends Controller
 {
@@ -44,7 +45,7 @@ public function login(Request $request)
     if (!Auth::guard($guard)->attempt($credentials)) {
         return back()->withErrors(['password' => 'كلمة المرور غير صحيحة.']);
     }
-
+   Artisan::call('check:tender-dates');
     $user = auth()->guard($guard)->user();
 
     session(['user_data' => $user]);

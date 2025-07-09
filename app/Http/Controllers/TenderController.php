@@ -6,6 +6,7 @@ use App\Models\Tender;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Validator;
 
 class TenderController extends Controller
@@ -124,7 +125,7 @@ public function getNotifications()
         $data->user_id = $user->id;
 
         $data->save();
-
+   Artisan::call('check:tender-dates');
         return response()->json(['message' => 'تم الاضافة بنجاح'], 200);
     }else{
         return redirect()->route('home');
