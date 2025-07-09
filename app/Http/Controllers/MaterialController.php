@@ -43,7 +43,7 @@ class MaterialController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'url' =>  'longText',
+            'url' =>  'required',
 
         ]);
 
@@ -105,7 +105,7 @@ class MaterialController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'url' =>  'longText',
+            'url' =>  'required',
 
         ]);
 

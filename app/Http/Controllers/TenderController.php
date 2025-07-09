@@ -93,7 +93,7 @@ public function getNotifications()
             'reference_number' => 'unique:tenders|required|string',
             'check_value' => 'string',
             'check_status' => 'string',
-            'url' => 'required|longText',
+            'url' => 'required',
             'address' => 'string',
         ]);
 
@@ -199,7 +199,7 @@ public function getNotifications()
             'reference_number' => 'required|string',
             'check_value' => 'string',
             'check_status' => 'string',
-            'url' => 'required|longText',
+            'url' => 'required',
             'address' => 'string',
         ]);
             $validator->setAttributeNames($customNames);

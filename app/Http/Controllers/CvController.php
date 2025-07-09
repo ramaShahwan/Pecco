@@ -45,8 +45,8 @@ class CvController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'filename' =>  'longText',
-            'filepath' => 'required|longText',
+            'filename' =>  'string',
+            'filepath' => 'required',
             'specialization' => 'required|string',
 
         ]);
@@ -113,8 +113,8 @@ class CvController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'filename' =>  'longText',
-            'filepath' => 'required|longText',
+            'filename' =>  'string',
+            'filepath' => 'required',
             'specialization' => 'required|string',
 
         ]);

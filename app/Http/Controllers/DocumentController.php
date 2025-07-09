@@ -44,8 +44,8 @@ class DocumentController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'filename' =>  'longText',
-            'filepath' => 'required|longText',
+            'filename' =>  'string',
+            'filepath' => 'required',
             'document_date' => 'required|date',
 
         ]);
@@ -112,8 +112,8 @@ class DocumentController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'filename' =>  'longText',
-            'filepath' => 'required|longText',
+            'filename' =>  'string',
+            'filepath' => 'required',
             'document_date' => 'required|date',
 
         ]);
