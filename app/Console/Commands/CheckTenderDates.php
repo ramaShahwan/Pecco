@@ -83,30 +83,64 @@ public function handle()
         ->orWhereBetween('visit_date', [$today, $targetDate])
         ->get();
 
-    foreach ($tenders as $tender) {
-        $type = null;
-        $time = null;
+    // foreach ($tenders as $tender) {
+    //     $type = null;
+    //     $time = null;
 
-        if ($tender->end_date && $tender->end_date >= $today && $tender->end_date <= $targetDate) {
-            $type = 'نهاية التقديم';
-            $time = $tender->end_date->format('Y-m-d H:i');
-        }
+    //     if ($tender->end_date && $tender->end_date >= $today && $tender->end_date <= $targetDate) {
+    //         $type = 'نهاية التقديم';
+    //         $time = $tender->end_date->format('Y-m-d H:i');
+    //     }
 
-        if ($tender->visit_date && $tender->visit_date >= $today && $tender->visit_date <= $targetDate) {
-            $type = ' الزيارة';
-            $time = $tender->visit_date->format('Y-m-d H:i');
-        }
+    //     if ($tender->visit_date && $tender->visit_date >= $today && $tender->visit_date <= $targetDate) {
+    //         $type = ' الزيارة';
+    //         $time = $tender->visit_date->format('Y-m-d H:i');
+    //     }
 
-        if ($type && $tender->user_id) {
+    //     if ($type && $tender->user_id) {
+    //         \App\Models\Notification::create([
+    //             'user_id' => $tender->user_id,
+    //             'tender_id' => $tender->id,
+    //             'title' => "تنبيه بخصوص {$tender->project_name}",
+    //             'body' => "اقترب موعد {$type} بتاريخ {$time}",
+    //         ]);
+    //     }
+    // }
+foreach ($tenders as $tender) {
+    $type = null;
+    $time = null;
+
+    if ($tender->end_date && $tender->end_date >= $today && $tender->end_date <= $targetDate) {
+        $type = 'نهاية التقديم';
+        $time = $tender->end_date->format('Y-m-d H:i');
+    }
+
+    if ($tender->visit_date && $tender->visit_date >= $today && $tender->visit_date <= $targetDate) {
+        $type = ' الزيارة';
+        $time = $tender->visit_date->format('Y-m-d H:i');
+    }
+
+    if ($type && $tender->user_id) {
+        $title = "تنبيه بخصوص {$tender->project_name}";
+        $body = "اقترب موعد {$type} بتاريخ {$time}";
+
+        // ✅ التحقق من وجود إشعار مطابق
+        $exists = \App\Models\Notification::where('user_id', $tender->user_id)
+            ->where('tender_id', $tender->id)
+            ->where('title', $title)
+            ->where('body', $body)
+            ->exists();
+
+        if (!$exists) {
             \App\Models\Notification::create([
                 'user_id' => $tender->user_id,
                 'tender_id' => $tender->id,
-                'title' => "تنبيه بخصوص {$tender->project_name}",
-                'body' => "اقترب موعد {$type} بتاريخ {$time}",
+                'title' => $title,
+                'body' => $body,
             ]);
         }
     }
-
+}
     $this->info('تم إنشاء الإشعارات للمناقصات القريبة وحذف القديمة.');
 }
 
